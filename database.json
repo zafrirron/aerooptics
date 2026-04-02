@@ -179,6 +179,33 @@
       "fl": 8.5,
       "rw": 4000,
       "rh": 3000
+    },
+    {
+      "id": "dji_m3d_w",
+      "name": "Matrice 3D (Dock 2 - Wide)",
+      "sw": 17.3,
+      "sh": 13.0,
+      "fl": 12.24,
+      "rw": 5280,
+      "rh": 3956
+    },
+    {
+      "id": "dji_m3d_t",
+      "name": "Matrice 3D / 3TD (Dock 2 - Tele)",
+      "sw": 6.4,
+      "sh": 4.8,
+      "fl": 32.4,
+      "rw": 4000,
+      "rh": 3000
+    },
+    {
+      "id": "dji_m3td_w",
+      "name": "Matrice 3TD (Dock 2 - Wide)",
+      "sw": 9.6,
+      "sh": 7.2,
+      "fl": 5.73,
+      "rw": 8064,
+      "rh": 6048
     }
   ],
   "DJI Enterprise - Thermal (IR)": [
@@ -230,6 +257,15 @@
     {
       "id": "dji_m3t_ir",
       "name": "Mavic 3 Thermal (IR - 12µm)",
+      "sw": 7.68,
+      "sh": 6.14,
+      "fl": 9.1,
+      "rw": 640,
+      "rh": 512
+    },
+    {
+      "id": "dji_m3td_ir",
+      "name": "Matrice 3TD (Dock 2 - IR)",
       "sw": 7.68,
       "sh": 6.14,
       "fl": 9.1,
