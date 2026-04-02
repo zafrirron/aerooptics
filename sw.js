@@ -1,6 +1,8 @@
-const CACHE_NAME = 'aerooptics-v0.4';
+self.importScripts('./version.js');
+const CACHE_NAME = 'aerooptics-' + APP_VERSION;
 const ASSETS_TO_CACHE = [
   './',
+  './version.js',
   './index.html',
   './database.json',
   './manifest.json',
