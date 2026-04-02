@@ -219,7 +219,7 @@
       "wt": 1391,
       "pr": 6000,
       "type": "eo",
-      "link": "https://www.google.com/search?q=Phantom%204%20RTK%20%2F%20P4%20Multispectral%20payload"
+      "link": "https://enterprise.dji.com/"
     },
     {
       "id": "dji_m2ea_v",
@@ -458,7 +458,7 @@
       "pr": 16000,
       "type": "eo",
       "requires_gimbal": true,
-      "link": "https://www.google.com/search?q=Inspire%203%20X9-8K%20(18mm)%20payload"
+      "link": "https://enterprise.dji.com/"
     },
     {
       "id": "dji_i3_24",
@@ -472,7 +472,7 @@
       "pr": 16000,
       "type": "eo",
       "requires_gimbal": true,
-      "link": "https://www.google.com/search?q=Inspire%203%20X9-8K%20(24mm)%20payload"
+      "link": "https://enterprise.dji.com/"
     },
     {
       "id": "dji_i3_35",
@@ -486,7 +486,7 @@
       "pr": 16000,
       "type": "eo",
       "requires_gimbal": true,
-      "link": "https://www.google.com/search?q=Inspire%203%20X9-8K%20(35mm)%20payload"
+      "link": "https://enterprise.dji.com/"
     },
     {
       "id": "dji_i3_50",
@@ -500,7 +500,7 @@
       "pr": 16000,
       "type": "eo",
       "requires_gimbal": true,
-      "link": "https://www.google.com/search?q=Inspire%203%20X9-8K%20(50mm)%20payload"
+      "link": "https://enterprise.dji.com/"
     },
     {
       "id": "dji_i2_x7_16",
@@ -514,7 +514,7 @@
       "pr": 8000,
       "type": "eo",
       "requires_gimbal": true,
-      "link": "https://www.google.com/search?q=Inspire%202%20X7%20(16mm%20S35)%20payload"
+      "link": "https://enterprise.dji.com/"
     },
     {
       "id": "dji_m3pro_main",
@@ -566,7 +566,7 @@
       "wt": 920,
       "pr": 3500,
       "type": "eo",
-      "link": "https://www.google.com/search?q=Air%203%20(Wide)%20payload"
+      "link": "https://enterprise.dji.com/"
     },
     {
       "id": "dji_air3_t",
@@ -579,7 +579,7 @@
       "wt": 920,
       "pr": 3500,
       "type": "eo",
-      "link": "https://www.google.com/search?q=Air%203%20(Medium%20Tele)%20payload"
+      "link": "https://enterprise.dji.com/"
     },
     {
       "id": "dji_mini4pro",
@@ -592,7 +592,7 @@
       "wt": 249,
       "pr": 800,
       "type": "eo",
-      "link": "https://www.google.com/search?q=Mini%204%20Pro%20%2F%20Mini%203%20Pro%20payload"
+      "link": "https://enterprise.dji.com/"
     },
     {
       "id": "dji_air2s",
@@ -605,7 +605,7 @@
       "wt": 900,
       "pr": 1500,
       "type": "eo",
-      "link": "https://www.google.com/search?q=Air%202S%20payload"
+      "link": "https://enterprise.dji.com/"
     },
     {
       "id": "dji_m2pro",
@@ -644,7 +644,7 @@
       "wt": 1391,
       "pr": 6000,
       "type": "eo",
-      "link": "https://www.google.com/search?q=Phantom%204%20Pro%20V2.0%20payload"
+      "link": "https://enterprise.dji.com/"
     },
     {
       "id": "dji_avata2",
@@ -657,7 +657,7 @@
       "wt": 249,
       "pr": 800,
       "type": "eo",
-      "link": "https://www.google.com/search?q=Avata%202%20payload"
+      "link": "https://enterprise.dji.com/"
     },
     {
       "id": "dji_mini2",
@@ -670,7 +670,7 @@
       "wt": 249,
       "pr": 800,
       "type": "eo",
-      "link": "https://www.google.com/search?q=Mini%202%20%2F%20SE%20payload"
+      "link": "https://enterprise.dji.com/"
     },
     {
       "id": "dji_fpv",
@@ -698,7 +698,7 @@
       "wt": 1600,
       "pr": 8000,
       "type": "eo",
-      "link": "https://www.google.com/search?q=EVO%20Max%204T%20(Wide)%20payload"
+      "link": "https://www.autelrobotics.com/"
     },
     {
       "id": "autel_max4t_z",
@@ -711,7 +711,7 @@
       "wt": 1600,
       "pr": 8000,
       "type": "eo",
-      "link": "https://www.google.com/search?q=EVO%20Max%204T%20(Zoom%20-%20Max%20Optical)%20payload"
+      "link": "https://www.autelrobotics.com/"
     },
     {
       "id": "autel_max4t_ir",
@@ -724,7 +724,7 @@
       "wt": 1600,
       "pr": 8000,
       "type": "ir",
-      "link": "https://www.google.com/search?q=EVO%20Max%204T%20(Thermal%2012%C2%B5m)%20payload"
+      "link": "https://www.autelrobotics.com/"
     },
     {
       "id": "autel_max4n_n",
@@ -737,7 +737,7 @@
       "wt": 1600,
       "pr": 8000,
       "type": "eo",
-      "link": "https://www.google.com/search?q=EVO%20Max%204N%20(Starlight%20Night)%20payload"
+      "link": "https://www.autelrobotics.com/"
     },
     {
       "id": "autel_alpha_w",
@@ -750,7 +750,7 @@
       "wt": 4000,
       "pr": 15000,
       "type": "eo",
-      "link": "https://www.google.com/search?q=Alpha%20L35T%20(Wide)%20payload"
+      "link": "https://www.autelrobotics.com/"
     },
     {
       "id": "autel_alpha_z",
@@ -763,7 +763,7 @@
       "wt": 4000,
       "pr": 15000,
       "type": "eo",
-      "link": "https://www.google.com/search?q=Alpha%20L35T%20(Zoom)%20payload"
+      "link": "https://www.autelrobotics.com/"
     },
     {
       "id": "autel_alpha_ir",
@@ -776,7 +776,7 @@
       "wt": 4000,
       "pr": 15000,
       "type": "ir",
-      "link": "https://www.google.com/search?q=Alpha%20L35T%20(Thermal%2012%C2%B5m)%20payload"
+      "link": "https://www.autelrobotics.com/"
     },
     {
       "id": "autel_dfish_w",
@@ -789,7 +789,7 @@
       "wt": 7800,
       "pr": 80000,
       "type": "eo",
-      "link": "https://www.google.com/search?q=Dragonfish%20L20T%20(Wide)%20payload"
+      "link": "https://www.autelrobotics.com/"
     },
     {
       "id": "autel_dfish_z",
@@ -802,7 +802,7 @@
       "wt": 7800,
       "pr": 80000,
       "type": "eo",
-      "link": "https://www.google.com/search?q=Dragonfish%20L20T%20(Max%20Zoom)%20payload"
+      "link": "https://www.autelrobotics.com/"
     },
     {
       "id": "autel_dfish_ir",
@@ -815,7 +815,7 @@
       "wt": 7800,
       "pr": 80000,
       "type": "ir",
-      "link": "https://www.google.com/search?q=Dragonfish%20L20T%20(Thermal%2012%C2%B5m)%20payload"
+      "link": "https://www.autelrobotics.com/"
     },
     {
       "id": "autel_evo2pro_v3",
@@ -828,7 +828,7 @@
       "wt": 1191,
       "pr": 2500,
       "type": "eo",
-      "link": "https://www.google.com/search?q=EVO%20II%20Pro%20V3%20payload"
+      "link": "https://www.autelrobotics.com/"
     },
     {
       "id": "autel_evo2_640t_v",
@@ -841,7 +841,7 @@
       "wt": 1191,
       "pr": 2500,
       "type": "eo",
-      "link": "https://www.google.com/search?q=EVO%20II%20Dual%20640T%20(Visual)%20payload"
+      "link": "https://www.autelrobotics.com/"
     },
     {
       "id": "autel_evo2_640t_ir",
@@ -854,7 +854,7 @@
       "wt": 1191,
       "pr": 2500,
       "type": "eo",
-      "link": "https://www.google.com/search?q=EVO%20II%20Dual%20640T%20(Thermal%2012%C2%B5m)%20payload"
+      "link": "https://www.autelrobotics.com/"
     }
   ],
   "Skydio": [
@@ -869,7 +869,7 @@
       "wt": 2100,
       "pr": 15000,
       "type": "eo",
-      "link": "https://www.google.com/search?q=X10%20VT300-L%20(Wide%2050MP)%20payload"
+      "link": "https://www.skydio.com/"
     },
     {
       "id": "skydio_x10_t",
@@ -882,7 +882,7 @@
       "wt": 2100,
       "pr": 15000,
       "type": "eo",
-      "link": "https://www.google.com/search?q=X10%20VT300-Z%20(Tele%2048MP)%20payload"
+      "link": "https://www.skydio.com/"
     },
     {
       "id": "skydio_x10_n",
@@ -895,7 +895,7 @@
       "wt": 2100,
       "pr": 15000,
       "type": "eo",
-      "link": "https://www.google.com/search?q=X10%20VT300-Z%20(Narrow%2064MP)%20payload"
+      "link": "https://www.skydio.com/"
     },
     {
       "id": "skydio_x10_ir",
@@ -908,7 +908,7 @@
       "wt": 2100,
       "pr": 15000,
       "type": "ir",
-      "link": "https://www.google.com/search?q=X10%20Thermal%20(Boson%2B%2012%C2%B5m)%20payload"
+      "link": "https://www.skydio.com/"
     },
     {
       "id": "skydio_x2_eo",
@@ -921,7 +921,7 @@
       "wt": 1325,
       "pr": 10000,
       "type": "eo",
-      "link": "https://www.google.com/search?q=X2%20Color%20(Visual)%20payload"
+      "link": "https://www.skydio.com/"
     },
     {
       "id": "skydio_x2_ir",
@@ -934,7 +934,7 @@
       "wt": 1325,
       "pr": 10000,
       "type": "ir",
-      "link": "https://www.google.com/search?q=X2%20Thermal%20(320x256%2012%C2%B5m)%20payload"
+      "link": "https://www.skydio.com/"
     }
   ],
   "Parrot & Teledyne FLIR": [
@@ -949,7 +949,7 @@
       "wt": 898,
       "pr": 4000,
       "type": "eo",
-      "link": "https://www.google.com/search?q=Parrot%20Anafi%20Ai%20payload"
+      "link": "https://www.parrot.com/en/drones/anafi-usa"
     },
     {
       "id": "parrot_usa_w",
@@ -962,7 +962,7 @@
       "wt": 500,
       "pr": 7000,
       "type": "eo",
-      "link": "https://www.google.com/search?q=Parrot%20Anafi%20USA%20(Wide)%20payload"
+      "link": "https://www.parrot.com/en/drones/anafi-usa"
     },
     {
       "id": "parrot_usa_t",
@@ -975,7 +975,7 @@
       "wt": 500,
       "pr": 7000,
       "type": "eo",
-      "link": "https://www.google.com/search?q=Parrot%20Anafi%20USA%20(Tele)%20payload"
+      "link": "https://www.parrot.com/en/drones/anafi-usa"
     },
     {
       "id": "parrot_usa_ir",
@@ -988,7 +988,7 @@
       "wt": 500,
       "pr": 7000,
       "type": "ir",
-      "link": "https://www.google.com/search?q=Parrot%20Anafi%20USA%20(Thermal)%20payload"
+      "link": "https://www.parrot.com/en/drones/anafi-usa"
     },
     {
       "id": "flir_siras_eo",
@@ -1001,7 +1001,7 @@
       "wt": 3090,
       "pr": 9700,
       "type": "eo",
-      "link": "https://www.flir.com/browse/camera-cores-amp-components/unmanned-aerial-systems/"
+      "link": "https://www.flir.com/"
     },
     {
       "id": "flir_siras_ir",
@@ -1014,7 +1014,7 @@
       "wt": 3090,
       "pr": 9700,
       "type": "ir",
-      "link": "https://www.flir.com/browse/camera-cores-amp-components/unmanned-aerial-systems/"
+      "link": "https://www.flir.com/"
     },
     {
       "id": "flir_tz20_w",
@@ -1027,7 +1027,7 @@
       "wt": 640,
       "pr": 5000,
       "type": "ir",
-      "link": "https://www.flir.com/browse/camera-cores-amp-components/unmanned-aerial-systems/"
+      "link": "https://www.flir.com/"
     },
     {
       "id": "flir_tz20_n",
@@ -1040,7 +1040,7 @@
       "wt": 640,
       "pr": 5000,
       "type": "ir",
-      "link": "https://www.flir.com/browse/camera-cores-amp-components/unmanned-aerial-systems/"
+      "link": "https://www.flir.com/"
     },
     {
       "id": "flir_hadron_eo",
@@ -1054,7 +1054,7 @@
       "pr": 4000,
       "type": "ir",
       "requires_gimbal": true,
-      "link": "https://www.flir.com/browse/camera-cores-amp-components/unmanned-aerial-systems/"
+      "link": "https://www.flir.com/"
     },
     {
       "id": "flir_hadron_ir",
@@ -1068,7 +1068,7 @@
       "pr": 4000,
       "type": "ir",
       "requires_gimbal": true,
-      "link": "https://www.flir.com/browse/camera-cores-amp-components/unmanned-aerial-systems/"
+      "link": "https://www.flir.com/"
     }
   ],
   "Phase One (High-End Survey)": [
@@ -1084,7 +1084,7 @@
       "pr": 45000,
       "type": "eo",
       "requires_gimbal": true,
-      "link": "https://geospatial.phaseone.com/drone-payloads/"
+      "link": "https://geospatial.phaseone.com/"
     },
     {
       "id": "po_rs150_70",
@@ -1098,7 +1098,7 @@
       "pr": 45000,
       "type": "eo",
       "requires_gimbal": true,
-      "link": "https://geospatial.phaseone.com/drone-payloads/"
+      "link": "https://geospatial.phaseone.com/"
     },
     {
       "id": "po_100_35",
@@ -1112,7 +1112,7 @@
       "pr": 45000,
       "type": "eo",
       "requires_gimbal": true,
-      "link": "https://geospatial.phaseone.com/drone-payloads/"
+      "link": "https://geospatial.phaseone.com/"
     },
     {
       "id": "po_100_80",
@@ -1126,7 +1126,7 @@
       "pr": 45000,
       "type": "eo",
       "requires_gimbal": true,
-      "link": "https://geospatial.phaseone.com/drone-payloads/"
+      "link": "https://geospatial.phaseone.com/"
     },
     {
       "id": "po_50_35",
@@ -1140,7 +1140,7 @@
       "pr": 45000,
       "type": "eo",
       "requires_gimbal": true,
-      "link": "https://geospatial.phaseone.com/drone-payloads/"
+      "link": "https://geospatial.phaseone.com/"
     },
     {
       "id": "po_50_80",
@@ -1154,7 +1154,7 @@
       "pr": 45000,
       "type": "eo",
       "requires_gimbal": true,
-      "link": "https://geospatial.phaseone.com/drone-payloads/"
+      "link": "https://geospatial.phaseone.com/"
     }
   ],
   "Sony (Wingtra & Mapping)": [
@@ -1170,7 +1170,7 @@
       "pr": 5000,
       "type": "eo",
       "requires_gimbal": true,
-      "link": "https://electronics.sony.com/imaging/interchangeable-lens-cameras/c/all-interchangeable-lens-cameras"
+      "link": "https://electronics.sony.com/"
     },
     {
       "id": "sony_ilxlr1_35",
@@ -1184,7 +1184,7 @@
       "pr": 5000,
       "type": "eo",
       "requires_gimbal": true,
-      "link": "https://electronics.sony.com/imaging/interchangeable-lens-cameras/c/all-interchangeable-lens-cameras"
+      "link": "https://electronics.sony.com/"
     },
     {
       "id": "sony_ilxlr1_50",
@@ -1198,7 +1198,7 @@
       "pr": 5000,
       "type": "eo",
       "requires_gimbal": true,
-      "link": "https://electronics.sony.com/imaging/interchangeable-lens-cameras/c/all-interchangeable-lens-cameras"
+      "link": "https://electronics.sony.com/"
     },
     {
       "id": "sony_a7r_24",
@@ -1212,7 +1212,7 @@
       "pr": 3500,
       "type": "eo",
       "requires_gimbal": true,
-      "link": "https://electronics.sony.com/imaging/interchangeable-lens-cameras/c/all-interchangeable-lens-cameras"
+      "link": "https://electronics.sony.com/"
     },
     {
       "id": "sony_a7r_35",
@@ -1226,7 +1226,7 @@
       "pr": 3500,
       "type": "eo",
       "requires_gimbal": true,
-      "link": "https://electronics.sony.com/imaging/interchangeable-lens-cameras/c/all-interchangeable-lens-cameras"
+      "link": "https://electronics.sony.com/"
     },
     {
       "id": "sony_a7r_50",
@@ -1240,7 +1240,7 @@
       "pr": 3500,
       "type": "eo",
       "requires_gimbal": true,
-      "link": "https://electronics.sony.com/imaging/interchangeable-lens-cameras/c/all-interchangeable-lens-cameras"
+      "link": "https://electronics.sony.com/"
     },
     {
       "id": "sony_rx1rii",
@@ -1253,7 +1253,7 @@
       "wt": 1000,
       "pr": 5000,
       "type": "eo",
-      "link": "https://electronics.sony.com/imaging/interchangeable-lens-cameras/c/all-interchangeable-lens-cameras"
+      "link": "https://electronics.sony.com/"
     },
     {
       "id": "sony_a6100_16",
@@ -1266,7 +1266,7 @@
       "wt": 1000,
       "pr": 5000,
       "type": "eo",
-      "link": "https://electronics.sony.com/imaging/interchangeable-lens-cameras/c/all-interchangeable-lens-cameras"
+      "link": "https://electronics.sony.com/"
     },
     {
       "id": "sony_a6100_20",
@@ -1279,7 +1279,7 @@
       "wt": 1000,
       "pr": 5000,
       "type": "eo",
-      "link": "https://electronics.sony.com/imaging/interchangeable-lens-cameras/c/all-interchangeable-lens-cameras"
+      "link": "https://electronics.sony.com/"
     }
   ],
   "AgEagle / SenseFly / Yuneec": [
@@ -1294,7 +1294,7 @@
       "wt": 1000,
       "pr": 5000,
       "type": "eo",
-      "link": "https://www.google.com/search?q=SenseFly%20Aeria%20X%20payload"
+      "link": "https://ageagle.com/sensefly-drones/"
     },
     {
       "id": "sensefly_soda",
@@ -1307,7 +1307,7 @@
       "wt": 1000,
       "pr": 5000,
       "type": "eo",
-      "link": "https://www.google.com/search?q=SenseFly%20S.O.D.A.%20payload"
+      "link": "https://ageagle.com/sensefly-drones/"
     },
     {
       "id": "micasense_redp",
@@ -1320,7 +1320,7 @@
       "wt": 1000,
       "pr": 5000,
       "type": "eo",
-      "link": "https://www.google.com/search?q=MicaSense%20RedEdge-P%20(Pan)%20payload"
+      "link": "https://ageagle.com/micasense/"
     },
     {
       "id": "yuneec_e90x",
@@ -1333,7 +1333,7 @@
       "wt": 1000,
       "pr": 5000,
       "type": "eo",
-      "link": "https://www.google.com/search?q=Yuneec%20E90X%20payload"
+      "link": "https://yuneec.com/"
     },
     {
       "id": "yuneec_e30zx",
@@ -1346,7 +1346,7 @@
       "wt": 1000,
       "pr": 5000,
       "type": "eo",
-      "link": "https://www.google.com/search?q=Yuneec%20E30ZX%20(Zoom)%20payload"
+      "link": "https://yuneec.com/"
     }
   ],
   "Tactical ISR & Defense": [
@@ -1400,7 +1400,7 @@
       "wt": 1000,
       "pr": 5000,
       "type": "eo",
-      "link": "https://www.google.com/search?q=BRINC%20Lemur%202%20(Visual)%20payload"
+      "link": "https://brincdrones.com/"
     },
     {
       "id": "brinc_lemur2_i",
@@ -1413,7 +1413,7 @@
       "wt": 1000,
       "pr": 5000,
       "type": "eo",
-      "link": "https://www.google.com/search?q=BRINC%20Lemur%202%20(Thermal%2012%C2%B5m)%20payload"
+      "link": "https://brincdrones.com/"
     },
     {
       "id": "teal_2_v",
@@ -1426,7 +1426,7 @@
       "wt": 1000,
       "pr": 5000,
       "type": "eo",
-      "link": "https://www.google.com/search?q=Teal%202%20(Visual)%20payload"
+      "link": "https://tealdrones.com/"
     },
     {
       "id": "teal_2_i",
@@ -1439,7 +1439,7 @@
       "wt": 1000,
       "pr": 5000,
       "type": "eo",
-      "link": "https://www.google.com/search?q=Teal%202%20(Thermal%2012%C2%B5m)%20payload"
+      "link": "https://tealdrones.com/"
     }
   ]
 }

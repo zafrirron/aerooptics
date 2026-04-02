@@ -4,6 +4,10 @@ All codebase shifts, optical logic updates, and AI Database Harvests are documen
 
 ---
 
+## [v1.5] - 2026-04-[Current Date]
+### Data Hotfix
+- **Vendor Link Accuracy:** Re-mapped and hardcoded database payloads that do not explicitly contain their manufacturer nomenclature in their internal database naming structure (e.g. "Phantom", "Inspire", "EVO", "X10"). Resolves an issue where these models incorrectly defaulted to Google Search link fallbacks instead of strictly routing to DJI, Autel, or Skydio respectively.
+
 ## [v1.4] - 2026-04-[Current Date]
 ### Data Enrichment & UI Upgrades
 - **Vendor Link Mapping:** Programmatically enriched all AI-swept hardware packages with direct `link` definitions to their official manufacturer pages.
