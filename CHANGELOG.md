@@ -4,6 +4,10 @@ All codebase shifts, optical logic updates, and AI Database Harvests are documen
 
 ---
 
+## [v1.3] - 2026-04-[Current Date]
+### Hotfix
+- **UI Logic Loop:** Corrected a CSS specificity bug where Tailwind `grid` utilities overrode JS `classList` visibility toggles, and repaired an unclosed structural `<div>` that accidentally orphaned the Procurement panel inside the Operator view.
+
 ## [v1.2] - 2026-04-[Current Date]
 
 ### Architectural Safety Measure

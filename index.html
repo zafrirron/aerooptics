@@ -157,6 +157,7 @@
                 </div>
             </div>
         </div>
+        </div> <!-- /view-operator -->
 
         <!-- Tab 2: Engineers Procurement View -->
         <div id="view-procurement" class="max-w-5xl mx-auto px-4 hidden transition-opacity duration-300">
@@ -535,15 +536,15 @@
                 btnOp.className = "px-5 py-2 sm:px-8 sm:py-2.5 rounded-lg text-xs sm:text-sm font-bold transition-all duration-300 text-white bg-brand-500 shadow-[0_0_15px_rgba(6,182,212,0.4)] flex items-center gap-2 border border-brand-400";
                 btnPr.className = "px-5 py-2 sm:px-8 sm:py-2.5 rounded-lg text-xs sm:text-sm font-bold transition-all duration-300 text-slate-400 hover:text-white flex items-center gap-2 border border-transparent";
                 
-                viewPr.classList.add('hidden');
-                viewOp.classList.remove('hidden');
+                viewPr.style.display = 'none';
+                viewOp.style.display = 'grid'; // Operator is a grid
                 setTimeout(() => viewOp.classList.remove('opacity-0'), 10);
             } else {
                 btnPr.className = "px-5 py-2 sm:px-8 sm:py-2.5 rounded-lg text-xs sm:text-sm font-bold transition-all duration-300 text-white bg-indigo-600 shadow-[0_0_15px_rgba(79,70,229,0.4)] flex items-center gap-2 border border-indigo-400";
                 btnOp.className = "px-5 py-2 sm:px-8 sm:py-2.5 rounded-lg text-xs sm:text-sm font-bold transition-all duration-300 text-slate-400 hover:text-white flex items-center gap-2 border border-transparent";
                 
-                viewOp.classList.add('hidden');
-                viewPr.classList.remove('hidden');
+                viewOp.style.display = 'none';
+                viewPr.style.display = 'block'; // Procurement is block
                 setTimeout(() => viewPr.classList.remove('opacity-0'), 10);
             }
         }
