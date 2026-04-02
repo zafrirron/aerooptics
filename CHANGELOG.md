@@ -4,6 +4,11 @@ All codebase shifts, optical logic updates, and AI Database Harvests are documen
 
 ---
 
+## [v1.1] - 2026-04-[Current Date]
+
+### UX/UI Single Page Application Refactor
+- **Architecture:** Converted the entire interface into a strict tabbed Single Page Application (SPA). The application structurally isolates the tactical `Operator Engine` from the `Engineering Procurement Engine` via header tabs, preventing UI bleeding and cognitive clutter.
+
 ## [v1.0] - 2026-04-[Current Date]
 
 ### Major System Upgrade: Procurement Engine
