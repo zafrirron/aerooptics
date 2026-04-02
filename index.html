@@ -148,6 +148,72 @@
                     <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center p-4 bg-brand-900/10 rounded-xl border border-brand-500/20 gap-4 relative overflow-hidden"><div class="absolute left-0 top-0 bottom-0 w-1 bg-brand-500"></div><div class="flex items-center gap-4 pl-2 flex-grow"><div class="p-2.5 bg-brand-900/40 rounded-lg text-brand-400 border border-brand-500/30"><i class="fa-solid fa-cube w-5 h-5 flex items-center justify-center"></i></div><div class="w-full"><p class="font-bold text-brand-100 text-sm mb-2">Custom Target Size</p><div class="flex flex-wrap items-center gap-3 w-full"><div class="flex items-center gap-1"><input type="number" id="custom-target-size" value="0.1" step="0.05" class="w-16 bg-slate-900/80 border border-brand-500/50 rounded px-2 py-1 text-xs text-brand-300 font-mono text-center focus:outline-none focus:border-brand-400 z-20"><span class="text-[10px] text-brand-500/70 uppercase font-bold mr-2">m</span></div><div class="flex items-center gap-1 bg-slate-900/60 pl-2 rounded border border-slate-700 z-20"><i class="fa-solid fa-crosshairs text-[10px] text-slate-500"></i><select id="custom-target-req" class="bg-transparent text-xs font-bold text-slate-300 py-1 pr-2 outline-none cursor-pointer"><option value="2">Detect (2px)</option><option value="8">Recognize (8px)</option><option value="14" selected>Identify (14px)</option></select></div></div></div></div><div class="flex flex-col items-end gap-2 w-full sm:w-auto z-20 shrink-0"><div class="flex items-center gap-3"><span class="text-lg font-mono font-bold text-brand-300" id="px-custom">0px</span><span id="status-custom" class="px-3 py-1.5 rounded-md text-[10px] font-bold w-full sm:w-28 text-center uppercase tracking-widest bg-slate-900 border border-slate-700 shadow-md">--</span></div><div class="flex items-center gap-2 bg-slate-900/80 px-2 py-1 rounded border border-brand-500/30 shadow-[0_0_10px_rgba(6,182,212,0.1)] w-full justify-between sm:justify-start"><span class="text-[9px] text-brand-500/80 font-bold uppercase tracking-widest pl-1">Max Alt:</span><span id="custom-max-alt" class="text-sm font-black font-mono text-white">0m</span></div></div></div>
                 </div>
             </div>
+
+            <!-- Engineers Procurement Section -->
+            <div class="glass-panel rounded-2xl p-6 sm:p-8 mt-6 border-t-4 border-indigo-500 relative overflow-hidden group">
+                <div class="absolute -right-4 -bottom-4 text-slate-700/20 pointer-events-none group-hover:text-indigo-500/10 transition duration-500"><i class="fa-solid fa-server text-8xl"></i></div>
+                <div class="flex items-center gap-3 mb-6 border-b border-slate-700/50 pb-4 relative z-10">
+                    <div class="w-8 h-8 rounded-lg bg-indigo-500/20 flex items-center justify-center text-indigo-400 border border-indigo-500/30 shadow-[0_0_15px_rgba(99,102,241,0.2)]"><i class="fa-solid fa-scale-balanced"></i></div>
+                    <h2 class="text-lg font-bold text-white uppercase tracking-wider">Platform Procurement Engine</h2>
+                </div>
+                <div class="grid grid-cols-1 xl:grid-cols-2 gap-6 relative z-10">
+                    <div class="space-y-4 bg-slate-900/50 p-5 rounded-xl border border-slate-700/50">
+                        <h3 class="text-[10px] font-bold text-slate-400 uppercase tracking-widest border-b border-slate-800 pb-2 mb-3"><i class="fa-solid fa-crosshairs text-slate-500 mr-2"></i>Tactical Requirements</h3>
+                        <div class="flex items-center justify-between gap-4">
+                            <span class="text-xs font-bold text-slate-300">Target Size:</span>
+                            <div class="relative"><input type="number" id="proc-target-size" value="0.5" step="0.1" class="w-full bg-slate-800 border border-slate-600 rounded px-2 py-1.5 text-sm font-mono text-center text-white focus:outline-none focus:border-indigo-500"><span class="absolute right-2 top-1/2 -translate-y-1/2 text-slate-500 text-[10px] font-bold">m</span></div>
+                        </div>
+                        <div class="flex items-center justify-between gap-4">
+                            <span class="text-xs font-bold text-slate-300">Flight Ceiling:</span>
+                            <div class="relative"><input type="number" id="proc-alt" value="100" step="10" class="w-full bg-slate-800 border border-slate-600 rounded px-2 py-1.5 text-sm font-mono text-center text-white focus:outline-none focus:border-indigo-500"><span class="absolute right-2 top-1/2 -translate-y-1/2 text-slate-500 text-[10px] font-bold">m</span></div>
+                        </div>
+                        <div class="flex items-center justify-between gap-4">
+                            <span class="text-xs font-bold text-slate-300">Minimum Standard:</span>
+                            <select id="proc-req" class="bg-slate-800 text-xs font-bold text-white py-1.5 px-2 rounded border border-slate-600 outline-none cursor-pointer w-full max-w-[120px] text-center">
+                                <option value="2">Detect</option>
+                                <option value="8" selected>Recognize</option>
+                                <option value="14">Identify</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="space-y-4 bg-slate-900/50 p-5 rounded-xl border border-slate-700/50">
+                        <h3 class="text-[10px] font-bold text-slate-400 uppercase tracking-widest border-b border-slate-800 pb-2 mb-3"><i class="fa-solid fa-filter text-slate-500 mr-2"></i>Platform Constraints</h3>
+                        <div class="flex items-center justify-between gap-4">
+                            <span class="text-xs font-bold text-slate-300">Max Weight:</span>
+                            <div class="relative"><input type="number" id="proc-max-wt" value="3000" step="100" class="w-full bg-slate-800 border border-emerald-500/30 rounded px-2 py-1.5 text-sm font-mono text-center text-emerald-400 focus:outline-none focus:border-emerald-500"><span class="absolute right-2 top-1/2 -translate-y-1/2 text-emerald-500/50 text-[10px] font-bold">g</span></div>
+                        </div>
+                        <div class="flex items-center justify-between gap-4">
+                            <span class="text-xs font-bold text-slate-300">Max Price:</span>
+                            <div class="relative"><span class="absolute left-2 top-1/2 -translate-y-1/2 text-amber-500/50 text-xs font-bold">$</span><input type="number" id="proc-max-pr" value="15000" step="500" class="w-full bg-slate-800 border border-amber-500/30 rounded pl-5 pr-2 py-1.5 text-sm font-mono text-center text-amber-400 focus:outline-none focus:border-amber-500"></div>
+                        </div>
+                        <div class="flex items-center justify-between gap-4">
+                            <span class="text-xs font-bold text-slate-300">Spectral Band:</span>
+                            <select id="proc-type" class="bg-slate-800 text-xs font-bold text-white py-1.5 px-2 rounded border border-slate-600 outline-none cursor-pointer w-full max-w-[120px] text-center">
+                                <option value="any">Any (EO/IR)</option>
+                                <option value="eo" selected>Visual Day</option>
+                                <option value="ir">Thermal Night</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="mt-4 flex flex-col sm:flex-row items-center justify-between bg-slate-900 border border-slate-700/50 rounded-xl overflow-hidden relative z-10 w-full shadow-lg">
+                    <div class="px-4 py-3 flex-1 w-full bg-slate-800/20">
+                        <p class="text-[10px] font-bold text-slate-400 uppercase tracking-widest leading-relaxed"><i class="fa-solid fa-triangle-exclamation text-amber-500/70 mr-2"></i>Modular Gimbal Penalty</p>
+                        <p class="text-[11px] text-slate-500 mt-1">Standalone platforms incur <span class="text-emerald-400 font-bold">+800g</span> & <span class="text-amber-400 font-bold">+$2,500</span>.</p>
+                    </div>
+                    <button onclick="runProcurementEngine()" class="w-full sm:w-auto bg-indigo-500 hover:bg-indigo-400 text-white px-8 py-5 sm:py-0 h-full text-xs font-black transition-colors uppercase tracking-widest shrink-0"><i class="fa-solid fa-microchip mr-2"></i>Run Engine</button>
+                </div>
+                
+                <div id="proc-results-container" class="mt-6 hidden relative z-10 w-full mb-2">
+                    <div class="bg-indigo-900/20 border border-indigo-500/30 p-4 rounded-xl mb-4 text-center sm:text-left transition-all">
+                        <p class="text-[10px] font-bold text-indigo-400 uppercase tracking-widest mb-1">Absolute Minimum Viable Optics</p>
+                        <p class="text-[11px] sm:text-xs text-slate-300">Conditions mathematically demand hardware resolving <span id="proc-req-gsd" class="font-black text-white px-2 py-0.5 bg-indigo-500 rounded border border-indigo-400 mx-1 shadow-[0_0_10px_rgba(99,102,241,0.5)]">0.00 cm/px</span> or lower.</p>
+                    </div>
+                    <div id="proc-results-list" class="space-y-3 max-h-96 overflow-y-auto pr-2 custom-scroll">
+                        <!-- Iterative Filter Results -->
+                    </div>
+                </div>
+            </div>
         </div>
     </main>
 
@@ -442,6 +508,86 @@
             clogModal.classList.add('opacity-0', 'pointer-events-none');
             clogModal.querySelector('.bg-slate-900').classList.add('scale-95');
             setTimeout(() => { clogModal.classList.remove('flex'); clogModal.classList.add('hidden'); }, 300);
+        }
+
+        // Engineers Procurement Target Logic
+        function runProcurementEngine() {
+            const reqTgt = parseFloat(document.getElementById('proc-target-size').value) || 0.5;
+            const reqAlt = parseFloat(document.getElementById('proc-alt').value) || 100;
+            const reqPx = parseFloat(document.getElementById('proc-req').value) || 8;
+            const maxWt = parseFloat(document.getElementById('proc-max-wt').value) || 999999;
+            const maxPr = parseFloat(document.getElementById('proc-max-pr').value) || 999999;
+            const reqType = document.getElementById('proc-type').value;
+
+            const strictGsd = (reqTgt * 100) / reqPx;
+            document.getElementById('proc-req-gsd').innerText = strictGsd.toFixed(2) + ' cm/px';
+
+            const resultsContainer = document.getElementById('proc-results-container');
+            const resultsList = document.getElementById('proc-results-list');
+            resultsContainer.classList.remove('hidden');
+            resultsList.innerHTML = '';
+
+            let passingPayloads = [];
+
+            // Execute iteration across entire AI Database
+            Object.values(flatPresets).forEach(p => {
+                const wt = typeof p.wt !== 'undefined' ? p.wt : 0;
+                const pr = typeof p.pr !== 'undefined' ? p.pr : 0;
+                const type = p.type || 'eo';
+                const rg = p.requires_gimbal ? 1 : 0;
+
+                const finalWt = wt + (rg * 800);
+                const finalPr = pr + (rg * 2500);
+
+                if(finalWt > maxWt) return;
+                if(finalPr > maxPr) return;
+                if(reqType !== 'any' && type !== reqType) return;
+
+                // Optical Bounding Check limit using mission altitude parameter
+                const payloadGsdW = (reqAlt * p.sw * 100) / (p.fl * p.rw);
+                const payloadGsdH = (reqAlt * p.sh * 100) / (p.fl * p.rh);
+                const payloadMaxGsd = Math.max(payloadGsdW, payloadGsdH);
+
+                if(payloadMaxGsd <= strictGsd) {
+                    passingPayloads.push({
+                        name: p.name,
+                        wt: finalWt,
+                        pr: finalPr,
+                        gsd: payloadMaxGsd,
+                        rg: rg,
+                        type: type
+                    });
+                }
+            });
+
+            passingPayloads.sort((a, b) => a.pr - b.pr);
+
+            if(passingPayloads.length === 0) {
+                resultsList.innerHTML = `<div class="p-6 text-center bg-slate-900 border border-dashed border-slate-700 rounded-xl text-slate-500"><i class="fa-solid fa-ban text-3xl mb-3 block opacity-50"></i><p class="font-bold text-sm">No hardware satisfies constraints.</p><p class="text-[10px] mt-1">Try raising weight/price or relaxing GSD ceilings.</p></div>`;
+            } else {
+                passingPayloads.forEach(opt => {
+                    const rgTag = opt.rg ? `<span class="bg-amber-500/10 text-amber-500 px-1.5 py-0.5 rounded text-[9px] uppercase tracking-widest border border-amber-500/20 ml-2 shadow-sm whitespace-nowrap"><i class="fa-solid fa-circle-plus mr-1"></i>Gimbal Added</span>` : '';
+                    const typeIcon = opt.type === 'ir' ? '<i class="fa-solid fa-fire text-orange-500"></i>' : '<i class="fa-solid fa-sun text-brand-400"></i>';
+                    const scoreWidth = Math.max(10, 100 - ((opt.gsd / strictGsd) * 100));
+                    
+                    const html = `
+                    <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between p-4 bg-slate-900/50 border border-slate-700/50 rounded-xl hover:bg-slate-800 transition shadow-[0_4px_20px_rgba(0,0,0,0.2)] gap-4">
+                        <div class="w-full sm:w-auto">
+                            <p class="text-sm font-bold text-white mb-2 flex items-center flex-wrap gap-y-1">${typeIcon}<span class="ml-2 mr-1">${opt.name}</span>${rgTag}</p>
+                            <div class="flex items-center gap-3 text-xs">
+                                <span class="bg-indigo-500/10 border border-indigo-500/20 text-indigo-300 px-2 py-0.5 rounded font-mono font-bold">${opt.gsd.toFixed(2)} cm/px</span>
+                                <span class="text-emerald-400 font-bold border-l border-slate-700 pl-3">${opt.wt.toLocaleString()}g</span>
+                                <span class="text-amber-400 font-bold border-l border-slate-700 pl-3">$${opt.pr.toLocaleString()}</span>
+                            </div>
+                        </div>
+                        <div class="w-full sm:w-32 bg-slate-950 rounded-full h-2 border border-slate-800 overflow-hidden shrink-0 mt-2 sm:mt-0 relative group">
+                            <div class="h-full bg-gradient-to-r from-emerald-500 to-brand-400 rounded-full" style="width: ${scoreWidth}%"></div>
+                            <div class="absolute inset-0 bg-slate-900/90 hidden group-hover:flex items-center justify-center text-[8px] font-bold text-white uppercase tracking-widest">Res Margin</div>
+                        </div>
+                    </div>`;
+                    resultsList.innerHTML += html;
+                });
+            }
         }
 
         // Register Service Worker for Offline Capabilities

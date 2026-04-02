@@ -4,6 +4,13 @@ All codebase shifts, optical logic updates, and AI Database Harvests are documen
 
 ---
 
+## [v1.0] - 2026-04-[Current Date]
+
+### Major System Upgrade: Procurement Engine
+- **Data Architecture:** The autonomous AI Sweeper populated the database with real-world `weight` (grams), `price` (USD), and spectral `type` for all 50+ payloads globally.
+- **Physics Automation:** Engineered a mechanical integration penalizer. If modular standalone cameras (e.g., Phase One / Sony a7R) are evaluated, the geometry engine automatically applies a strict `+800g` and `+$2,500` payload integration penalty mimicking a standardized Gremsy gimbal requirement.
+- **Engine UI:** Deployed the massive "Platform Procurement Engine" targeting drone frame engineers. Engineers can now define target resolutions, spectral constraints, structural mass ceilings, and instantly loop the entire payload industry to procure the exact required hardware.
+
 ## [v0.9] - 2026-04-[Current Date]
 
 ### Frontend Infrastructure
