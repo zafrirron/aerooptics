@@ -152,10 +152,27 @@
     </main>
 
     <footer class="max-w-7xl mx-auto mt-16 mb-8 border-t border-slate-800 pt-8 text-center px-4 relative z-10">
-        <p class="text-xs text-slate-500 font-medium leading-relaxed max-w-4xl mx-auto">
-            Calculations utilize strict geometric optical projection equations. URLs update automatically for mission sharing. <span id="app-version-badge" class="bg-brand-500/10 border border-brand-500/30 text-brand-400 font-bold px-2 py-0.5 rounded ml-1 shadow-[0_0_10px_rgba(6,182,212,0.1)]">v---</span>
+        <p class="text-xs text-slate-500 font-medium leading-relaxed max-w-4xl mx-auto flex flex-col sm:flex-row items-center justify-center gap-2">
+            <span>Calculations utilize strict geometric optical projection equations. URLs update automatically for mission sharing.</span>
+            <button onclick="openChangelogModal()" id="app-version-badge" class="bg-brand-500/10 hover:bg-brand-500/30 border border-brand-500/30 text-brand-400 font-bold px-3 py-1 rounded-md shadow-[0_0_10px_rgba(6,182,212,0.1)] transition-all cursor-pointer inline-flex items-center gap-2"><i class="fa-solid fa-clock-rotate-left text-brand-500/80"></i>v---</button>
         </p>
     </footer>
+
+    <!-- Changelog Modal -->
+    <div id="changelog-modal" class="fixed inset-0 bg-slate-950/80 backdrop-blur-sm z-[200] hidden flex-col items-center justify-center p-4 sm:p-6 opacity-0 transition-opacity duration-300 pointer-events-none">
+        <div class="bg-slate-900 border border-brand-500/30 shadow-[0_0_50px_rgba(0,0,0,0.5)] rounded-2xl w-full max-w-3xl max-h-[85vh] flex flex-col transform scale-95 transition-transform duration-300">
+            <div class="px-6 py-5 border-b border-slate-800 flex justify-between items-center bg-slate-800/30 rounded-t-2xl">
+                <h3 class="text-lg font-bold text-white flex items-center gap-3"><i class="fa-solid fa-tower-broadcast text-brand-400"></i> Tactical Operations Changelog</h3>
+                <button onclick="closeChangelogModal()" class="w-8 h-8 flex items-center justify-center rounded-full bg-slate-800 hover:bg-slate-700 text-slate-400 hover:text-white border border-slate-700 transition-colors"><i class="fa-solid fa-xmark"></i></button>
+            </div>
+            <div class="p-6 overflow-y-auto flex-1 bg-slate-900 w-full relative rounded-b-2xl">
+                <div id="changelog-spinner" class="absolute inset-0 flex items-center justify-center bg-slate-900 z-10">
+                    <i class="fa-solid fa-spinner fa-spin text-3xl text-brand-500/30"></i>
+                </div>
+                <div id="changelog-content" class="text-slate-300 text-sm leading-relaxed whitespace-pre-wrap font-mono relative z-0 pb-10"></div>
+            </div>
+        </div>
+    </div>
 
     <script>
         document.getElementById('app-version-badge').innerText = APP_VERSION;
@@ -386,6 +403,46 @@
         }
 
         bootEnterpriseEngine();
+
+        // Changelog Viewer Logic
+        const clogModal = document.getElementById('changelog-modal');
+        const clogContent = document.getElementById('changelog-content');
+        const clogSpinner = document.getElementById('changelog-spinner');
+
+        async function openChangelogModal() {
+            clogModal.classList.remove('hidden');
+            clogModal.classList.add('flex');
+            void clogModal.offsetWidth; // Force Reflow
+            clogModal.classList.remove('opacity-0', 'pointer-events-none');
+            clogModal.querySelector('.bg-slate-900').classList.remove('scale-95');
+            clogSpinner.style.display = 'flex';
+            clogContent.innerHTML = '';
+            try {
+                const res = await fetch('./CHANGELOG.md?t=' + new Date().getTime());
+                if(!res.ok) throw new Error('Changelog not found');
+                const text = await res.text();
+                
+                // Native Markdown string parser tailored to our specific format
+                let formatted = text.replace(/---/g, ''); // Remove horizontal rules
+                formatted = formatted.replace(/^## \[([^\]]+)\](.*)$/gm, '<h2 class="text-lg font-bold flex items-center gap-3 mt-10 mb-4 border-b border-brand-500/20 pb-3"><span class="bg-brand-500 text-slate-900 px-2 py-0.5 rounded font-black tracking-widest text-xs">$1</span> <span class="text-xs font-bold text-slate-500 bg-slate-800 px-2 py-0.5 rounded border border-slate-700">$2</span></h2>');
+                formatted = formatted.replace(/^### (.*)$/gm, '<h3 class="text-[13px] font-bold text-emerald-400 mt-6 mb-3 uppercase tracking-widest bg-emerald-900/10 px-3 py-1.5 rounded border-l-2 border-emerald-500"><i class="fa-solid fa-code-merge mr-2 opacity-50"></i>$1</h3>');
+                formatted = formatted.replace(/^# (.*)$/gm, '<h1 class="text-xl font-black text-white mb-2 pb-4 border-b border-slate-800">$1</h1>');
+                formatted = formatted.replace(/\*\*(.*?)\*\*/g, '<span class="text-white font-bold">$1</span>');
+                formatted = formatted.replace(/`(.*?)`/g, '<span class="text-brand-300 font-mono bg-slate-800 px-1.5 py-0.5 rounded border border-slate-700 text-xs shadow-inner">$1</span>');
+                formatted = formatted.replace(/^\-\s+(.*)$/gm, '<div class="ml-4 mb-3 flex items-start gap-3"><div class="w-1.5 h-1.5 rounded-full bg-brand-500 mt-2 shrink-0 shadow-[0_0_8px_rgba(6,182,212,0.8)]"></div><p class="text-slate-300">$1</p></div>');
+                
+                clogContent.innerHTML = formatted;
+            } catch (e) {
+                clogContent.innerHTML = `<div class="bg-amber-900/20 border border-amber-500/30 p-4 rounded-xl text-amber-500 text-center mt-10"><i class="fa-solid fa-satellite-dish text-3xl mb-3 opacity-50 block"></i>Changelog architecture unavailable or not yet cached.</div>`;
+            }
+            clogSpinner.style.display = 'none';
+        }
+
+        function closeChangelogModal() {
+            clogModal.classList.add('opacity-0', 'pointer-events-none');
+            clogModal.querySelector('.bg-slate-900').classList.add('scale-95');
+            setTimeout(() => { clogModal.classList.remove('flex'); clogModal.classList.add('hidden'); }, 300);
+        }
 
         // Register Service Worker for Offline Capabilities
         if ('serviceWorker' in navigator) {

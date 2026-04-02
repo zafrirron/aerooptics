@@ -4,6 +4,12 @@ All codebase shifts, optical logic updates, and AI Database Harvests are documen
 
 ---
 
+## [v0.9] - 2026-04-[Current Date]
+
+### Frontend Infrastructure
+- **Feature:** Introduced the Tactical Operations Changelog viewer on the tablet frontend Interface.
+- **Service Worker:** Bound `CHANGELOG.md` permanently to the resilient offline-cache system ensuring field personnel have live access to patch notes.
+
 ## [v0.8] - 2026-04-[Current Date]
 
 ### Agentic DB Harvester Updates
