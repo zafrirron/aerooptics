@@ -29,3 +29,13 @@ To serve on GitHub pages:
 - `/database.json`: Drone specs data definition.
 - `/sw.js` and `/manifest.json`: Ensures the application registers correctly as an offline PWA.
 - `/icon.png`: Dynamic tactical logo.
+
+## Cache Management & Updates
+Because AeroOptics operates as a Progressive Web App (PWA) with strict offline capabilities, updates pushed to GitHub will NOT immediately appear if a user has already cached the application. 
+
+**To forcefully clear the cache and push a new release to your team:**
+1. Open the `sw.js` file.
+2. At the very top of the file, increase the `CACHE_NAME` version string (e.g., change `'aerooptics-v1'` to `'aerooptics-v2'`).
+3. Commit and push your changes to GitHub.
+
+When the operators' mobile devices quietly ping the network, their browser checks `sw.js`. Seeing that the version string has changed by even a single character forces the browser to silently delete the old cache array and download the new payload. Next time they open the PWA, it will be the newest version.
