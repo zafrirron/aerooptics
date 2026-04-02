@@ -1,4 +1,4 @@
-const CACHE_NAME = 'aerooptics-v0.3';
+const CACHE_NAME = 'aerooptics-v0.4';
 const ASSETS_TO_CACHE = [
   './',
   './index.html',
@@ -8,6 +8,7 @@ const ASSETS_TO_CACHE = [
 ];
 
 self.addEventListener('install', event => {
+  self.skipWaiting(); // Forces the waiting service worker to become the active service worker.
   event.waitUntil(
     caches.open(CACHE_NAME)
       .then(cache => {
@@ -62,6 +63,6 @@ self.addEventListener('activate', event => {
           }
         })
       );
-    })
+    }).then(() => self.clients.claim()) // Automatically claim the new service worker so the user gets updates immediately
   );
 });
