@@ -69,10 +69,18 @@
         </div>
         <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold mb-4 tracking-tight text-white">AeroOptics <span class="gradient-text">Pro</span></h1>
         <p class="text-slate-400 text-lg md:text-xl max-w-3xl mx-auto font-light leading-relaxed mb-6">Tactical Drone Payload DRI (Detection, Recognition & Identification) Calculator. Derive precise physical ground dimensions and maximum flight ceilings.</p>
-        <button onclick="copyMissionURL()" class="bg-brand-500/20 hover:bg-brand-500/40 text-brand-400 border border-brand-500/30 px-6 py-2 rounded-full text-sm font-bold transition shadow-[0_0_15px_rgba(6,182,212,0.15)]"><i class="fa-solid fa-link mr-2"></i>Copy URL to Share Mission</button>
+        <button onclick="copyMissionURL()" class="bg-brand-500/20 hover:bg-brand-500/40 text-brand-400 border border-brand-500/30 px-6 py-2 rounded-full text-sm font-bold transition shadow-[0_0_15px_rgba(6,182,212,0.15)] mb-8"><i class="fa-solid fa-link mr-2"></i>Copy URL to Share Mission</button>
+        
+        <!-- UI Application Mode Tabs -->
+        <div class="flex p-1 bg-slate-900/80 border border-slate-700/50 rounded-xl w-fit mx-auto relative shadow-[0_0_20px_rgba(0,0,0,0.5)] backdrop-blur-sm">
+            <button onclick="switchAppTab('operator')" id="tab-operator" class="px-5 py-2 sm:px-8 sm:py-2.5 rounded-lg text-xs sm:text-sm font-bold transition-all duration-300 text-white bg-brand-500 shadow-[0_0_15px_rgba(6,182,212,0.4)] flex items-center gap-2 border border-brand-400"><i class="fa-solid fa-crosshairs"></i> Operator Engine</button>
+            <button onclick="switchAppTab('procurement')" id="tab-procurement" class="px-5 py-2 sm:px-8 sm:py-2.5 rounded-lg text-xs sm:text-sm font-bold transition-all duration-300 text-slate-400 hover:text-white flex items-center gap-2 border border-transparent"><i class="fa-solid fa-microchip"></i> Engineering Procurement</button>
+        </div>
     </header>
 
-    <main class="max-w-7xl mx-auto px-4 grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 relative z-10">
+    <main class="w-full relative z-10 pb-10">
+        <!-- Tab 1: Operator Calculator View -->
+        <div id="view-operator" class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 px-4 transition-opacity duration-300">
         <div class="lg:col-span-4 space-y-6">
             <div class="glass-panel rounded-2xl p-6 sm:p-8">
                 <div class="flex items-center gap-3 mb-6 border-b border-slate-700/50 pb-4"><div class="w-8 h-8 rounded-lg bg-slate-800 flex items-center justify-center text-brand-400"><i class="fa-solid fa-microchip"></i></div><h2 class="text-lg font-bold text-white uppercase tracking-wider">Payload Parameters</h2></div>
