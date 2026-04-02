@@ -539,14 +539,14 @@
             try {
                 const response = await fetch(DB_URL + '?t=' + new Date().getTime(), { cache: "no-store" });
                 if (!response.ok) throw new Error("JSON not found");
-                const masterDB = await response.json(); presetGroups = masterDB.optics || {};
+                masterDB = await response.json(); presetGroups = masterDB.optics || {};
                 localStorage.setItem('AeroOptics_LocalDB', JSON.stringify(presetGroups));
                 dbStatus.innerHTML = `<i class="fa-solid fa-cloud-check text-emerald-400"></i> <span class="text-emerald-400">Database Synced (${Object.values(presetGroups).flat().length} items)</span>`;
                 dbStatus.classList.replace('bg-slate-800/50', 'bg-emerald-500/10'); dbStatus.classList.add('border-emerald-500/30');
             } catch (error) {
                 console.warn("Could not fetch database.json (Check CORS or server status). Using local cache.");
                 const cachedDB = localStorage.getItem('AeroOptics_LocalDB');
-                const masterDB = cachedDB ? JSON.parse(cachedDB) : fallbackDB; presetGroups = masterDB.optics || fallbackDB.optics || {};
+                masterDB = cachedDB ? JSON.parse(cachedDB) : fallbackDB; presetGroups = masterDB.optics || fallbackDB.optics || {};
                 dbStatus.innerHTML = `<i class="fa-solid fa-wifi text-amber-400"></i> <span class="text-amber-400">Offline Cache Mode (${Object.values(presetGroups).flat().length} items)</span>`;
                 dbStatus.classList.replace('bg-slate-800/50', 'bg-amber-500/10'); dbStatus.classList.add('border-amber-500/30');
             }
@@ -690,6 +690,7 @@
     
         
         // --- BATTERY ENGINE LOGIC ---
+        let masterDB = {};
         let flatBatteries = {};
         const elBatPreset = document.getElementById('bat-preset-select');
         const elBatEmptyWt = document.getElementById('bat-empty-wt');
