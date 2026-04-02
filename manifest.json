@@ -1,0 +1,17 @@
+{
+  "name": "AeroOptics Pro Tactical Engine",
+  "short_name": "AeroOptics",
+  "description": "Tactical Operations Engine & Optics Calculator",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#020617",
+  "theme_color": "#020617",
+  "icons": [
+    {
+      "src": "icon.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}

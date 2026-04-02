@@ -1,0 +1,958 @@
+{
+  "DJI Enterprise - Visual (EO)": [
+    {
+      "id": "dji_m3e",
+      "name": "Mavic 3 Enterprise (Wide)",
+      "sw": 17.3,
+      "sh": 13.0,
+      "fl": 12.24,
+      "rw": 5280,
+      "rh": 3956
+    },
+    {
+      "id": "dji_m3e_t",
+      "name": "Mavic 3 Enterprise (Tele)",
+      "sw": 6.4,
+      "sh": 4.8,
+      "fl": 32.4,
+      "rw": 4000,
+      "rh": 3000
+    },
+    {
+      "id": "dji_m3t_v",
+      "name": "Mavic 3 Thermal (Visual EO)",
+      "sw": 6.4,
+      "sh": 4.8,
+      "fl": 4.5,
+      "rw": 8000,
+      "rh": 6000
+    },
+    {
+      "id": "dji_m3m",
+      "name": "Mavic 3 Multispectral (RGB)",
+      "sw": 17.3,
+      "sh": 13.0,
+      "fl": 12.24,
+      "rw": 5280,
+      "rh": 3956
+    },
+    {
+      "id": "dji_m30_w",
+      "name": "Matrice 30/30T (Wide)",
+      "sw": 6.4,
+      "sh": 4.8,
+      "fl": 4.5,
+      "rw": 8000,
+      "rh": 6000
+    },
+    {
+      "id": "dji_m30_z",
+      "name": "Matrice 30/30T (Zoom - Max Optical)",
+      "sw": 6.4,
+      "sh": 4.8,
+      "fl": 21.0,
+      "rw": 8000,
+      "rh": 6000
+    },
+    {
+      "id": "dji_h30_w",
+      "name": "Zenmuse H30/H30T (Wide)",
+      "sw": 9.6,
+      "sh": 7.2,
+      "fl": 6.72,
+      "rw": 8064,
+      "rh": 6048
+    },
+    {
+      "id": "dji_h30_z",
+      "name": "Zenmuse H30/H30T (Zoom - Max Optical)",
+      "sw": 7.18,
+      "sh": 5.38,
+      "fl": 172.0,
+      "rw": 7328,
+      "rh": 5496
+    },
+    {
+      "id": "dji_h20_w",
+      "name": "Zenmuse H20/H20T (Wide)",
+      "sw": 6.17,
+      "sh": 4.55,
+      "fl": 4.5,
+      "rw": 4056,
+      "rh": 3040
+    },
+    {
+      "id": "dji_h20_z",
+      "name": "Zenmuse H20/H20T (Zoom - Max Optical)",
+      "sw": 7.6,
+      "sh": 5.7,
+      "fl": 119.9,
+      "rw": 5184,
+      "rh": 3888
+    },
+    {
+      "id": "dji_h20n_v",
+      "name": "Zenmuse H20N (Starlight Visual)",
+      "sw": 7.18,
+      "sh": 5.38,
+      "fl": 6.8,
+      "rw": 1920,
+      "rh": 1080
+    },
+    {
+      "id": "dji_p1_24",
+      "name": "Zenmuse P1 (24mm Lens)",
+      "sw": 35.9,
+      "sh": 24.0,
+      "fl": 24.0,
+      "rw": 8192,
+      "rh": 5460
+    },
+    {
+      "id": "dji_p1_35",
+      "name": "Zenmuse P1 (35mm Lens)",
+      "sw": 35.9,
+      "sh": 24.0,
+      "fl": 35.0,
+      "rw": 8192,
+      "rh": 5460
+    },
+    {
+      "id": "dji_p1_50",
+      "name": "Zenmuse P1 (50mm Lens)",
+      "sw": 35.9,
+      "sh": 24.0,
+      "fl": 50.0,
+      "rw": 8192,
+      "rh": 5460
+    },
+    {
+      "id": "dji_l2",
+      "name": "Zenmuse L2 (RGB Mapping)",
+      "sw": 17.3,
+      "sh": 13.0,
+      "fl": 12.24,
+      "rw": 5280,
+      "rh": 3956
+    },
+    {
+      "id": "dji_l1",
+      "name": "Zenmuse L1 (RGB Mapping)",
+      "sw": 13.2,
+      "sh": 8.8,
+      "fl": 8.8,
+      "rw": 5472,
+      "rh": 3648
+    },
+    {
+      "id": "dji_p4rtk",
+      "name": "Phantom 4 RTK / P4 Multispectral",
+      "sw": 13.2,
+      "sh": 8.8,
+      "fl": 8.8,
+      "rw": 5472,
+      "rh": 3648
+    },
+    {
+      "id": "dji_m2ea_v",
+      "name": "Mavic 2 Enterprise Advanced (Visual)",
+      "sw": 6.4,
+      "sh": 4.8,
+      "fl": 4.5,
+      "rw": 8000,
+      "rh": 6000
+    },
+    {
+      "id": "dji_m2e_dual_v",
+      "name": "Mavic 2 Enterprise Dual (Visual)",
+      "sw": 6.17,
+      "sh": 4.55,
+      "fl": 4.3,
+      "rw": 4000,
+      "rh": 3000
+    },
+    {
+      "id": "dji_m2e_zoom",
+      "name": "Mavic 2 Enterprise Zoom (Visual)",
+      "sw": 6.17,
+      "sh": 4.55,
+      "fl": 8.5,
+      "rw": 4000,
+      "rh": 3000
+    }
+  ],
+  "DJI Enterprise - Thermal (IR)": [
+    {
+      "id": "dji_h30t_ir",
+      "name": "Zenmuse H30T (IR - 12µm High-Res)",
+      "sw": 15.36,
+      "sh": 12.28,
+      "fl": 24.0,
+      "rw": 1280,
+      "rh": 1024
+    },
+    {
+      "id": "dji_h20t_ir",
+      "name": "Zenmuse H20T (IR - 12µm)",
+      "sw": 7.68,
+      "sh": 6.14,
+      "fl": 13.5,
+      "rw": 640,
+      "rh": 512
+    },
+    {
+      "id": "dji_h20n_ir_w",
+      "name": "Zenmuse H20N (IR Wide - 12µm)",
+      "sw": 7.68,
+      "sh": 6.14,
+      "fl": 12.0,
+      "rw": 640,
+      "rh": 512
+    },
+    {
+      "id": "dji_h20n_ir_t",
+      "name": "Zenmuse H20N (IR Tele - 12µm)",
+      "sw": 7.68,
+      "sh": 6.14,
+      "fl": 53.0,
+      "rw": 640,
+      "rh": 512
+    },
+    {
+      "id": "dji_m30t_ir",
+      "name": "Matrice 30T (IR - 12µm)",
+      "sw": 7.68,
+      "sh": 6.14,
+      "fl": 9.1,
+      "rw": 640,
+      "rh": 512
+    },
+    {
+      "id": "dji_m3t_ir",
+      "name": "Mavic 3 Thermal (IR - 12µm)",
+      "sw": 7.68,
+      "sh": 6.14,
+      "fl": 9.1,
+      "rw": 640,
+      "rh": 512
+    },
+    {
+      "id": "dji_m2ea_ir",
+      "name": "Mavic 2 Ent. Adv. (IR - 12µm)",
+      "sw": 7.68,
+      "sh": 6.14,
+      "fl": 9.0,
+      "rw": 640,
+      "rh": 512
+    },
+    {
+      "id": "dji_xt2_9",
+      "name": "Zenmuse XT2 (9mm 17µm)",
+      "sw": 10.88,
+      "sh": 8.7,
+      "fl": 9.0,
+      "rw": 640,
+      "rh": 512
+    },
+    {
+      "id": "dji_xt2_13",
+      "name": "Zenmuse XT2 (13mm 17µm)",
+      "sw": 10.88,
+      "sh": 8.7,
+      "fl": 13.0,
+      "rw": 640,
+      "rh": 512
+    },
+    {
+      "id": "dji_xt2_19",
+      "name": "Zenmuse XT2 (19mm 17µm)",
+      "sw": 10.88,
+      "sh": 8.7,
+      "fl": 19.0,
+      "rw": 640,
+      "rh": 512
+    }
+  ],
+  "DJI Cinematic & Consumer": [
+    {
+      "id": "dji_i3_18",
+      "name": "Inspire 3 X9-8K (18mm)",
+      "sw": 35.9,
+      "sh": 24.0,
+      "fl": 18.0,
+      "rw": 8192,
+      "rh": 5456
+    },
+    {
+      "id": "dji_i3_24",
+      "name": "Inspire 3 X9-8K (24mm)",
+      "sw": 35.9,
+      "sh": 24.0,
+      "fl": 24.0,
+      "rw": 8192,
+      "rh": 5456
+    },
+    {
+      "id": "dji_i3_35",
+      "name": "Inspire 3 X9-8K (35mm)",
+      "sw": 35.9,
+      "sh": 24.0,
+      "fl": 35.0,
+      "rw": 8192,
+      "rh": 5456
+    },
+    {
+      "id": "dji_i3_50",
+      "name": "Inspire 3 X9-8K (50mm)",
+      "sw": 35.9,
+      "sh": 24.0,
+      "fl": 50.0,
+      "rw": 8192,
+      "rh": 5456
+    },
+    {
+      "id": "dji_i2_x7_16",
+      "name": "Inspire 2 X7 (16mm S35)",
+      "sw": 23.5,
+      "sh": 15.6,
+      "fl": 16.0,
+      "rw": 6016,
+      "rh": 4008
+    },
+    {
+      "id": "dji_m3pro_main",
+      "name": "Mavic 3 Pro/Cine (Hasselblad)",
+      "sw": 17.3,
+      "sh": 13.0,
+      "fl": 12.24,
+      "rw": 5280,
+      "rh": 3956
+    },
+    {
+      "id": "dji_m3pro_med",
+      "name": "Mavic 3 Pro (Medium Tele)",
+      "sw": 9.6,
+      "sh": 7.2,
+      "fl": 16.6,
+      "rw": 8064,
+      "rh": 6048
+    },
+    {
+      "id": "dji_m3pro_tele",
+      "name": "Mavic 3 Pro (Tele)",
+      "sw": 6.4,
+      "sh": 4.8,
+      "fl": 35.0,
+      "rw": 4000,
+      "rh": 3000
+    },
+    {
+      "id": "dji_air3_w",
+      "name": "Air 3 (Wide)",
+      "sw": 9.6,
+      "sh": 7.2,
+      "fl": 5.73,
+      "rw": 8064,
+      "rh": 6048
+    },
+    {
+      "id": "dji_air3_t",
+      "name": "Air 3 (Medium Tele)",
+      "sw": 9.6,
+      "sh": 7.2,
+      "fl": 16.6,
+      "rw": 8064,
+      "rh": 6048
+    },
+    {
+      "id": "dji_mini4pro",
+      "name": "Mini 4 Pro / Mini 3 Pro",
+      "sw": 9.6,
+      "sh": 7.2,
+      "fl": 5.73,
+      "rw": 8064,
+      "rh": 6048
+    },
+    {
+      "id": "dji_air2s",
+      "name": "Air 2S",
+      "sw": 13.2,
+      "sh": 8.8,
+      "fl": 8.8,
+      "rw": 5472,
+      "rh": 3648
+    },
+    {
+      "id": "dji_m2pro",
+      "name": "Mavic 2 Pro",
+      "sw": 13.2,
+      "sh": 8.8,
+      "fl": 10.26,
+      "rw": 5472,
+      "rh": 3648
+    },
+    {
+      "id": "dji_m2zoom",
+      "name": "Mavic 2 Zoom (Max Optical)",
+      "sw": 6.17,
+      "sh": 4.55,
+      "fl": 24.0,
+      "rw": 4000,
+      "rh": 3000
+    },
+    {
+      "id": "dji_p4pv2",
+      "name": "Phantom 4 Pro V2.0",
+      "sw": 13.2,
+      "sh": 8.8,
+      "fl": 8.8,
+      "rw": 5472,
+      "rh": 3648
+    },
+    {
+      "id": "dji_avata2",
+      "name": "Avata 2",
+      "sw": 9.6,
+      "sh": 7.2,
+      "fl": 2.7,
+      "rw": 4000,
+      "rh": 3000
+    },
+    {
+      "id": "dji_mini2",
+      "name": "Mini 2 / SE",
+      "sw": 6.17,
+      "sh": 4.55,
+      "fl": 4.49,
+      "rw": 4000,
+      "rh": 3000
+    },
+    {
+      "id": "dji_fpv",
+      "name": "DJI FPV",
+      "sw": 6.17,
+      "sh": 4.55,
+      "fl": 2.66,
+      "rw": 3840,
+      "rh": 2160
+    }
+  ],
+  "Autel Robotics": [
+    {
+      "id": "autel_max4t_w",
+      "name": "EVO Max 4T (Wide)",
+      "sw": 9.6,
+      "sh": 7.2,
+      "fl": 5.3,
+      "rw": 8192,
+      "rh": 6144
+    },
+    {
+      "id": "autel_max4t_z",
+      "name": "EVO Max 4T (Zoom - Max Optical)",
+      "sw": 6.4,
+      "sh": 4.8,
+      "fl": 45.0,
+      "rw": 8000,
+      "rh": 6000
+    },
+    {
+      "id": "autel_max4t_ir",
+      "name": "EVO Max 4T (Thermal 12µm)",
+      "sw": 7.68,
+      "sh": 6.14,
+      "fl": 9.1,
+      "rw": 640,
+      "rh": 512
+    },
+    {
+      "id": "autel_max4n_n",
+      "name": "EVO Max 4N (Starlight Night)",
+      "sw": 13.2,
+      "sh": 8.8,
+      "fl": 10.0,
+      "rw": 4500,
+      "rh": 3000
+    },
+    {
+      "id": "autel_alpha_w",
+      "name": "Alpha L35T (Wide)",
+      "sw": 9.6,
+      "sh": 7.2,
+      "fl": 5.0,
+      "rw": 8192,
+      "rh": 6144
+    },
+    {
+      "id": "autel_alpha_z",
+      "name": "Alpha L35T (Zoom)",
+      "sw": 6.4,
+      "sh": 4.8,
+      "fl": 115.0,
+      "rw": 4000,
+      "rh": 3000
+    },
+    {
+      "id": "autel_alpha_ir",
+      "name": "Alpha L35T (Thermal 12µm)",
+      "sw": 7.68,
+      "sh": 6.14,
+      "fl": 13.0,
+      "rw": 640,
+      "rh": 512
+    },
+    {
+      "id": "autel_dfish_w",
+      "name": "Dragonfish L20T (Wide)",
+      "sw": 6.4,
+      "sh": 4.8,
+      "fl": 4.5,
+      "rw": 4000,
+      "rh": 3000
+    },
+    {
+      "id": "autel_dfish_z",
+      "name": "Dragonfish L20T (Max Zoom)",
+      "sw": 6.4,
+      "sh": 4.8,
+      "fl": 90.0,
+      "rw": 4000,
+      "rh": 3000
+    },
+    {
+      "id": "autel_dfish_ir",
+      "name": "Dragonfish L20T (Thermal 12µm)",
+      "sw": 7.68,
+      "sh": 6.14,
+      "fl": 13.0,
+      "rw": 640,
+      "rh": 512
+    },
+    {
+      "id": "autel_evo2pro_v3",
+      "name": "EVO II Pro V3",
+      "sw": 13.2,
+      "sh": 8.8,
+      "fl": 8.8,
+      "rw": 5472,
+      "rh": 3648
+    },
+    {
+      "id": "autel_evo2_640t_v",
+      "name": "EVO II Dual 640T (Visual)",
+      "sw": 9.6,
+      "sh": 7.2,
+      "fl": 5.0,
+      "rw": 8192,
+      "rh": 6144
+    },
+    {
+      "id": "autel_evo2_640t_ir",
+      "name": "EVO II Dual 640T (Thermal 12µm)",
+      "sw": 7.68,
+      "sh": 6.14,
+      "fl": 13.0,
+      "rw": 640,
+      "rh": 512
+    }
+  ],
+  "Skydio": [
+    {
+      "id": "skydio_x10_w",
+      "name": "X10 VT300-L (Wide 50MP)",
+      "sw": 13.1,
+      "sh": 9.83,
+      "fl": 7.74,
+      "rw": 8192,
+      "rh": 6144
+    },
+    {
+      "id": "skydio_x10_t",
+      "name": "X10 VT300-Z (Tele 48MP)",
+      "sw": 6.4,
+      "sh": 4.8,
+      "fl": 35.0,
+      "rw": 8000,
+      "rh": 6000
+    },
+    {
+      "id": "skydio_x10_n",
+      "name": "X10 VT300-Z (Narrow 64MP)",
+      "sw": 7.4,
+      "sh": 5.55,
+      "fl": 9.88,
+      "rw": 9248,
+      "rh": 6944
+    },
+    {
+      "id": "skydio_x10_ir",
+      "name": "X10 Thermal (Boson+ 12µm)",
+      "sw": 7.68,
+      "sh": 6.14,
+      "fl": 13.6,
+      "rw": 640,
+      "rh": 512
+    },
+    {
+      "id": "skydio_x2_eo",
+      "name": "X2 Color (Visual)",
+      "sw": 6.17,
+      "sh": 4.55,
+      "fl": 3.5,
+      "rw": 4056,
+      "rh": 3040
+    },
+    {
+      "id": "skydio_x2_ir",
+      "name": "X2 Thermal (320x256 12µm)",
+      "sw": 3.84,
+      "sh": 3.07,
+      "fl": 4.0,
+      "rw": 320,
+      "rh": 256
+    }
+  ],
+  "Parrot & Teledyne FLIR": [
+    {
+      "id": "parrot_ai",
+      "name": "Parrot Anafi Ai",
+      "sw": 6.4,
+      "sh": 4.8,
+      "fl": 4.5,
+      "rw": 8000,
+      "rh": 6000
+    },
+    {
+      "id": "parrot_usa_w",
+      "name": "Parrot Anafi USA (Wide)",
+      "sw": 5.9,
+      "sh": 4.4,
+      "fl": 4.0,
+      "rw": 5344,
+      "rh": 4016
+    },
+    {
+      "id": "parrot_usa_t",
+      "name": "Parrot Anafi USA (Tele)",
+      "sw": 5.9,
+      "sh": 4.4,
+      "fl": 12.0,
+      "rw": 5344,
+      "rh": 4016
+    },
+    {
+      "id": "parrot_usa_ir",
+      "name": "Parrot Anafi USA (Thermal)",
+      "sw": 3.84,
+      "sh": 3.07,
+      "fl": 4.0,
+      "rw": 320,
+      "rh": 256
+    },
+    {
+      "id": "flir_siras_eo",
+      "name": "FLIR SIRAS (Visual EO)",
+      "sw": 9.6,
+      "sh": 7.2,
+      "fl": 6.7,
+      "rw": 4608,
+      "rh": 3456
+    },
+    {
+      "id": "flir_siras_ir",
+      "name": "FLIR SIRAS (Thermal IR 12µm)",
+      "sw": 7.68,
+      "sh": 6.14,
+      "fl": 13.6,
+      "rw": 640,
+      "rh": 512
+    },
+    {
+      "id": "flir_tz20_w",
+      "name": "FLIR Vue TZ20-R (Wide IR 12µm)",
+      "sw": 7.68,
+      "sh": 6.14,
+      "fl": 4.9,
+      "rw": 640,
+      "rh": 512
+    },
+    {
+      "id": "flir_tz20_n",
+      "name": "FLIR Vue TZ20-R (Narrow IR 12µm)",
+      "sw": 7.68,
+      "sh": 6.14,
+      "fl": 24.0,
+      "rw": 640,
+      "rh": 512
+    },
+    {
+      "id": "flir_hadron_eo",
+      "name": "FLIR Hadron 640R (Visual EO)",
+      "sw": 6.17,
+      "sh": 4.55,
+      "fl": 3.5,
+      "rw": 4000,
+      "rh": 3000
+    },
+    {
+      "id": "flir_hadron_ir",
+      "name": "FLIR Hadron 640R (Thermal 12µm)",
+      "sw": 7.68,
+      "sh": 6.14,
+      "fl": 13.6,
+      "rw": 640,
+      "rh": 512
+    }
+  ],
+  "Phase One (High-End Survey)": [
+    {
+      "id": "po_rs150_50",
+      "name": "iXM-RS150F 150MP (50mm)",
+      "sw": 53.4,
+      "sh": 40.0,
+      "fl": 50.0,
+      "rw": 14204,
+      "rh": 10652
+    },
+    {
+      "id": "po_rs150_70",
+      "name": "iXM-RS150F 150MP (70mm)",
+      "sw": 53.4,
+      "sh": 40.0,
+      "fl": 70.0,
+      "rw": 14204,
+      "rh": 10652
+    },
+    {
+      "id": "po_100_35",
+      "name": "iXM-100 100MP (35mm)",
+      "sw": 43.8,
+      "sh": 32.9,
+      "fl": 35.0,
+      "rw": 11664,
+      "rh": 8750
+    },
+    {
+      "id": "po_100_80",
+      "name": "iXM-100 100MP (80mm)",
+      "sw": 43.8,
+      "sh": 32.9,
+      "fl": 80.0,
+      "rw": 11664,
+      "rh": 8750
+    },
+    {
+      "id": "po_50_35",
+      "name": "iXM-50 50MP (35mm)",
+      "sw": 43.8,
+      "sh": 32.9,
+      "fl": 35.0,
+      "rw": 8280,
+      "rh": 6208
+    },
+    {
+      "id": "po_50_80",
+      "name": "iXM-50 50MP (80mm)",
+      "sw": 43.8,
+      "sh": 32.9,
+      "fl": 80.0,
+      "rw": 8280,
+      "rh": 6208
+    }
+  ],
+  "Sony (Wingtra & Mapping)": [
+    {
+      "id": "sony_ilxlr1_24",
+      "name": "Sony ILX-LR1 (24mm)",
+      "sw": 35.8,
+      "sh": 23.8,
+      "fl": 24.0,
+      "rw": 9504,
+      "rh": 6336
+    },
+    {
+      "id": "sony_ilxlr1_35",
+      "name": "Sony ILX-LR1 (35mm)",
+      "sw": 35.8,
+      "sh": 23.8,
+      "fl": 35.0,
+      "rw": 9504,
+      "rh": 6336
+    },
+    {
+      "id": "sony_ilxlr1_50",
+      "name": "Sony ILX-LR1 (50mm)",
+      "sw": 35.8,
+      "sh": 23.8,
+      "fl": 50.0,
+      "rw": 9504,
+      "rh": 6336
+    },
+    {
+      "id": "sony_a7r_24",
+      "name": "Sony a7R IV/V (24mm)",
+      "sw": 35.8,
+      "sh": 23.8,
+      "fl": 24.0,
+      "rw": 9504,
+      "rh": 6336
+    },
+    {
+      "id": "sony_a7r_35",
+      "name": "Sony a7R IV/V (35mm)",
+      "sw": 35.8,
+      "sh": 23.8,
+      "fl": 35.0,
+      "rw": 9504,
+      "rh": 6336
+    },
+    {
+      "id": "sony_a7r_50",
+      "name": "Sony a7R IV/V (50mm)",
+      "sw": 35.8,
+      "sh": 23.8,
+      "fl": 50.0,
+      "rw": 9504,
+      "rh": 6336
+    },
+    {
+      "id": "sony_rx1rii",
+      "name": "Sony RX1R II (Wingtra 35mm)",
+      "sw": 35.9,
+      "sh": 24.0,
+      "fl": 35.0,
+      "rw": 7952,
+      "rh": 5304
+    },
+    {
+      "id": "sony_a6100_16",
+      "name": "Sony a6100/a6700 (16mm)",
+      "sw": 23.5,
+      "sh": 15.6,
+      "fl": 16.0,
+      "rw": 6000,
+      "rh": 4000
+    },
+    {
+      "id": "sony_a6100_20",
+      "name": "Sony a6100/a6700 (Wingtra 20mm)",
+      "sw": 23.5,
+      "sh": 15.6,
+      "fl": 20.0,
+      "rw": 6000,
+      "rh": 4000
+    }
+  ],
+  "AgEagle / SenseFly / Yuneec": [
+    {
+      "id": "sensefly_aeria",
+      "name": "SenseFly Aeria X",
+      "sw": 23.5,
+      "sh": 15.6,
+      "fl": 18.5,
+      "rw": 6000,
+      "rh": 4000
+    },
+    {
+      "id": "sensefly_soda",
+      "name": "SenseFly S.O.D.A.",
+      "sw": 13.2,
+      "sh": 8.8,
+      "fl": 10.6,
+      "rw": 5472,
+      "rh": 3648
+    },
+    {
+      "id": "micasense_redp",
+      "name": "MicaSense RedEdge-P (Pan)",
+      "sw": 8.6,
+      "sh": 6.5,
+      "fl": 10.4,
+      "rw": 2464,
+      "rh": 2056
+    },
+    {
+      "id": "yuneec_e90x",
+      "name": "Yuneec E90X",
+      "sw": 13.2,
+      "sh": 8.8,
+      "fl": 8.8,
+      "rw": 5472,
+      "rh": 3648
+    },
+    {
+      "id": "yuneec_e30zx",
+      "name": "Yuneec E30ZX (Zoom)",
+      "sw": 6.17,
+      "sh": 4.55,
+      "fl": 43.0,
+      "rw": 1920,
+      "rh": 1080
+    }
+  ],
+  "Tactical ISR & Defense": [
+    {
+      "id": "nextvision_col2",
+      "name": "NextVision Colibri 2",
+      "sw": 6.17,
+      "sh": 4.55,
+      "fl": 5.3,
+      "rw": 1280,
+      "rh": 720
+    },
+    {
+      "id": "nextvision_rap_eo",
+      "name": "NextVision Raptor (Zoom EO)",
+      "sw": 6.17,
+      "sh": 4.55,
+      "fl": 20.0,
+      "rw": 1280,
+      "rh": 720
+    },
+    {
+      "id": "nextvision_rap_ir",
+      "name": "NextVision Raptor (Thermal 17µm)",
+      "sw": 10.88,
+      "sh": 8.16,
+      "fl": 14.2,
+      "rw": 640,
+      "rh": 480
+    },
+    {
+      "id": "brinc_lemur2_v",
+      "name": "BRINC Lemur 2 (Visual)",
+      "sw": 6.17,
+      "sh": 4.55,
+      "fl": 2.8,
+      "rw": 3840,
+      "rh": 2160
+    },
+    {
+      "id": "brinc_lemur2_i",
+      "name": "BRINC Lemur 2 (Thermal 12µm)",
+      "sw": 3.84,
+      "sh": 3.07,
+      "fl": 4.0,
+      "rw": 320,
+      "rh": 256
+    },
+    {
+      "id": "teal_2_v",
+      "name": "Teal 2 (Visual)",
+      "sw": 6.17,
+      "sh": 4.55,
+      "fl": 3.5,
+      "rw": 4000,
+      "rh": 3000
+    },
+    {
+      "id": "teal_2_i",
+      "name": "Teal 2 (Thermal 12µm)",
+      "sw": 7.68,
+      "sh": 6.14,
+      "fl": 13.6,
+      "rw": 640,
+      "rh": 512
+    }
+  ]
+}

@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AeroOptics Pro | Tactical Operations Engine</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = { darkMode: 'class', theme: { extend: { fontFamily: { sans: ['Inter', 'sans-serif'] }, colors: { brand: { 400: '#22d3ee', 500: '#06b6d4', 600: '#0891b2' }, surface: { 800: '#1e293b', 900: '#0f172a', 950: '#020617' } } } } }
+    </script>
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#020617">
+    <link rel="icon" type="image/png" href="icon.png">
+    <link rel="apple-touch-icon" href="icon.png">
+    <style>
+        body { background-color: #020617; color: #f8fafc; overflow-x: hidden; background-image: radial-gradient(circle at 15% 50%, rgba(6, 182, 212, 0.08), transparent 25%), radial-gradient(circle at 85% 30%, rgba(59, 130, 246, 0.08), transparent 25%); }
+        .glass-panel { background: rgba(15, 23, 42, 0.7); backdrop-filter: blur(16px); border: 1px solid rgba(255, 255, 255, 0.05); box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3); }
+        .gradient-text { background: linear-gradient(135deg, #22d3ee 0%, #3b82f6 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .input-base { background: rgba(30, 41, 59, 0.5); border: 1px solid rgba(255, 255, 255, 0.1); color: #f8fafc; transition: all 0.2s ease; }
+        .input-base:focus { outline: none; border-color: #06b6d4; box-shadow: 0 0 0 2px rgba(6, 182, 212, 0.2); background: rgba(30, 41, 59, 0.8); }
+        select optgroup { background: #0f172a; color: #22d3ee; font-weight: 700; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.05em; padding: 8px 4px; }
+        select option { background: #1e293b; color: #f8fafc; font-weight: 500; text-transform: none; padding: 4px; font-size: 0.9rem; }
+        input[type=range] { -webkit-appearance: none; width: 100%; background: transparent; }
+        input[type=range]::-webkit-slider-thumb { -webkit-appearance: none; height: 18px; width: 18px; border-radius: 50%; background: #22d3ee; cursor: pointer; margin-top: -6px; box-shadow: 0 0 12px rgba(34, 211, 238, 0.5); transition: transform 0.1s; }
+        input[type=range]::-webkit-slider-thumb:hover { transform: scale(1.15); }
+        input[type=range]::-webkit-slider-runnable-track { width: 100%; height: 6px; cursor: pointer; background: #1e293b; border-radius: 3px; }
+        .info-trigger { cursor: help; display: inline-flex; align-items: center; gap: 0.375rem; border-bottom: 1px dashed rgba(148, 163, 184, 0.4); transition: all 0.2s ease; padding-bottom: 2px; }
+        .info-trigger:hover, .info-trigger:hover > span, .info-trigger:hover i.fa-circle-info { color: #22d3ee !important; border-bottom-color: #22d3ee !important; }
+        .info-trigger:hover i.fa-circle-info { transform: scale(1.15); }
+        ::-webkit-scrollbar { width: 6px; } ::-webkit-scrollbar-track { background: transparent; } ::-webkit-scrollbar-thumb { background: #334155; border-radius: 4px; }
+        #toast { position: fixed; bottom: -50px; left: 50%; transform: translateX(-50%); background: #06b6d4; color: white; padding: 10px 20px; border-radius: 8px; font-weight: bold; font-size: 14px; transition: bottom 0.3s ease; z-index: 1000; box-shadow: 0 4px 20px rgba(6,182,212,0.4); }
+        #toast.show { bottom: 30px; }
+    </style>
+</head>
+<body class="min-h-screen antialiased selection:bg-brand-500 selection:text-white pb-16 font-sans">
+    <div id="toast"><i class="fa-solid fa-check mr-2"></i> Mission URL Copied! Paste to share.</div>
+    <aside id="info-sidebar" class="fixed top-0 right-0 h-full w-80 sm:w-[400px] bg-slate-900/95 backdrop-blur-2xl border-l border-brand-500/30 shadow-[-20px_0_50px_rgba(0,0,0,0.5)] transform translate-x-full transition-transform duration-300 ease-[cubic-bezier(0.4,0,0.2,1)] z-[100] flex flex-col pointer-events-auto">
+        <div class="relative p-6 sm:p-8 border-b border-slate-700/50 bg-slate-800/20 overflow-hidden shrink-0">
+            <div class="absolute right-0 top-0 bottom-0 w-32 bg-gradient-to-l from-brand-500/10 to-transparent pointer-events-none"></div>
+            <div class="w-12 h-12 rounded-xl bg-slate-800/80 text-brand-400 flex items-center justify-center text-2xl mb-4 border border-brand-500/30 shadow-[0_0_15px_rgba(6,182,212,0.2)] relative z-10"><i id="sb-icon" class="fa-solid fa-circle-info"></i></div>
+            <h2 id="sb-title" class="text-2xl font-extrabold text-white tracking-tight relative z-10">Parameter Intelligence</h2>
+        </div>
+        <div class="p-6 sm:p-8 overflow-y-auto flex-1 space-y-8">
+            <div><h4 class="text-[10px] font-bold text-slate-500 uppercase tracking-widest mb-3">Definition</h4><p id="sb-def" class="text-sm text-slate-300 leading-relaxed font-light whitespace-pre-line"></p></div>
+            <div id="sb-impact-wrapper" class="bg-brand-900/10 border border-brand-500/20 rounded-xl p-5 relative overflow-hidden">
+                <div class="absolute left-0 top-0 bottom-0 w-1 bg-brand-500"></div>
+                <h4 class="text-[10px] font-bold text-brand-400 uppercase tracking-widest mb-2 flex items-center gap-2"><i class="fa-solid fa-crosshairs"></i> Mission Impact</h4>
+                <p id="sb-impact" class="text-brand-100/80 text-xs leading-relaxed whitespace-pre-line"></p>
+            </div>
+            <div id="sb-formula-wrapper" class="bg-slate-950 rounded-xl p-5 border border-slate-800">
+                <h4 class="text-[10px] font-bold text-slate-500 uppercase tracking-widest mb-3">Engine Formula</h4><code id="sb-formula" class="text-xs text-emerald-400 font-mono block whitespace-pre-line break-words"></code>
+            </div>
+        </div>
+    </aside>
+
+    <div class="fixed top-0 left-1/2 -translate-x-1/2 w-[800px] h-[300px] bg-brand-500/10 blur-[120px] rounded-full pointer-events-none -z-10"></div>
+
+    <header class="pt-16 pb-10 px-4 text-center max-w-5xl mx-auto relative z-10">
+        <div id="db-status" class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-slate-800/50 border border-slate-700 text-slate-400 text-xs font-bold uppercase tracking-widest mb-4 transition-all duration-300">
+            <i class="fa-solid fa-spinner fa-spin"></i> Loading Fleet DB...
+        </div>
+        <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold mb-4 tracking-tight text-white">AeroOptics <span class="gradient-text">Pro</span></h1>
+        <p class="text-slate-400 text-lg md:text-xl max-w-2xl mx-auto font-light leading-relaxed mb-6">Ensure absolute mission certainty. Simulate standoff by editing Altitude and Zoom.</p>
+        <button onclick="copyMissionURL()" class="bg-brand-500/20 hover:bg-brand-500/40 text-brand-400 border border-brand-500/30 px-6 py-2 rounded-full text-sm font-bold transition shadow-[0_0_15px_rgba(6,182,212,0.15)]"><i class="fa-solid fa-link mr-2"></i>Copy URL to Share Mission</button>
+    </header>
+
+    <main class="max-w-7xl mx-auto px-4 grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 relative z-10">
+        <div class="lg:col-span-4 space-y-6">
+            <div class="glass-panel rounded-2xl p-6 sm:p-8">
+                <div class="flex items-center gap-3 mb-6 border-b border-slate-700/50 pb-4"><div class="w-8 h-8 rounded-lg bg-slate-800 flex items-center justify-center text-brand-400"><i class="fa-solid fa-microchip"></i></div><h2 class="text-lg font-bold text-white uppercase tracking-wider">Payload Parameters</h2></div>
+                <div class="space-y-6">
+                    <div>
+                        <label class="info-trigger text-xs font-semibold text-slate-400 uppercase tracking-wider mb-2 w-max" data-topic="hardware"><span>Hardware Database</span><i class="fa-solid fa-circle-info text-[10px] text-slate-500"></i></label>
+                        <select id="preset-select" class="w-full input-base rounded-lg px-3 py-3 text-sm font-medium cursor-pointer" disabled><option value="custom">Loading database...</option></select>
+                    </div>
+                    <div class="grid grid-cols-2 gap-4">
+                        <div><label class="info-trigger text-xs font-semibold text-slate-400 uppercase tracking-wider mb-2 w-max" data-topic="sensor_w"><span>Sensor Width</span><i class="fa-solid fa-circle-info text-[10px] text-slate-500"></i></label><div class="relative"><input type="number" id="sensor-w" step="0.001" class="w-full input-base rounded-lg pl-3 pr-10 py-2.5 text-sm font-semibold"><span class="absolute right-3 top-1/2 -translate-y-1/2 text-slate-500 text-xs">mm</span></div></div>
+                        <div><label class="info-trigger text-xs font-semibold text-slate-400 uppercase tracking-wider mb-2 w-max" data-topic="sensor_h"><span>Sensor Height</span><i class="fa-solid fa-circle-info text-[10px] text-slate-500"></i></label><div class="relative"><input type="number" id="sensor-h" step="0.001" class="w-full input-base rounded-lg pl-3 pr-10 py-2.5 text-sm font-semibold"><span class="absolute right-3 top-1/2 -translate-y-1/2 text-slate-500 text-xs">mm</span></div></div>
+                    </div>
+                    <div class="grid grid-cols-2 gap-4">
+                        <div><label class="info-trigger text-xs font-semibold text-slate-400 uppercase tracking-wider mb-2 w-max" data-topic="res_w"><span>Image Width</span><i class="fa-solid fa-circle-info text-[10px] text-slate-500"></i></label><div class="relative"><input type="number" id="res-w" step="1" class="w-full input-base rounded-lg pl-3 pr-10 py-2.5 text-sm font-semibold"><span class="absolute right-3 top-1/2 -translate-y-1/2 text-slate-500 text-xs">px</span></div></div>
+                        <div><label class="info-trigger text-xs font-semibold text-slate-400 uppercase tracking-wider mb-2 w-max" data-topic="res_h"><span>Image Height</span><i class="fa-solid fa-circle-info text-[10px] text-slate-500"></i></label><div class="relative"><input type="number" id="res-h" step="1" class="w-full input-base rounded-lg pl-3 pr-10 py-2.5 text-sm font-semibold"><span class="absolute right-3 top-1/2 -translate-y-1/2 text-slate-500 text-xs">px</span></div></div>
+                    </div>
+                    <div class="pt-5 border-t border-slate-700/50">
+                        <div class="flex items-center justify-between mb-4">
+                            <label class="info-trigger text-xs font-semibold text-slate-400 uppercase tracking-wider w-max" data-topic="optics_mode"><span>Optics Engine</span><i class="fa-solid fa-circle-info text-[10px] text-slate-500"></i></label>
+                            <div class="flex bg-slate-900 rounded-lg p-1 border border-slate-700/50"><button id="mode-focal" class="px-3 py-1.5 text-xs font-bold rounded-md bg-brand-500 text-white shadow-sm transition-all">Lens</button><button id="mode-fov" class="px-3 py-1.5 text-xs font-bold rounded-md text-slate-400 hover:text-white transition-all">FOV</button></div>
+                        </div>
+                        <div id="focal-container" class="grid grid-cols-2 gap-4">
+                            <div><label class="info-trigger text-[10px] text-slate-500 uppercase tracking-wider mb-1 w-max" data-topic="focal_length"><span>True Focal Len.</span><i class="fa-solid fa-circle-info text-[10px] text-slate-500"></i></label><div class="relative mt-1"><input type="number" id="focal-length" step="0.5" class="w-full input-base rounded-lg pl-3 pr-9 py-3 text-sm font-bold text-brand-400"><span class="absolute right-3 top-1/2 -translate-y-1/2 text-slate-500 text-xs">mm</span></div></div>
+                            <div><label class="info-trigger text-[10px] text-amber-500 uppercase tracking-wider mb-1 w-max" data-topic="zoom_multi"><span>Optical Zoom</span><i class="fa-solid fa-circle-info text-[10px] text-amber-500/70"></i></label><div class="relative mt-1 shadow-[0_0_15px_rgba(245,158,11,0.1)] rounded-lg"><input type="number" id="zoom-multiplier" step="0.5" value="1.0" class="w-full input-base rounded-lg pl-3 pr-6 py-3 text-sm font-bold text-amber-400 border-amber-500/30 focus:border-amber-400"><span class="absolute right-3 top-1/2 -translate-y-1/2 text-amber-500 text-xs font-bold">x</span></div></div>
+                        </div>
+                        <div id="fov-container" class="hidden"><label class="info-trigger text-[10px] text-slate-500 uppercase tracking-wider mb-1 w-max" data-topic="fov_h"><span>Enter Horizontal FOV</span><i class="fa-solid fa-circle-info text-[10px] text-slate-500"></i></label><div class="relative mt-1"><input type="number" id="fov-h-input" step="0.1" class="w-full input-base rounded-lg pl-4 pr-12 py-3 text-lg font-bold text-brand-400"><span class="absolute right-4 top-1/2 -translate-y-1/2 text-slate-500 text-sm">&deg;</span></div></div>
+                    </div>
+                    <div class="pt-5 border-t border-slate-700/50">
+                        <div class="flex justify-between items-end mb-4"><label class="info-trigger text-xs font-semibold text-brand-400 uppercase tracking-wider w-max" data-topic="altitude"><span>Flight Altitude (AGL)</span><i class="fa-solid fa-circle-info text-[10px] text-brand-500/70"></i></label><div class="text-2xl font-black text-white"><span id="alt-display">100</span><span class="text-sm text-slate-500 ml-1 font-semibold">m</span></div></div>
+                        <input type="range" id="altitude-slider" min="5" max="2500" value="100" class="w-full mb-3">
+                        <div class="relative"><input type="number" id="altitude-input" value="100" class="w-full input-base rounded-lg pl-4 pr-12 py-2 text-sm font-semibold"><span class="absolute right-4 top-1/2 -translate-y-1/2 text-slate-500 text-xs">meters</span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="lg:col-span-8 space-y-6">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6">
+                <div class="glass-panel rounded-2xl p-5 border-t-2 border-brand-500 relative overflow-hidden group hover:bg-slate-800/40 transition">
+                    <div class="absolute -right-4 -bottom-4 text-slate-700/20 group-hover:text-brand-500/10 transition duration-500 pointer-events-none"><i class="fa-solid fa-magnifying-glass text-6xl"></i></div>
+                    <div class="flex justify-between items-start mb-2"><h3 class="info-trigger text-[10px] font-bold text-slate-400 uppercase tracking-widest w-max" data-topic="gsd"><span>Ground Sample Distance</span><i class="fa-solid fa-circle-info text-[10px] text-slate-500"></i></h3></div>
+                    <div class="flex items-baseline gap-1 relative z-10 mb-1"><span id="out-gsd" class="text-3xl font-black text-white tracking-tighter">0.00</span><span class="text-brand-400 text-sm font-semibold">cm/px</span></div>
+                </div>
+                <div class="glass-panel rounded-2xl p-5 border-t-2 border-indigo-500 relative overflow-hidden group hover:bg-slate-800/40 transition">
+                    <div class="absolute -right-4 -bottom-4 text-slate-700/20 group-hover:text-indigo-500/10 transition duration-500 pointer-events-none"><i class="fa-solid fa-vector-square text-6xl"></i></div>
+                    <h3 class="info-trigger text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-2 w-max" data-topic="footprint"><span>Ground Footprint</span><i class="fa-solid fa-circle-info text-[10px] text-slate-500"></i></h3>
+                    <div class="flex items-baseline gap-1 relative z-10"><span id="out-foot-w" class="text-2xl font-bold text-white">0</span><span class="text-slate-600 text-sm">&times;</span><span id="out-foot-h" class="text-2xl font-bold text-white">0</span><span class="text-indigo-400 text-sm font-semibold">m</span></div>
+                    <p class="text-[11px] text-slate-400 mt-1 relative z-10">Area: <span id="out-area" class="text-slate-300 font-semibold">0</span> m&sup2;</p>
+                </div>
+                <div class="glass-panel rounded-2xl p-5 border-t-2 border-purple-500 relative overflow-hidden group hover:bg-slate-800/40 transition">
+                    <div class="absolute -right-4 -bottom-4 text-slate-700/20 group-hover:text-purple-500/10 transition duration-500 pointer-events-none"><i class="fa-solid fa-eye text-6xl"></i></div>
+                    <h3 class="info-trigger text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-2 w-max" data-topic="camera_out"><span>Camera Optics Output</span><i class="fa-solid fa-circle-info text-[10px] text-slate-500"></i></h3>
+                    <div class="flex flex-col gap-1 relative z-10">
+                        <div class="flex justify-between items-center"><span class="text-[11px] text-slate-500">FOV (H/V):</span><span class="text-lg font-bold text-white"><span id="out-fov-h">0&deg;</span> / <span id="out-fov-v" class="text-slate-400 text-sm">0&deg;</span></span></div>
+                        <div class="flex justify-between items-center mt-3 pt-2 border-t border-slate-700/50"><span class="info-trigger text-[11px] text-slate-500 w-max" data-topic="zoom_multi"><span>Optical Zoom (Eq):</span><i class="fa-solid fa-circle-info text-[10px] text-slate-600"></i></span><div class="flex items-center gap-2"><span class="text-[10px] text-slate-400"><span id="out-eq-focal">0</span>mm</span><span class="text-sm font-black text-amber-400 bg-amber-500/10 px-2 py-0.5 rounded border border-amber-500/20">x<span id="out-zoom">1.0</span></span></div></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="glass-panel rounded-2xl p-6 sm:p-8">
+                <div class="flex flex-col sm:flex-row sm:justify-between sm:items-end mb-6 gap-4 border-b border-slate-700/50 pb-4">
+                    <div><h2 class="info-trigger text-xl font-semibold text-white w-max" data-topic="johnson"><i class="fa-solid fa-crosshairs text-emerald-400 mr-2"></i><span>Target Detectability Matrix</span><i class="fa-solid fa-circle-info text-slate-500 text-sm ml-1"></i></h2><p class="text-sm text-slate-400 mt-2">Calculated via Military-Standard Johnson's Criteria. Displays minimum physical ground size to be classified.</p></div>
+                </div>
+                <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-8">
+                    <div class="bg-slate-900/50 rounded-xl p-4 border border-slate-700/50 border-l-2 border-l-yellow-500 shadow-lg relative overflow-hidden"><div class="info-trigger text-[10px] font-bold text-yellow-500 uppercase tracking-widest mb-1 w-max relative z-10" data-topic="detect"><span>Detection (&ge; 2px)</span><i class="fa-solid fa-circle-info text-yellow-500/70"></i></div><div class="text-2xl font-black text-white mb-1 relative z-10">> <span id="req-detect">0</span> <span class="text-sm text-slate-500 font-normal" id="unit-detect">cm</span></div></div>
+                    <div class="bg-slate-900/50 rounded-xl p-4 border border-slate-700/50 border-l-2 border-l-brand-500 shadow-lg relative overflow-hidden"><div class="info-trigger text-[10px] font-bold text-brand-500 uppercase tracking-widest mb-1 w-max relative z-10" data-topic="recognize"><span>Recognition (&ge; 8px)</span><i class="fa-solid fa-circle-info text-brand-500/70"></i></div><div class="text-2xl font-black text-white mb-1 relative z-10">> <span id="req-recognize">0</span> <span class="text-sm text-slate-500 font-normal" id="unit-recognize">cm</span></div></div>
+                    <div class="bg-slate-900/50 rounded-xl p-4 border border-slate-700/50 border-l-2 border-l-emerald-500 shadow-lg relative overflow-hidden"><div class="info-trigger text-[10px] font-bold text-emerald-500 uppercase tracking-widest mb-1 w-max relative z-10" data-topic="identify"><span>Identification (&ge; 14px)</span><i class="fa-solid fa-circle-info text-emerald-500/70"></i></div><div class="text-2xl font-black text-white mb-1 relative z-10">> <span id="req-identify">0</span> <span class="text-sm text-slate-500 font-normal" id="unit-identify">cm</span></div></div>
+                </div>
+                <h3 class="info-trigger text-sm font-semibold text-slate-300 uppercase tracking-wider mb-4 w-max" data-topic="simulation"><i class="fa-solid fa-list-check text-slate-500 mr-2"></i><span>Real-World Target Simulation</span><i class="fa-solid fa-circle-info text-slate-500 text-[10px] ml-1"></i></h3>
+                <div class="space-y-3">
+                    <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center p-4 bg-slate-800/40 rounded-xl border border-slate-700/50 gap-4 hover:bg-slate-800 transition"><div class="flex items-center gap-4"><div class="p-2.5 bg-slate-900 rounded-lg text-slate-400 border border-slate-700"><i class="fa-solid fa-car-side w-5 h-5 flex items-center justify-center"></i></div><div><p class="font-bold text-slate-200 text-sm">Standard Vehicle</p><p class="text-xs text-slate-500">Critical Dimension: 4.5m</p></div></div><div class="flex items-center gap-4 w-full sm:w-auto justify-between sm:justify-end"><span class="text-lg font-mono font-bold text-slate-300" id="px-car">0px</span><span id="status-car" class="px-3 py-1.5 rounded-md text-[10px] font-bold w-28 text-center uppercase tracking-widest bg-slate-900 border border-slate-700 shadow-md">--</span></div></div>
+                    <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center p-4 bg-slate-800/40 rounded-xl border border-slate-700/50 gap-4 hover:bg-slate-800 transition"><div class="flex items-center gap-4"><div class="p-2.5 bg-slate-900 rounded-lg text-slate-400 border border-slate-700"><i class="fa-solid fa-person w-5 h-5 flex items-center justify-center"></i></div><div><p class="font-bold text-slate-200 text-sm">Human Subject</p><p class="text-xs text-slate-500">Critical Dimension: 0.5m</p></div></div><div class="flex items-center gap-4 w-full sm:w-auto justify-between sm:justify-end"><span class="text-lg font-mono font-bold text-slate-300" id="px-human">0px</span><span id="status-human" class="px-3 py-1.5 rounded-md text-[10px] font-bold w-28 text-center uppercase tracking-widest bg-slate-900 border border-slate-700 shadow-md">--</span></div></div>
+                    <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center p-4 bg-brand-900/10 rounded-xl border border-brand-500/20 gap-4 relative overflow-hidden"><div class="absolute left-0 top-0 bottom-0 w-1 bg-brand-500"></div><div class="flex items-center gap-4 pl-2"><div class="p-2.5 bg-brand-900/40 rounded-lg text-brand-400 border border-brand-500/30"><i class="fa-solid fa-cube w-5 h-5 flex items-center justify-center"></i></div><div><p class="font-bold text-brand-100 text-sm mb-1">Custom Target Size</p><div class="flex items-center gap-2"><input type="number" id="custom-target-size" value="0.1" step="0.05" class="w-20 bg-slate-900/80 border border-brand-500/50 rounded px-2 py-1 text-xs text-brand-300 font-mono text-center focus:outline-none focus:border-brand-400 z-20"><span class="text-[10px] text-brand-500/70 uppercase font-bold">meters</span></div></div></div><div class="flex items-center gap-4 w-full sm:w-auto justify-between sm:justify-end z-20"><span class="text-lg font-mono font-bold text-brand-300" id="px-custom">0px</span><span id="status-custom" class="px-3 py-1.5 rounded-md text-[10px] font-bold w-28 text-center uppercase tracking-widest bg-slate-900 border border-slate-700 shadow-md">--</span></div></div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="max-w-7xl mx-auto mt-16 mb-8 border-t border-slate-800 pt-8 text-center px-4 relative z-10"><p class="text-xs text-slate-500 font-medium leading-relaxed max-w-4xl mx-auto">Calculations utilize strict geometric optical projection equations. URLs update automatically for mission sharing.</p></footer>
+
+    <script>
+        const dictionary = { hardware: { title: "Hardware Database", icon: "fa-database", def: "A registry of commercial, enterprise, and military drone payloads securely loaded from database.json." }, sensor_w: { title: "Sensor Width", icon: "fa-arrows-left-right-to-line", def: "The exact physical horizontal width of the imaging sensor in millimeters." }, sensor_h: { title: "Sensor Height", icon: "fa-arrows-up-down-to-line", def: "The physical vertical height of the imaging sensor in millimeters." }, res_w: { title: "Image Width", icon: "fa-border-all", def: "The horizontal digital dimension of the final output image." }, res_h: { title: "Image Height", icon: "fa-border-all", def: "The vertical digital dimension of the final output image." }, optics_mode: { title: "Optics Engine Mode", icon: "fa-gears", def: "The core geometric projection calculator bridging the physical sensor and lens." }, focal_length: { title: "True Focal Length", icon: "fa-camera", def: "The absolute physical distance (in mm) from the optical center of the lens to the image sensor convergence point.", formula: "Focal Length = Sensor Width / (2 × tan(FOV / 2))" }, zoom_multi: { title: "Optical Zoom (35mm Equivalent)", icon: "fa-magnifying-glass-plus", def: "A multiplier that converts the payload's optics into a 35mm format.", impact: "You can type directly into the Zoom box to simulate tactical standoff. The engine calculates the crop factor and derives the true focal length required.", formula: "Crop Factor = 43.27 / Sensor Diagonal\nEq. Focal = True Focal × Crop Factor\nZoom Multi = Eq. Focal / 24mm" }, fov_h: { title: "Horizontal Field of View", icon: "fa-arrows-left-right", def: "The horizontal angular extent of the observable world captured by the camera.", formula: "FOV_H = 2 × arctan(Sensor Width / (2 × Focal Length))" }, altitude: { title: "Flight Altitude (AGL)", icon: "fa-plane-up", def: "Altitude Above Ground Level: vertical distance from drone to target.", formula: "GSD ∝ Altitude" }, gsd: { title: "Ground Sample Distance", icon: "fa-magnifying-glass", def: "The physical distance between the centers of two consecutive digital pixels on the earth.", formula: "GSD = (Altitude × Sensor Width × 100) / (Focal Length × Image Width)" }, footprint: { title: "Ground Footprint", icon: "fa-vector-square", def: "The exact geographic dimensions (Width × Height) of the area captured in one frame." }, camera_out: { title: "Camera Optics Output", icon: "fa-eye", def: "A live output of the camera's true geometric projection cone." }, johnson: { title: "Johnson's Criteria", icon: "fa-crosshairs", def: "An internationally recognized military standard dictating pixels required for a human to classify a target." }, detect: { title: "Detection Threshold", icon: "fa-circle-dot", def: "Requires ≥ 2 Pixels across the target's critical dimension." }, recognize: { title: "Recognition Threshold", icon: "fa-users-viewfinder", def: "Requires ≥ 8 Pixels across the target's critical dimension." }, identify: { title: "Identification Threshold", icon: "fa-fingerprint", def: "Requires ≥ 14 Pixels across the target's critical dimension." }, simulation: { title: "Target Simulation", icon: "fa-list-check", def: "Projects standard target dimensions against your GSD to evaluate detectability." } };
+        const sidebar = document.getElementById('info-sidebar'), sbTitle = document.getElementById('sb-title'), sbIcon = document.getElementById('sb-icon'), sbDef = document.getElementById('sb-def'), sbImpact = document.getElementById('sb-impact'), sbImpactWrapper = document.getElementById('sb-impact-wrapper'), sbFormula = document.getElementById('sb-formula'), sbFormulaWrapper = document.getElementById('sb-formula-wrapper');
+        let sidebarTimeout;
+        document.querySelectorAll('.info-trigger').forEach(trigger => { trigger.addEventListener('mouseenter', (e) => { clearTimeout(sidebarTimeout); const data = dictionary[e.currentTarget.getAttribute('data-topic')]; if(data) { sbTitle.innerText = data.title; sbIcon.className = `fa-solid ${data.icon}`; sbDef.innerText = data.def; if(data.impact) { sbImpactWrapper.style.display = 'block'; sbImpact.innerText = data.impact; } else { sbImpactWrapper.style.display = 'none'; } if(data.formula) { sbFormulaWrapper.style.display = 'block'; sbFormula.innerText = data.formula; } else { sbFormulaWrapper.style.display = 'none'; } sidebar.classList.remove('translate-x-full'); } }); trigger.addEventListener('mouseleave', () => { sidebarTimeout = setTimeout(() => { sidebar.classList.add('translate-x-full'); }, 200); }); });
+        sidebar.addEventListener('mouseenter', () => clearTimeout(sidebarTimeout)); sidebar.addEventListener('mouseleave', () => { sidebarTimeout = setTimeout(() => { sidebar.classList.add('translate-x-full'); }, 200); });
+
+        const DB_URL = './database.json'; let presetGroups = {}; const flatPresets = {}; const dbStatus = document.getElementById('db-status');
+        
+        // Massive embedded fallback database in case the user opens this file locally without a web server
+        const fallbackDB = {
+  "DJI Enterprise - Visual (EO)": [
+    { "id": "dji_m3e", "name": "Mavic 3 Enterprise (Wide)", "sw": 17.3, "sh": 13.0, "fl": 12.24, "rw": 5280, "rh": 3956 },
+    { "id": "dji_m3e_t", "name": "Mavic 3 Enterprise (Tele)", "sw": 6.4, "sh": 4.8, "fl": 32.4, "rw": 4000, "rh": 3000 },
+    { "id": "dji_m3t_v", "name": "Mavic 3 Thermal (Visual EO)", "sw": 6.4, "sh": 4.8, "fl": 4.5, "rw": 8000, "rh": 6000 },
+    { "id": "dji_m3m", "name": "Mavic 3 Multispectral (RGB)", "sw": 17.3, "sh": 13.0, "fl": 12.24, "rw": 5280, "rh": 3956 },
+    { "id": "dji_m30_w", "name": "Matrice 30/30T (Wide)", "sw": 6.4, "sh": 4.8, "fl": 4.5, "rw": 8000, "rh": 6000 },
+    { "id": "dji_m30_z", "name": "Matrice 30/30T (Zoom - Max Optical)", "sw": 6.4, "sh": 4.8, "fl": 21.0, "rw": 8000, "rh": 6000 },
+    { "id": "dji_h30_w", "name": "Zenmuse H30/H30T (Wide)", "sw": 9.6, "sh": 7.2, "fl": 6.72, "rw": 8064, "rh": 6048 },
+    { "id": "dji_h30_z", "name": "Zenmuse H30/H30T (Zoom - Max Optical)", "sw": 7.18, "sh": 5.38, "fl": 172.0, "rw": 7328, "rh": 5496 },
+    { "id": "dji_h20_w", "name": "Zenmuse H20/H20T (Wide)", "sw": 6.17, "sh": 4.55, "fl": 4.5, "rw": 4056, "rh": 3040 },
+    { "id": "dji_h20_z", "name": "Zenmuse H20/H20T (Zoom - Max Optical)", "sw": 7.6, "sh": 5.7, "fl": 119.9, "rw": 5184, "rh": 3888 },
+    { "id": "dji_p1_24", "name": "Zenmuse P1 (24mm)", "sw": 35.9, "sh": 24.0, "fl": 24.0, "rw": 8192, "rh": 5460 },
+    { "id": "dji_l1", "name": "Zenmuse L1 (RGB Map)", "sw": 13.2, "sh": 8.8, "fl": 8.8, "rw": 5472, "rh": 3648 },
+    { "id": "dji_l2", "name": "Zenmuse L2 (RGB Map)", "sw": 17.3, "sh": 13.0, "fl": 12.24, "rw": 5280, "rh": 3956 },
+    { "id": "dji_p4rtk", "name": "Phantom 4 RTK", "sw": 13.2, "sh": 8.8, "fl": 8.8, "rw": 5472, "rh": 3648 }
+  ],
+  "DJI Enterprise - Thermal (IR)": [
+    { "id": "dji_h30t_ir", "name": "Zenmuse H30T (IR - 12µm High-Res)", "sw": 15.36, "sh": 12.28, "fl": 24.0, "rw": 1280, "rh": 1024 },
+    { "id": "dji_h20t_ir", "name": "Zenmuse H20T (IR - 12µm)", "sw": 7.68, "sh": 6.14, "fl": 13.5, "rw": 640, "rh": 512 },
+    { "id": "dji_m30t_ir", "name": "Matrice 30T (IR - 12µm)", "sw": 7.68, "sh": 6.14, "fl": 9.1, "rw": 640, "rh": 512 },
+    { "id": "dji_m3t_ir", "name": "Mavic 3 Thermal (IR - 12µm)", "sw": 7.68, "sh": 6.14, "fl": 9.1, "rw": 640, "rh": 512 },
+    { "id": "dji_xt2_13", "name": "Zenmuse XT2 (13mm 17µm)", "sw": 10.88, "sh": 8.7, "fl": 13.0, "rw": 640, "rh": 512 }
+  ],
+  "DJI Cinematic & Consumer": [
+    { "id": "dji_i3_18", "name": "Inspire 3 X9-8K (18mm)", "sw": 35.9, "sh": 24.0, "fl": 18.0, "rw": 8192, "rh": 5456 },
+    { "id": "dji_m3pro_main", "name": "Mavic 3 Pro/Cine (Hasselblad)", "sw": 17.3, "sh": 13.0, "fl": 12.24, "rw": 5280, "rh": 3956 },
+    { "id": "dji_air3_w", "name": "Air 3 (Wide)", "sw": 9.6, "sh": 7.2, "fl": 5.73, "rw": 8064, "rh": 6048 },
+    { "id": "dji_mini4pro", "name": "Mini 4 Pro", "sw": 9.6, "sh": 7.2, "fl": 5.73, "rw": 8064, "rh": 6048 },
+    { "id": "dji_air2s", "name": "Air 2S", "sw": 13.2, "sh": 8.8, "fl": 8.8, "rw": 5472, "rh": 3648 },
+    { "id": "dji_m2pro", "name": "Mavic 2 Pro", "sw": 13.2, "sh": 8.8, "fl": 10.26, "rw": 5472, "rh": 3648 }
+  ],
+  "Autel Robotics": [
+    { "id": "autel_max4t_w", "name": "EVO Max 4T (Wide)", "sw": 9.6, "sh": 7.2, "fl": 5.3, "rw": 8192, "rh": 6144 },
+    { "id": "autel_max4t_z", "name": "EVO Max 4T (Zoom - Max Optical)", "sw": 6.4, "sh": 4.8, "fl": 45.0, "rw": 8000, "rh": 6000 },
+    { "id": "autel_max4t_ir", "name": "EVO Max 4T (Thermal 12µm)", "sw": 7.68, "sh": 6.14, "fl": 9.1, "rw": 640, "rh": 512 },
+    { "id": "autel_alpha_w", "name": "Alpha L35T (Wide)", "sw": 9.6, "sh": 7.2, "fl": 5.0, "rw": 8192, "rh": 6144 },
+    { "id": "autel_dfish_w", "name": "Dragonfish L20T (Wide)", "sw": 6.4, "sh": 4.8, "fl": 4.5, "rw": 4000, "rh": 3000 },
+    { "id": "autel_evo2pro_v3", "name": "EVO II Pro V3", "sw": 13.2, "sh": 8.8, "fl": 8.8, "rw": 5472, "rh": 3648 }
+  ],
+  "Skydio": [
+    { "id": "skydio_x10_w", "name": "X10 VT300-L (Wide 50MP)", "sw": 13.1, "sh": 9.83, "fl": 7.74, "rw": 8192, "rh": 6144 },
+    { "id": "skydio_x10_t", "name": "X10 VT300-Z (Tele 48MP)", "sw": 6.4, "sh": 4.8, "fl": 35.0, "rw": 8000, "rh": 6000 },
+    { "id": "skydio_x10_ir", "name": "X10 Thermal (Boson+ 12µm)", "sw": 7.68, "sh": 6.14, "fl": 13.6, "rw": 640, "rh": 512 },
+    { "id": "skydio_x2_eo", "name": "X2 Color (Visual)", "sw": 6.17, "sh": 4.55, "fl": 3.5, "rw": 4056, "rh": 3040 }
+  ],
+  "Parrot & Teledyne FLIR": [
+    { "id": "parrot_usa_w", "name": "Parrot Anafi USA (Wide)", "sw": 5.9, "sh": 4.4, "fl": 4.0, "rw": 5344, "rh": 4016 },
+    { "id": "parrot_usa_ir", "name": "Parrot Anafi USA (Thermal)", "sw": 3.84, "sh": 3.07, "fl": 4.0, "rw": 320, "rh": 256 },
+    { "id": "flir_siras_eo", "name": "FLIR SIRAS (Visual EO)", "sw": 9.6, "sh": 7.2, "fl": 6.7, "rw": 4608, "rh": 3456 },
+    { "id": "flir_siras_ir", "name": "FLIR SIRAS (Thermal IR 12µm)", "sw": 7.68, "sh": 6.14, "fl": 13.6, "rw": 640, "rh": 512 },
+    { "id": "flir_tz20_w", "name": "FLIR Vue TZ20-R (Wide IR 12µm)", "sw": 7.68, "sh": 6.14, "fl": 4.9, "rw": 640, "rh": 512 }
+  ],
+  "Phase One & Sony (Survey)": [
+    { "id": "po_rs150_50", "name": "iXM-RS150F 150MP (50mm)", "sw": 53.4, "sh": 40.0, "fl": 50.0, "rw": 14204, "rh": 10652 },
+    { "id": "po_100_35", "name": "iXM-100 100MP (35mm)", "sw": 43.8, "sh": 32.9, "fl": 35.0, "rw": 11664, "rh": 8750 },
+    { "id": "sony_ilxlr1_35", "name": "Sony ILX-LR1 (35mm)", "sw": 35.8, "sh": 23.8, "fl": 35.0, "rw": 9504, "rh": 6336 },
+    { "id": "sony_a7r_35", "name": "Sony a7R IV/V (35mm)", "sw": 35.8, "sh": 23.8, "fl": 35.0, "rw": 9504, "rh": 6336 },
+    { "id": "sony_rx1rii", "name": "Sony RX1R II (Wingtra 35mm)", "sw": 35.9, "sh": 24.0, "fl": 35.0, "rw": 7952, "rh": 5304 }
+  ],
+  "Tactical ISR & Defense": [
+    { "id": "nextvision_col2", "name": "NextVision Colibri 2", "sw": 6.17, "sh": 4.55, "fl": 5.3, "rw": 1280, "rh": 720 },
+    { "id": "nextvision_rap_eo", "name": "NextVision Raptor (Zoom EO)", "sw": 6.17, "sh": 4.55, "fl": 20.0, "rw": 1280, "rh": 720 },
+    { "id": "brinc_lemur2_v", "name": "BRINC Lemur 2 (Visual)", "sw": 6.17, "sh": 4.55, "fl": 2.8, "rw": 3840, "rh": 2160 },
+    { "id": "teal_2_v", "name": "Teal 2 (Visual)", "sw": 6.17, "sh": 4.55, "fl": 3.5, "rw": 4000, "rh": 3000 }
+  ]
+};
+
+        async function bootEnterpriseEngine() {
+            try {
+                const response = await fetch(DB_URL + '?t=' + new Date().getTime(), { cache: "no-store" });
+                if (!response.ok) throw new Error("JSON not found");
+                presetGroups = await response.json();
+                localStorage.setItem('AeroOptics_LocalDB', JSON.stringify(presetGroups));
+                dbStatus.innerHTML = `<i class="fa-solid fa-cloud-check text-emerald-400"></i> <span class="text-emerald-400">Database Synced (${Object.values(presetGroups).flat().length} items)</span>`;
+                dbStatus.classList.replace('bg-slate-800/50', 'bg-emerald-500/10'); dbStatus.classList.add('border-emerald-500/30');
+            } catch (error) {
+                console.warn("Could not fetch database.json (Check CORS or server status). Using local cache.");
+                const cachedDB = localStorage.getItem('AeroOptics_LocalDB');
+                presetGroups = cachedDB ? JSON.parse(cachedDB) : fallbackDB;
+                dbStatus.innerHTML = `<i class="fa-solid fa-wifi text-amber-400"></i> <span class="text-amber-400">Offline Cache Mode (${Object.values(presetGroups).flat().length} items)</span>`;
+                dbStatus.classList.replace('bg-slate-800/50', 'bg-amber-500/10'); dbStatus.classList.add('border-amber-500/30');
+            }
+            buildDropdownMenu(); document.getElementById('preset-select').disabled = false; loadStateFromURL();
+        }
+
+        function buildDropdownMenu() {
+            let selectHTML = `<option value="custom" class="text-brand-400 font-bold">» Custom Sensor</option>`;
+            for (const [groupName, cameras] of Object.entries(presetGroups)) {
+                selectHTML += `<optgroup label="[ ${groupName} ]">`;
+                cameras.forEach(cam => { flatPresets[cam.id] = cam; selectHTML += `<option value="${cam.id}">${cam.name}</option>`; });
+                selectHTML += `</optgroup>`;
+            }
+            document.getElementById('preset-select').innerHTML = selectHTML; 
+        }
+
+        let isProgrammaticUpdate = false;
+        function updateURLState() {
+            if(isProgrammaticUpdate) return;
+            const params = new URLSearchParams();
+            if(elPreset.value !== 'custom') params.set('cam', elPreset.value);
+            params.set('alt', elAltInput.value);
+            if(elZoomMulti.value !== '1.0' && elZoomMulti.value !== '') params.set('z', elZoomMulti.value);
+            if(elCustomTarget.value !== '0.1') params.set('tgt', elCustomTarget.value);
+            window.history.replaceState({}, '', window.location.pathname + '?' + params.toString());
+        }
+
+        function loadStateFromURL() {
+            isProgrammaticUpdate = true;
+            const params = new URLSearchParams(window.location.search); let needsCalc = false;
+            if(params.has('cam') && flatPresets[params.get('cam')]) {
+                elPreset.value = params.get('cam'); const p = flatPresets[params.get('cam')];
+                elSw.value = p.sw; elSh.value = p.sh; elRw.value = p.rw; elRh.value = p.rh; elFocalLen.value = p.fl;
+                inputMode = 'focal'; updateModeUI(); needsCalc = true;
+            } else {
+                const firstCam = Object.keys(flatPresets)[0];
+                if (firstCam) {
+                    elPreset.value = firstCam; const p = flatPresets[firstCam];
+                    elSw.value = p.sw; elSh.value = p.sh; elRw.value = p.rw; elRh.value = p.rh; elFocalLen.value = p.fl;
+                    needsCalc = true;
+                }
+            }
+            if(params.has('alt')) { elAltInput.value = params.get('alt'); elAltSlider.value = params.get('alt'); needsCalc = true; }
+            if(params.has('tgt')) { elCustomTarget.value = params.get('tgt'); needsCalc = true; }
+            if(params.has('z')) {
+                elZoomMulti.value = params.get('z');
+                const diag = Math.sqrt(Math.pow(elSw.value, 2) + Math.pow(elSh.value, 2));
+                elFocalLen.value = ((params.get('z') * 24.0) / (43.2666 / diag)).toFixed(2); needsCalc = true;
+            }
+            if(needsCalc) calculateEngine(false);
+            isProgrammaticUpdate = false;
+        }
+
+        function copyMissionURL() { navigator.clipboard.writeText(window.location.href).then(() => { const toast = document.getElementById('toast'); toast.classList.add('show'); setTimeout(() => { toast.classList.remove('show'); }, 3000); }); }
+
+        const elPreset = document.getElementById('preset-select'), elSw = document.getElementById('sensor-w'), elSh = document.getElementById('sensor-h'), elRw = document.getElementById('res-w'), elRh = document.getElementById('res-h'), elFocalLen = document.getElementById('focal-length'), elZoomMulti = document.getElementById('zoom-multiplier'), elFovHInput = document.getElementById('fov-h-input'), elAltSlider = document.getElementById('altitude-slider'), elAltInput = document.getElementById('altitude-input'), elCustomTarget = document.getElementById('custom-target-size'), btnFocal = document.getElementById('mode-focal'), btnFov = document.getElementById('mode-fov'), contFocal = document.getElementById('focal-container'), contFov = document.getElementById('fov-container');
+        let inputMode = 'focal';
+
+        elPreset.addEventListener('change', (e) => { if(flatPresets[e.target.value]) { const p = flatPresets[e.target.value]; elSw.value = p.sw; elSh.value = p.sh; elRw.value = p.rw; elRh.value = p.rh; elFocalLen.value = p.fl; inputMode = 'focal'; updateModeUI(); calculateEngine(true); } });
+        elAltSlider.addEventListener('input', (e) => { elAltInput.value = e.target.value; calculateEngine(true); }); elAltInput.addEventListener('input', (e) => { elAltSlider.value = e.target.value; calculateEngine(true); });
+        btnFocal.addEventListener('click', () => { inputMode = 'focal'; updateModeUI(); calculateEngine(true); }); btnFov.addEventListener('click', () => { inputMode = 'fov'; updateModeUI(); calculateEngine(true); });
+
+        function updateModeUI() {
+            btnFocal.className = inputMode === 'focal' ? "px-3 py-1.5 text-xs font-bold rounded-md bg-brand-500 text-white shadow-sm transition-all" : "px-3 py-1.5 text-xs font-bold rounded-md text-slate-400 hover:text-white hover:bg-slate-800 transition-all";
+            btnFov.className = inputMode === 'fov' ? "px-3 py-1.5 text-xs font-bold rounded-md bg-brand-500 text-white shadow-sm transition-all" : "px-3 py-1.5 text-xs font-bold rounded-md text-slate-400 hover:text-white hover:bg-slate-800 transition-all";
+            inputMode === 'focal' ? (contFocal.classList.remove('hidden'), contFov.classList.add('hidden')) : (contFov.classList.remove('hidden'), contFocal.classList.add('hidden'));
+        }
+
+        [elSw, elSh, elRw, elRh, elFovHInput, elCustomTarget].forEach(el => { el.addEventListener('input', () => { if(el !== elCustomTarget) elPreset.value = 'custom'; calculateEngine(true); }); });
+        elFocalLen.addEventListener('input', () => { elPreset.value = 'custom'; calculateEngine(true); });
+        elZoomMulti.addEventListener('input', () => { elPreset.value = 'custom'; const sw = parseFloat(elSw.value) || 0.1, sh = parseFloat(elSh.value) || 0.1, zoom = parseFloat(elZoomMulti.value) || 1.0; const diag = Math.sqrt((sw * sw) + (sh * sh)); elFocalLen.value = ((zoom * 24.0) / (43.2666 / diag)).toFixed(2); calculateEngine(false); });
+
+        function getStatusProps(pixels) {
+            if (pixels < 2) return { text: 'Undetectable', classes: 'text-slate-400 bg-slate-900 border-slate-700' };
+            if (pixels < 8) return { text: 'Detect', classes: 'text-yellow-400 bg-yellow-500/10 border-yellow-500/30 shadow-[0_0_10px_rgba(234,179,8,0.1)]' };
+            if (pixels < 14) return { text: 'Recognize', classes: 'text-brand-400 bg-brand-500/10 border-brand-500/30 shadow-[0_0_10px_rgba(6,182,212,0.1)]' };
+            return { text: 'Identify', classes: 'text-emerald-400 bg-emerald-500/10 border-emerald-500/30 shadow-[0_0_10px_rgba(16,185,129,0.1)]' };
+        }
+
+        function calculateEngine(updateZoomBox = true) {
+            const sw = parseFloat(elSw.value) || 0.1, sh = parseFloat(elSh.value) || 0.1, rw = parseFloat(elRw.value) || 1, rh = parseFloat(elRh.value) || 1, alt = parseFloat(elAltInput.value) || 1, customTarget = parseFloat(elCustomTarget.value) || 0.1;
+            let focal, fovH; const rad2deg = 180 / Math.PI, deg2rad = Math.PI / 180;
+            if (inputMode === 'focal') { focal = parseFloat(elFocalLen.value) || 0.1; fovH = 2 * Math.atan(sw / (2 * focal)) * rad2deg; elFovHInput.value = fovH.toFixed(2); } 
+            else { fovH = parseFloat(elFovHInput.value) || 0.1; if(fovH >= 180) fovH = 179.9; focal = sw / (2 * Math.tan((fovH / 2) * deg2rad)); elFocalLen.value = focal.toFixed(2); }
+
+            const sensorDiag = Math.sqrt(Math.pow(sw, 2) + Math.pow(sh, 2)), cropFactor = 43.2666 / sensorDiag;
+            const eqFocal = focal * cropFactor, zoomMult = eqFocal / 24.0;
+            if(updateZoomBox) { elZoomMulti.value = zoomMult.toFixed(1); }
+
+            const fovV = 2 * Math.atan(sh / (2 * focal)) * rad2deg, footW = alt * (sw / focal), footH = alt * (sh / focal), area = footW * footH;
+            const gsdW = (footW * 100) / rw, gsdH = (footH * 100) / rh, gsd = Math.max(gsdW, gsdH); 
+
+            document.getElementById('alt-display').innerText = alt.toFixed(0); document.getElementById('out-gsd').innerText = gsd.toFixed(2);
+            document.getElementById('out-foot-w').innerText = footW.toFixed(1); document.getElementById('out-foot-h').innerText = footH.toFixed(1);
+            document.getElementById('out-area').innerText = Math.round(area).toLocaleString();
+            document.getElementById('out-fov-h').innerHTML = fovH.toFixed(1) + '&deg;'; document.getElementById('out-fov-v').innerHTML = fovV.toFixed(1) + '&deg;';
+            document.getElementById('out-eq-focal').innerText = eqFocal.toFixed(0); document.getElementById('out-zoom').innerText = zoomMult.toFixed(1);
+
+            const formatMetric = (cm, valId, unitId) => { if (cm >= 100) { document.getElementById(valId).innerText = (cm / 100).toFixed(2); document.getElementById(unitId).innerText = 'm'; } else { document.getElementById(valId).innerText = cm.toFixed(1); document.getElementById(unitId).innerText = 'cm'; } };
+            formatMetric(gsd * 2, 'req-detect', 'unit-detect'); formatMetric(gsd * 8, 'req-recognize', 'unit-recognize'); formatMetric(gsd * 14, 'req-identify', 'unit-identify');
+
+            const calcPx = (meters) => (meters * 100) / gsd;
+            const pxCar = calcPx(4.5), pxHuman = calcPx(0.5), pxCustom = calcPx(customTarget);
+            document.getElementById('px-car').innerText = Math.floor(pxCar) + 'px'; document.getElementById('px-human').innerText = Math.floor(pxHuman) + 'px'; document.getElementById('px-custom').innerText = Math.floor(pxCustom) + 'px';
+
+            const bindStatus = (px, elId) => { const stat = getStatusProps(px); const el = document.getElementById(elId); el.innerText = stat.text; el.className = `px-3 py-1.5 rounded-md text-[10px] font-bold w-28 text-center uppercase tracking-widest border transition-all ${stat.classes}`; };
+            bindStatus(pxCar, 'status-car'); bindStatus(pxHuman, 'status-human'); bindStatus(pxCustom, 'status-custom');
+            updateURLState(); 
+        }
+
+        bootEnterpriseEngine();
+
+        // Register Service Worker for Offline Capabilities
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('./sw.js')
+                    .then(registration => {
+                        console.log('ServiceWorker registration successful with scope: ', registration.scope);
+                    })
+                    .catch(err => {
+                        console.log('ServiceWorker registration failed: ', err);
+                    });
+            });
+        }
+    </script>
+</body>
+</html>
