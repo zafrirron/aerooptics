@@ -36,6 +36,11 @@ Because AeroOptics operates as a Progressive Web App (PWA) with strict offline c
 **To forcefully clear the cache and push a new release to your team:**
 1. Open the `sw.js` file.
 2. At the very top of the file, increase the `CACHE_NAME` version string (e.g., change `'aerooptics-v1'` to `'aerooptics-v2'`).
-3. Commit and push your changes to GitHub.
+3. Commit and push your changes to GitHub using the following operations in your terminal:
+   ```bash
+   git add .
+   git commit -m "chore: bump cache version to deploy new release"
+   git push origin main
+   ```
 
 When the operators' mobile devices quietly ping the network, their browser checks `sw.js`. Seeing that the version string has changed by even a single character forces the browser to silently delete the old cache array and download the new payload. Next time they open the PWA, it will be the newest version.
