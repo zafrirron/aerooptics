@@ -4,6 +4,12 @@ All codebase shifts, optical logic updates, and AI Database Harvests are documen
 
 ---
 
+## [v2.0] - 2026-04-[Current Date] - "AeroForge Evolution"
+### Architectural Paradigm Shift
+- **AeroForge Dashboard Framework:** The entire PWA has been fundamentally rewritten from a single-function optical calculator into a master **"Universal Drone Architecture Engine."** The UI now boasts a premium absolute-height dashboard featuring a persistent left-hand navigation sidebar allowing engineers to seamlessly jump between multi-domain procurement mechanics.
+- **Legacy Preservation Protocol:** The entire original `v1.5` AeroOptics application (incorporating tactical physics and reverse-engineering logic) was completely preserved and encapsulated into a protected runtime container (`#vertical-optics`), guaranteeing 100% mathematical integrity for field operators while the layout transitions.
+- **Relational Database Expansion:** Aggressively restructured `database.json` via a root-level encapsulation script. The core engine dynamically parses a newly constructed `optics` key while establishing foundational JSON infrastructure for 9 new operational domains (`battery`, `motor`, `fc`, `compute`, `frame`, `datalink`, `sensor`, `pdb`, `gimbal`). Initial schema seed data (e.g. NVIDIA Jetson Orin NX, T-Motor U8 Lites, Cube Orange+) was injected to confirm multi-domain data propagation.
+
 ## [v1.5] - 2026-04-[Current Date]
 ### Data Hotfix
 - **Vendor Link Accuracy:** Re-mapped and hardcoded database payloads that do not explicitly contain their manufacturer nomenclature in their internal database naming structure (e.g. "Phantom", "Inspire", "EVO", "X10"). Resolves an issue where these models incorrectly defaulted to Google Search link fallbacks instead of strictly routing to DJI, Autel, or Skydio respectively.
