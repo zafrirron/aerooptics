@@ -4,6 +4,13 @@ All codebase shifts, optical logic updates, and AI Database Harvests are documen
 
 ---
 
+## [v2.1] - 2026-04-[Current Date] - "Energy Storage Vertical"
+### Battery Dynamics Sub-System
+- **AeroForge Scale:** Implemented the complete interface and JS mechanics for the Phase 1 Energy Storage module natively inside the Dashboard.
+- **Flight Operator Math:** The Battery Operator tab calculates absolute Hover Time (minutes), Safe Max Discharge limits (Amps), and active Takeoff Weight (MTOW) using simplified Coulomb integration intersecting with Airframe mass and Motor Efficiency constants (g/W).
+- **Reverse Procurement Sweep:** Built a reverse-engineering filter for hardware. Operators input target hover metrics alongside max weight thresholds, outputting dynamically ranked Solid-State/Li-Po/Li-Ion packs capable of surviving the load math.
+- **Database Harvest:** Successfully enriched `database.json`'s `battery` root node with a spectrum of high-end enterprise cells (e.g. Molicel P42A, Samsung 40T, Tattu Plus, Grepow SemiSolid).
+
 ## [v2.0] - 2026-04-[Current Date] - "AeroForge Evolution"
 ### Architectural Paradigm Shift
 - **AeroForge Dashboard Framework:** The entire PWA has been fundamentally rewritten from a single-function optical calculator into a master **"Universal Drone Architecture Engine."** The UI now boasts a premium absolute-height dashboard featuring a persistent left-hand navigation sidebar allowing engineers to seamlessly jump between multi-domain procurement mechanics.
