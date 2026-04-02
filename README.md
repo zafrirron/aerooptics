@@ -34,13 +34,25 @@ To serve on GitHub pages:
 Because AeroOptics operates as a Progressive Web App (PWA) with strict offline capabilities, updates pushed to GitHub will NOT immediately appear if a user has already cached the application. 
 
 **To forcefully clear the cache and push a new release to your team:**
-1. Open the `sw.js` file.
-2. At the very top of the file, increase the `CACHE_NAME` version string (e.g., change `'aerooptics-v1'` to `'aerooptics-v2'`).
-3. Commit and push your changes to GitHub using the following operations in your terminal:
+1. Open the `version.js` file.
+2. Increment the `APP_VERSION` string (e.g., change `'v0.8'` to `'v0.9'`).
+3. Commit and push your changes to GitHub using the terminal:
    ```bash
    git add .
-   git commit -m "chore: bump cache version to deploy new release"
+   git commit -m "chore: bump version to deploy new release"
    git push origin main
    ```
 
-When the operators' mobile devices quietly ping the network, their browser checks `sw.js`. Seeing that the version string has changed by even a single character forces the browser to silently delete the old cache array and download the new payload. Next time they open the PWA, it will be the newest version.
+When the operators' mobile devices quietly ping the network, their browser checks `sw.js` (which functionally imports `version.js`). Seeing that the version string has changed by even a single character forces the browser to silently delete the old cache array and download the new payload. Next time they open the PWA, it will be the newest version.
+
+## Agentic IDE Discovery & Update Protocol
+AeroOptics is engineered to be maintained autonomously via IDE AI agents (like Gemini/Antigravity). When you want to add new drone products to the tactical engine without doing manual optical geometry calculations, open the AI agent and execute the following exact command:
+
+> **"AeroOptics, perform a Global Drone Discovery Sweep."**
+
+The Agent will autonomously:
+1. Search the open web for newly released enterprise drones missing from the database.
+2. Mathematically derive their physical sensor geometries and true focal equivalents.
+3. Inject the payload into `database.json`.
+4. Append the payload's technical details to `CHANGELOG.md`.
+5. Automatically bump `version.js` to push the release to the PWA network.
