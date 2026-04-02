@@ -85,9 +85,10 @@
             <div class="glass-panel rounded-2xl p-6 sm:p-8">
                 <div class="flex items-center gap-3 mb-6 border-b border-slate-700/50 pb-4"><div class="w-8 h-8 rounded-lg bg-slate-800 flex items-center justify-center text-brand-400"><i class="fa-solid fa-microchip"></i></div><h2 class="text-lg font-bold text-white uppercase tracking-wider">Payload Parameters</h2></div>
                 <div class="space-y-6">
-                    <div>
+                    <div class="relative">
                         <label class="info-trigger text-xs font-semibold text-slate-400 uppercase tracking-wider mb-2 w-max" data-topic="hardware"><span>Hardware Database</span><i class="fa-solid fa-circle-info text-[10px] text-slate-500"></i></label>
                         <select id="preset-select" class="w-full input-base rounded-lg px-3 py-3 text-sm font-medium cursor-pointer" disabled><option value="custom">Loading database...</option></select>
+                        <a id="operator-vendor-link" href="#" target="_blank" class="hidden absolute top-0 right-0 text-[10px] items-center gap-1 font-bold text-brand-400 hover:text-brand-300 uppercase tracking-widest bg-brand-500/10 px-2 py-1 rounded border border-brand-500/20 transition-colors"><i class="fa-solid fa-arrow-up-right-from-square"></i> Vendor Specs</a>
                     </div>
                     <div class="grid grid-cols-2 gap-4">
                         <div><label class="info-trigger text-xs font-semibold text-slate-400 uppercase tracking-wider mb-2 w-max" data-topic="sensor_w"><span>Sensor Width</span><i class="fa-solid fa-circle-info text-[10px] text-slate-500"></i></label><div class="relative"><input type="number" id="sensor-w" step="0.001" class="w-full input-base rounded-lg pl-3 pr-10 py-2.5 text-sm font-semibold"><span class="absolute right-3 top-1/2 -translate-y-1/2 text-slate-500 text-xs">mm</span></div></div>
@@ -398,12 +399,14 @@
             if(params.has('cam') && flatPresets[params.get('cam')]) {
                 elPreset.value = params.get('cam'); const p = flatPresets[params.get('cam')];
                 elSw.value = p.sw; elSh.value = p.sh; elRw.value = p.rw; elRh.value = p.rh; elFocalLen.value = p.fl;
+                const linkEl = document.getElementById('operator-vendor-link'); if(p.link) { linkEl.href = p.link; linkEl.classList.remove('hidden'); linkEl.classList.add('flex'); } else { linkEl.classList.add('hidden'); linkEl.classList.remove('flex'); }
                 inputMode = 'focal'; updateModeUI(); needsCalc = true;
             } else {
                 const firstCam = Object.keys(flatPresets)[0];
                 if (firstCam) {
                     elPreset.value = firstCam; const p = flatPresets[firstCam];
                     elSw.value = p.sw; elSh.value = p.sh; elRw.value = p.rw; elRh.value = p.rh; elFocalLen.value = p.fl;
+                    const linkEl = document.getElementById('operator-vendor-link'); if(p.link) { linkEl.href = p.link; linkEl.classList.remove('hidden'); linkEl.classList.add('flex'); } else { linkEl.classList.add('hidden'); linkEl.classList.remove('flex'); }
                     needsCalc = true;
                 }
             }
@@ -423,7 +426,7 @@
         const elPreset = document.getElementById('preset-select'), elSw = document.getElementById('sensor-w'), elSh = document.getElementById('sensor-h'), elRw = document.getElementById('res-w'), elRh = document.getElementById('res-h'), elFocalLen = document.getElementById('focal-length'), elZoomMulti = document.getElementById('zoom-multiplier'), elFovHInput = document.getElementById('fov-h-input'), elAltSlider = document.getElementById('altitude-slider'), elAltInput = document.getElementById('altitude-input'), elCustomTarget = document.getElementById('custom-target-size'), elCustomReq = document.getElementById('custom-target-req'), btnFocal = document.getElementById('mode-focal'), btnFov = document.getElementById('mode-fov'), contFocal = document.getElementById('focal-container'), contFov = document.getElementById('fov-container');
         let inputMode = 'focal';
 
-        elPreset.addEventListener('change', (e) => { if(flatPresets[e.target.value]) { const p = flatPresets[e.target.value]; elSw.value = p.sw; elSh.value = p.sh; elRw.value = p.rw; elRh.value = p.rh; elFocalLen.value = p.fl; inputMode = 'focal'; updateModeUI(); calculateEngine(true); } });
+        elPreset.addEventListener('change', (e) => { const linkEl = document.getElementById('operator-vendor-link'); if(flatPresets[e.target.value]) { const p = flatPresets[e.target.value]; elSw.value = p.sw; elSh.value = p.sh; elRw.value = p.rw; elRh.value = p.rh; elFocalLen.value = p.fl; inputMode = 'focal'; if(p.link) { linkEl.href = p.link; linkEl.classList.remove('hidden'); linkEl.classList.add('flex'); } else { linkEl.classList.add('hidden'); linkEl.classList.remove('flex'); } updateModeUI(); calculateEngine(true); } else { linkEl.classList.add('hidden'); linkEl.classList.remove('flex'); } });
         elAltSlider.addEventListener('input', (e) => { elAltInput.value = e.target.value; calculateEngine(true); }); elAltInput.addEventListener('input', (e) => { elAltSlider.value = e.target.value; calculateEngine(true); });
         btnFocal.addEventListener('click', () => { inputMode = 'focal'; updateModeUI(); calculateEngine(true); }); btnFov.addEventListener('click', () => { inputMode = 'fov'; updateModeUI(); calculateEngine(true); });
 
@@ -594,7 +597,13 @@
                         pr: finalPr,
                         gsd: payloadMaxGsd,
                         rg: rg,
-                        type: type
+                        type: type,
+                        sw: p.sw,
+                        sh: p.sh,
+                        rw: p.rw,
+                        rh: p.rh,
+                        fl: p.fl,
+                        url: p.link || '#'
                     });
                 }
             });
@@ -611,8 +620,12 @@
                     
                     const html = `
                     <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between p-4 bg-slate-900/50 border border-slate-700/50 rounded-xl hover:bg-slate-800 transition shadow-[0_4px_20px_rgba(0,0,0,0.2)] gap-4">
-                        <div class="w-full sm:w-auto">
-                            <p class="text-sm font-bold text-white mb-2 flex items-center flex-wrap gap-y-1">${typeIcon}<span class="ml-2 mr-1">${opt.name}</span>${rgTag}</p>
+                        <div class="flex-1 w-full sm:w-auto pr-4">
+                            <div class="flex items-center justify-between w-full mb-1">
+                                <p class="text-sm font-bold text-white flex items-center flex-wrap gap-y-1">${typeIcon}<span class="ml-2 mr-1">${opt.name}</span>${rgTag}</p>
+                                ${opt.url !== '#' ? `<a href="${opt.url}" target="_blank" class="text-slate-400 hover:text-brand-400 transition" title="Vendor Specs"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>` : ''}
+                            </div>
+                            <p class="text-[10px] text-slate-500 mb-2 font-mono"><i class="fa-solid fa-microchip mr-1"></i>${opt.sw}x${opt.sh}mm Sensor | ${opt.rw}x${opt.rh}px | ${opt.fl}mm Lens</p>
                             <div class="flex items-center gap-3 text-xs">
                                 <span class="bg-indigo-500/10 border border-indigo-500/20 text-indigo-300 px-2 py-0.5 rounded font-mono font-bold">${opt.gsd.toFixed(2)} cm/px</span>
                                 <span class="text-emerald-400 font-bold border-l border-slate-700 pl-3">${opt.wt.toLocaleString()}g</span>

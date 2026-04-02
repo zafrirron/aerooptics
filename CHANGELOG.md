@@ -4,6 +4,12 @@ All codebase shifts, optical logic updates, and AI Database Harvests are documen
 
 ---
 
+## [v1.4] - 2026-04-[Current Date]
+### Data Enrichment & UI Upgrades
+- **Vendor Link Mapping:** Programmatically enriched all AI-swept hardware packages with direct `link` definitions to their official manufacturer pages.
+- **Operator Link Button:** Selecting a database preset now dynamically exposes an "Open Vendor Page" action link in the top right of the selector.
+- **Engineering Sensor Specs:** The Platform Procurement list now natively exposes raw optical physics hardware numbers (Sensor dimensions mm, Resolution px, Focal Length mm) directly alongside cost and weight estimations, including embedded outbound vendor links.
+
 ## [v1.3] - 2026-04-[Current Date]
 ### Hotfix
 - **UI Logic Loop:** Corrected a CSS specificity bug where Tailwind `grid` utilities overrode JS `classList` visibility toggles, and repaired an unclosed structural `<div>` that accidentally orphaned the Procurement panel inside the Operator view.
