@@ -161,13 +161,22 @@
         function closeSidebar() { sidebar.classList.add('translate-x-full'); }
 
         document.querySelectorAll('.info-trigger').forEach(trigger => { 
+            // Fix for iOS Safari ignoring clicks on non-buttons without a pointer cursor
+            trigger.style.cursor = 'pointer'; 
+            trigger.onclick = function() {}; 
+            
+            trigger.addEventListener('touchstart', (e) => { 
+                openSidebar(e.currentTarget.getAttribute('data-topic')); 
+            }, {passive: true});
             trigger.addEventListener('mouseenter', (e) => openSidebar(e.currentTarget.getAttribute('data-topic'))); 
             trigger.addEventListener('mouseleave', () => { sidebarTimeout = setTimeout(closeSidebar, 200); }); 
             trigger.addEventListener('click', (e) => { e.preventDefault(); openSidebar(e.currentTarget.getAttribute('data-topic')); });
         });
         sidebar.addEventListener('mouseenter', () => clearTimeout(sidebarTimeout)); 
         sidebar.addEventListener('mouseleave', () => { sidebarTimeout = setTimeout(closeSidebar, 200); });
-        sbClose.addEventListener('click', closeSidebar);
+        sidebar.addEventListener('touchstart', () => clearTimeout(sidebarTimeout), {passive: true});
+        sbClose.addEventListener('click', (e) => { e.preventDefault(); closeSidebar(); });
+        sbClose.addEventListener('touchstart', (e) => { e.preventDefault(); closeSidebar(); }, {passive: false});
 
         const DB_URL = './database.json'; let presetGroups = {}; const flatPresets = {}; const dbStatus = document.getElementById('db-status');
         
