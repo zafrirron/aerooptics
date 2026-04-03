@@ -1,83 +1,106 @@
 const fs = require('fs');
-const dbPath = 'e:/Dev/AeroOptics/database.json';
 
-const raw = fs.readFileSync(dbPath, 'utf8');
-const db = JSON.parse(raw);
+const dbPath = './database.json';
+let db = JSON.parse(fs.readFileSync(dbPath, 'utf8'));
 
-// AI Enrichment Rules mapping
-const rules = [
-  // DJI Vis
-  { match: 'm3e|m3m|m3pro|air3', wt: 920, pr: 3500, type: 'eo' },
-  { match: 'm30_w|m30_z', wt: 3770, pr: 8000, type: 'eo' },
-  { match: 'h30', wt: 920, pr: 4000, type: 'eo' },
-  { match: 'h20_w|h20_z', wt: 678, pr: 3500, type: 'eo' },
-  { match: 'p1', wt: 800, pr: 5600, type: 'eo' },
-  { match: 'l1|l2', wt: 930, pr: 12000, type: 'eo' },
-  { match: 'p4rtk|p4pv2', wt: 1391, pr: 6000, type: 'eo' },
-  { match: 'm2e', wt: 899, pr: 2500, type: 'eo' },
-  { match: 'm3d', wt: 1610, pr: 5000, type: 'eo' },
-  { match: 'm3td_w', wt: 1610, pr: 7000, type: 'eo' },
-  // DJI IR
-  { match: 'h30t_ir', wt: 920, pr: 12000, type: 'ir' },
-  { match: 'h20t_ir|h20n', wt: 678, pr: 10000, type: 'ir' },
-  { match: 'm3t|m30t_ir|m3td_ir', wt: 920, pr: 6000, type: 'ir' }, // M30T is 3770g actually
-  { match: 'm30t_ir', wt: 3770, pr: 10000, type: 'ir' }, // Override
-  { match: 'xt2', wt: 629, pr: 8000, type: 'ir' },
-  // Consumer DJI
-  { match: 'i3', wt: 3995, pr: 16000, type: 'eo', rg: true }, // Inspire 3 X9 requires gimbal
-  { match: 'i2_x7', wt: 3440, pr: 8000, type: 'eo', rg: true },
-  { match: 'air2s|m2pro', wt: 900, pr: 1500, type: 'eo' },
-  { match: 'mini|avata|fpv', wt: 249, pr: 800, type: 'eo' },
-  // Autel
-  { match: 'max4t_w|max4t_z|max4n', wt: 1600, pr: 8000, type: 'eo' },
-  { match: 'max4t_ir', wt: 1600, pr: 8000, type: 'ir' },
-  { match: 'alpha_w|alpha_z', wt: 4000, pr: 15000, type: 'eo' },
-  { match: 'alpha_ir', wt: 4000, pr: 15000, type: 'ir' },
-  { match: 'dfish_w|dfish_z|dfish_ir', wt: 7800, pr: 80000, type: 'eo' }, // Default to EO for DF
-  { match: 'evo2', wt: 1191, pr: 2500, type: 'eo' },
-  { match: 'evo2_.*ir', wt: 1191, pr: 6000, type: 'ir' },
-  // Skydio
-  { match: 'x10_w|x10_t|x10_n', wt: 2100, pr: 15000, type: 'eo' },
-  { match: 'x10_ir', wt: 2100, pr: 15000, type: 'ir' },
-  { match: 'x2_eo', wt: 1325, pr: 10000, type: 'eo' },
-  { match: 'x2_ir', wt: 1325, pr: 10000, type: 'ir' },
-  // Parrot
-  { match: 'ai', wt: 898, pr: 4000, type: 'eo' },
-  { match: 'usa_w|usa_t', wt: 500, pr: 7000, type: 'eo' },
-  { match: 'usa_ir', wt: 500, pr: 7000, type: 'ir' },
-  // FLIR
-  { match: 'siras_eo', wt: 3090, pr: 9700, type: 'eo' },
-  { match: 'siras_ir', wt: 3090, pr: 9700, type: 'ir' },
-  { match: 'tz20', wt: 640, pr: 5000, type: 'ir' },
-  { match: 'hadron', wt: 43, pr: 4000, type: 'ir', rg: true }, // Modular
-  // Phase One & Sony (Modular)
-  { match: 'po_', wt: 1100, pr: 45000, type: 'eo', rg: true },
-  { match: 'sony_ilxlr1', wt: 243, pr: 5000, type: 'eo', rg: true },
-  { match: 'sony_a7r', wt: 665, pr: 3500, type: 'eo', rg: true }
-];
+// 3. MOTOR
+db.motor = {
+  "T-Motor Enterprise": [
+    { "id": "tm_u8_lite", "name": "U8 Lite KV85", "weight": 240, "kv": 85, "max_thrust": 3500, "link": "https://store.tmotor.com/goods.php?id=325" },
+    { "id": "tm_u13", "name": "U13 KV85", "weight": 875, "kv": 85, "max_thrust": 11000, "link": "https://store.tmotor.com" },
+    { "id": "tm_mn1005", "name": "Navigator MN1005 KV90", "weight": 204, "kv": 90, "max_thrust": 2800, "link": "https://store.tmotor.com" }
+  ],
+  "KDE Direct": [
+    { "id": "kde_7215", "name": "KDE7215XF-135", "weight": 415, "kv": 135, "max_thrust": 5200, "link": "https://www.kdedirect.com" },
+    { "id": "kde_8218", "name": "KDE8218XF-120", "weight": 615, "kv": 120, "max_thrust": 7800, "link": "https://www.kdedirect.com" }
+  ]
+};
 
-for (const cat in db) {
-  db[cat].forEach(item => {
-    let matched = false;
-    for (const r of rules) {
-      if (new RegExp(r.match).test(item.id)) {
-        item.wt = r.wt;
-        item.pr = r.pr;
-        item.type = r.type;
-        if (r.rg) item.requires_gimbal = true;
-        matched = true;
-        break;
-      }
-    }
-    if (!matched) {
-      item.wt = 1000;
-      item.pr = 5000;
-      item.type = 'eo';
-    }
-    // Specific fix for Autel DF IR
-    if (item.id === 'autel_dfish_ir') item.type = 'ir';
-  });
-}
+// 4. FC
+db.fc = {
+  "CubePilot": [
+    { "id": "cube_orange_plus", "name": "Cube Orange+", "weight": 34, "mcu": "H7", "redundancy": "Triple IMU", "link": "https://cubepilot.org" },
+    { "id": "cube_blue", "name": "Cube Blue (TAA)", "weight": 34, "mcu": "H7", "redundancy": "Triple IMU (US Built)", "link": "https://cubepilot.org" }
+  ],
+  "Holybro": [
+    { "id": "pixhawk_6c", "name": "Pixhawk 6C", "weight": 49, "mcu": "H743", "redundancy": "Dual IMU", "link": "https://holybro.com" },
+    { "id": "pixhawk_6x", "name": "Pixhawk 6X Pro", "weight": 52, "mcu": "H753", "redundancy": "Triple IMU", "link": "https://holybro.com" }
+  ],
+  "CUAV": [
+    { "id": "cuav_nora", "name": "Nora+", "weight": 70, "mcu": "H7", "redundancy": "Triple IMU", "link": "https://cuav.net" },
+    { "id": "cuav_x7", "name": "X7 Pro", "weight": 85, "mcu": "H7", "redundancy": "Triple IMU", "link": "https://cuav.net" }
+  ]
+};
+
+// 5. COMPUTE
+db.compute = {
+  "NVIDIA": [
+    { "id": "jetson_orin_nano", "name": "Jetson Orin Nano (8GB)", "weight": 110, "tops": 40, "ram": 8, "link": "https://nvidia.com" },
+    { "id": "jetson_orin_nx", "name": "Jetson Orin NX (16GB)", "weight": 120, "tops": 100, "ram": 16, "link": "https://nvidia.com" }
+  ],
+  "Raspberry Pi": [
+    { "id": "rpi_5_8gb", "name": "Raspberry Pi 5 (8GB)", "weight": 46, "tops": 0, "ram": 8, "link": "https://raspberrypi.com" },
+    { "id": "cm4_carrier", "name": "CM4 Carrier Board Mini", "weight": 30, "tops": 0, "ram": 4, "link": "https://raspberrypi.com" }
+  ]
+};
+
+// 6. FRAME
+db.frame = {
+  "Tarot": [
+    { "id": "tarot_t18", "name": "T18 Octocopter (1270mm)", "weight": 2100, "arms": 8, "max_prop": 18, "link": "https://tarot-rc.com" },
+    { "id": "tarot_x6", "name": "X6 Hexacopter (960mm)", "weight": 2000, "arms": 6, "max_prop": 18, "link": "https://tarot-rc.com" }
+  ],
+  "CarbonCore": [
+    { "id": "cc_cortex", "name": "Cortex Quadcopter", "weight": 1400, "arms": 4, "max_prop": 24, "link": "https://carboncore.com" }
+  ]
+};
+
+// 7. DATALINK
+db.datalink = {
+  "Microhard": [
+    { "id": "mh_pddl900", "name": "PDDL900 (900MHz)", "weight": 45, "range_km": 100, "bandwidth_mbps": 25, "link": "https://microhardcorp.com" }
+  ],
+  "Silvus": [
+    { "id": "silvus_sc4200", "name": "StreamCaster 4200", "weight": 150, "range_km": 150, "bandwidth_mbps": 100, "link": "https://silvustechnologies.com" }
+  ],
+  "Herelink": [
+    { "id": "herelink_v1.1", "name": "Herelink V1.1 Air Unit", "weight": 95, "range_km": 20, "bandwidth_mbps": 12, "link": "https://cubepilot.org" }
+  ]
+};
+
+// 8. SENSOR
+db.sensor = {
+  "LiDAR": [
+    { "id": "velodyne_puck", "name": "Velodyne Puck VLP-16", "weight": 830, "range_m": 100, "accuracy_cm": 3, "link": "https://velodynelidar.com" },
+    { "id": "livox_avia", "name": "Livox Avia", "weight": 498, "range_m": 320, "accuracy_cm": 2, "link": "https://livoxtech.com" }
+  ],
+  "GPS / RTK": [
+    { "id": "here4_rtk", "name": "Here4 RTK", "weight": 16, "range_m": 0, "accuracy_cm": 1, "link": "https://cubepilot.org" },
+    { "id": "f9p_rtk", "name": "Holybro H-RTK F9P", "weight": 30, "range_m": 0, "accuracy_cm": 1, "link": "https://holybro.com" }
+  ]
+};
+
+// 9. PDB
+db.pdb = {
+  "Mauch": [
+    { "id": "mauch_pl_200", "name": "PL-200 Sensor + Hub", "weight": 45, "amps": 200, "link": "https://mauch-electronic.com" },
+    { "id": "mauch_pl_400", "name": "PL-400 Quad Sensor", "weight": 85, "amps": 400, "link": "https://mauch-electronic.com" }
+  ],
+  "Holybro": [
+    { "id": "pm02_v3", "name": "PM02D Power Module", "weight": 20, "amps": 90, "link": "https://holybro.com" }
+  ]
+};
+
+// 10. GIMBAL
+db.gimbal = {
+  "Gremsy": [
+    { "id": "gremsy_pio", "name": "Pixy PE", "weight": 420, "payload_g": 600, "link": "https://gremsy.com" },
+    { "id": "gremsy_t3", "name": "T3 V3", "weight": 1200, "payload_g": 3300, "link": "https://gremsy.com" }
+  ],
+  "DJI": [
+    { "id": "zenmuse_rs3", "name": "Ronin S3 Pro", "weight": 1500, "payload_g": 4500, "link": "https://dji.com" }
+  ]
+};
 
 fs.writeFileSync(dbPath, JSON.stringify(db, null, 2));
-console.log('Database enriched perfectly!');
+console.log("Database successfully populated with all verticals!");

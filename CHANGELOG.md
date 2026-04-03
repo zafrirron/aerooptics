@@ -1,4 +1,11 @@
-# AeroOptics Pro - Operations Changelog
+# AeroForge Version History
+
+### v2.2.0 (The True AeroForge Build)
+*   **Total Vertical Expansion:** Deployed 8 new engineering modules: Propulsion, Flight Control, Companion Compute, Airframes, Data Link (C2), Sensors & GNSS, Power (PMU), and Gimbals.
+*   **Mathematical Models:** Integrated the Thrust-to-Mass hover requirement module capable of filtering enterprise motors against airframe parameters (Quadcopter/Hexa/Octo) based on a strict 2.0:1 requirement.
+*   **Database Expansion:** Tripled `database.json` capacity by injecting enterprise specs for T-Motor, KDE Direct, NVIDIA, CubePilot, Silvus, and Velodyne.
+
+### v2.1.2Changelog
 
 All codebase shifts, optical logic updates, and AI Database Harvests are documented here mapped directly to the `APP_VERSION` cache string.
 

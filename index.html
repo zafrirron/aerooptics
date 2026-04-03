@@ -551,7 +551,7 @@
                 dbStatus.classList.replace('bg-slate-800/50', 'bg-amber-500/10'); dbStatus.classList.add('border-amber-500/30');
             }
             buildDropdownMenu();
-            populateBatteryDropdown(); document.getElementById('preset-select').disabled = false; loadStateFromURL();
+            populateBatteryDropdown(); populateAllOtherDropdowns(); document.getElementById('preset-select').disabled = false; loadStateFromURL();
         }
 
         function buildDropdownMenu() {
@@ -689,6 +689,65 @@
         }
     
         
+        
+        function populateAllOtherDropdowns() {
+            runMotorEngine();
+            
+            const cats = ['fc', 'compute', 'frame', 'datalink', 'sensor', 'pdb', 'gimbal'];
+            cats.forEach(c => {
+                const list = document.getElementById(c + '-list');
+                if(!list || !masterDB[c]) return;
+                let html = '';
+                for(const [group, items] of Object.entries(masterDB[c])) {
+                    html += `<tr><td colspan="4" class="bg-slate-800/30 text-xs font-bold uppercase text-brand-400 p-2 mt-4 inline-block rounded w-full border-t border-slate-700/50">${group}</td></tr>`;
+                    items.forEach(itm => {
+                        html += `<tr class="hover:bg-slate-800/20 transition-colors">
+                            <td class="p-3 font-semibold text-white">${itm.name}</td>
+                            <td class="p-3 text-slate-400">${itm.weight || 'N/A'}</td>
+                            <td class="p-3 text-slate-400 font-mono text-xs">${itm.kv ? 'KV'+itm.kv : (itm.amps ? itm.amps+'A' : (itm.mcu ? itm.mcu : (itm.range_km ? itm.range_km+'km' : '—')))}</td>
+                            <td class="p-3 text-center"><a href="${itm.link}" target="_blank" class="text-brand-400 hover:text-brand-300 bg-brand-500/10 hover:bg-brand-500/20 px-3 py-1 rounded text-xs font-bold transition-all"><i class="fa-solid fa-arrow-up-right-from-square"></i></a></td>
+                        </tr>`;
+                    });
+                }
+                list.innerHTML = html;
+            });
+        }
+
+        function runMotorEngine() {
+            if(!masterDB.motor) return;
+            const mtow = parseFloat(document.getElementById('motor-mtow').value) || 5.0;
+            const arms = parseFloat(document.getElementById('motor-arms').value) || 4;
+            
+            const hoverBase = (mtow * 1000) / arms;
+            const targetThrust = hoverBase * 2.0;
+            
+            document.getElementById('motor-hover-base').innerHTML = Math.round(hoverBase) + '<span class="text-sm text-slate-500 font-medium ml-1">g / arm</span>';
+            document.getElementById('motor-thrust-target').innerHTML = Math.round(targetThrust) + '<span class="text-sm text-brand-500/80 font-medium ml-1">g / arm</span>';
+            
+            let listHTML = '';
+            for(const [group, items] of Object.entries(masterDB.motor)) {
+                listHTML += `<tr><td colspan="6" class="bg-slate-800/30 text-xs font-bold uppercase text-brand-400 p-2 mt-4 inline-block rounded w-full border-t border-slate-700/50">${group}</td></tr>`;
+                items.forEach(mot => {
+                    const pass = mot.max_thrust >= targetThrust;
+                    const headroom = mot.max_thrust - hoverBase;
+                    const passClass = pass ? 'text-emerald-400' : 'text-red-400 line-through opacity-50';
+                    const passIcon = pass ? '<i class="fa-solid fa-check mr-1"></i>' : '<i class="fa-solid fa-xmark mr-1"></i>';
+                    
+                    listHTML += `<tr class="hover:bg-slate-800/20 transition-colors ${pass ? '' : 'opacity-60'}">
+                        <td class="p-3 font-semibold text-white">${mot.name}</td>
+                        <td class="p-3 text-slate-400">${mot.weight}g</td>
+                        <td class="p-3 text-slate-400">${mot.kv}</td>
+                        <td class="p-3 font-bold ${passClass}">${passIcon}${mot.max_thrust}g</td>
+                        <td class="p-3 text-right font-mono text-xs text-brand-400">+${Math.round(headroom)}g</td>
+                        <td class="p-3 text-center"><a href="${mot.link}" target="_blank" class="text-brand-400 hover:text-brand-300 bg-brand-500/10 hover:bg-brand-500/20 px-3 py-1 rounded text-xs font-bold transition-all"><i class="fa-solid fa-arrow-up-right-from-square"></i></a></td>
+                    </tr>`;
+                });
+            }
+            document.getElementById('motor-procurement-list').innerHTML = listHTML;
+        }
+
+        // --- CALLED FROM bootEnterpriseEngine ---
+
         // --- BATTERY ENGINE LOGIC ---
         let masterDB = {};
         let flatBatteries = {};

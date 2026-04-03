@@ -1552,111 +1552,297 @@
     ]
   },
   "motor": {
-    "Heavy Lift U-Series": [
+    "T-Motor Enterprise": [
       {
-        "id": "tmotor_u8_lite",
-        "name": "T-Motor U8 Lite (85KV)",
+        "id": "tm_u8_lite",
+        "name": "U8 Lite KV85",
         "weight": 240,
+        "kv": 85,
         "max_thrust": 3500,
-        "price": 180,
-        "link": "https://store.tmotor.com/"
+        "link": "https://store.tmotor.com/goods.php?id=325"
       },
       {
-        "id": "kde_direct_7215",
-        "name": "KDE Direct 7215XF-135",
-        "weight": 365,
+        "id": "tm_u13",
+        "name": "U13 KV85",
+        "weight": 875,
+        "kv": 85,
+        "max_thrust": 11000,
+        "link": "https://store.tmotor.com"
+      },
+      {
+        "id": "tm_mn1005",
+        "name": "Navigator MN1005 KV90",
+        "weight": 204,
+        "kv": 90,
+        "max_thrust": 2800,
+        "link": "https://store.tmotor.com"
+      }
+    ],
+    "KDE Direct": [
+      {
+        "id": "kde_7215",
+        "name": "KDE7215XF-135",
+        "weight": 415,
+        "kv": 135,
         "max_thrust": 5200,
-        "price": 215,
-        "link": "https://www.kdedirect.com/"
+        "link": "https://www.kdedirect.com"
+      },
+      {
+        "id": "kde_8218",
+        "name": "KDE8218XF-120",
+        "weight": 615,
+        "kv": 120,
+        "max_thrust": 7800,
+        "link": "https://www.kdedirect.com"
       }
     ]
   },
   "fc": {
-    "Enterprise Flight Controllers": [
+    "CubePilot": [
       {
         "id": "cube_orange_plus",
-        "name": "Cube Orange+ (Standard Carrier)",
-        "weight": 75,
-        "price": 349,
+        "name": "Cube Orange+",
+        "weight": 34,
         "mcu": "H7",
-        "imu": "Triple Redundant",
-        "link": "https://cubepilot.org/"
+        "redundancy": "Triple IMU",
+        "link": "https://cubepilot.org"
+      },
+      {
+        "id": "cube_blue",
+        "name": "Cube Blue (TAA)",
+        "weight": 34,
+        "mcu": "H7",
+        "redundancy": "Triple IMU (US Built)",
+        "link": "https://cubepilot.org"
+      }
+    ],
+    "Holybro": [
+      {
+        "id": "pixhawk_6c",
+        "name": "Pixhawk 6C",
+        "weight": 49,
+        "mcu": "H743",
+        "redundancy": "Dual IMU",
+        "link": "https://holybro.com"
       },
       {
         "id": "pixhawk_6x",
-        "name": "Holybro Pixhawk 6X",
-        "weight": 50,
-        "price": 299,
+        "name": "Pixhawk 6X Pro",
+        "weight": 52,
+        "mcu": "H753",
+        "redundancy": "Triple IMU",
+        "link": "https://holybro.com"
+      }
+    ],
+    "CUAV": [
+      {
+        "id": "cuav_nora",
+        "name": "Nora+",
+        "weight": 70,
         "mcu": "H7",
-        "imu": "Triple Redundant",
-        "link": "https://holybro.com/"
+        "redundancy": "Triple IMU",
+        "link": "https://cuav.net"
       },
       {
-        "id": "mro_control_zero",
-        "name": "mRo Control Zero H7",
-        "weight": 8,
-        "price": 175,
+        "id": "cuav_x7",
+        "name": "X7 Pro",
+        "weight": 85,
         "mcu": "H7",
-        "imu": "Dual IMU",
-        "link": "https://mrobubotics.com/"
+        "redundancy": "Triple IMU",
+        "link": "https://cuav.net"
       }
     ]
   },
   "compute": {
-    "Edge AI Neural Processing": [
+    "NVIDIA": [
       {
-        "id": "jetson_orin_nx_8gb",
-        "name": "NVIDIA Jetson Orin NX (8GB) + Carrier",
-        "weight": 95,
-        "power_w": 15,
-        "tops": 70,
-        "price": 450,
-        "link": "https://www.nvidia.com/en-us/autonomous-machines/embedded-systems/jetson-orin/"
+        "id": "jetson_orin_nano",
+        "name": "Jetson Orin Nano (8GB)",
+        "weight": 110,
+        "tops": 40,
+        "ram": 8,
+        "link": "https://nvidia.com"
       },
       {
-        "id": "rpi5_hailo",
-        "name": "Raspberry Pi 5 + Hailo-8 M.2",
-        "weight": 65,
-        "power_w": 12,
-        "tops": 26,
-        "price": 220,
-        "link": "https://www.raspberrypi.com/"
+        "id": "jetson_orin_nx",
+        "name": "Jetson Orin NX (16GB)",
+        "weight": 120,
+        "tops": 100,
+        "ram": 16,
+        "link": "https://nvidia.com"
+      }
+    ],
+    "Raspberry Pi": [
+      {
+        "id": "rpi_5_8gb",
+        "name": "Raspberry Pi 5 (8GB)",
+        "weight": 46,
+        "tops": 0,
+        "ram": 8,
+        "link": "https://raspberrypi.com"
       },
       {
-        "id": "coral_dev_board",
-        "name": "Google Coral Dev Board",
-        "weight": 45,
-        "power_w": 10,
-        "tops": 4,
-        "price": 130,
-        "link": "https://coral.ai/"
+        "id": "cm4_carrier",
+        "name": "CM4 Carrier Board Mini",
+        "weight": 30,
+        "tops": 0,
+        "ram": 4,
+        "link": "https://raspberrypi.com"
       }
     ]
   },
-  "frame": {},
+  "frame": {
+    "Tarot": [
+      {
+        "id": "tarot_t18",
+        "name": "T18 Octocopter (1270mm)",
+        "weight": 2100,
+        "arms": 8,
+        "max_prop": 18,
+        "link": "https://tarot-rc.com"
+      },
+      {
+        "id": "tarot_x6",
+        "name": "X6 Hexacopter (960mm)",
+        "weight": 2000,
+        "arms": 6,
+        "max_prop": 18,
+        "link": "https://tarot-rc.com"
+      }
+    ],
+    "CarbonCore": [
+      {
+        "id": "cc_cortex",
+        "name": "Cortex Quadcopter",
+        "weight": 1400,
+        "arms": 4,
+        "max_prop": 24,
+        "link": "https://carboncore.com"
+      }
+    ]
+  },
   "datalink": {
-    "Encrypted Mesh Radios": [
+    "Microhard": [
       {
-        "id": "microhard_pn900",
-        "name": "Microhard pX2 (900MHz MANET)",
-        "weight": 35,
+        "id": "mh_pddl900",
+        "name": "PDDL900 (900MHz)",
+        "weight": 45,
+        "range_km": 100,
+        "bandwidth_mbps": 25,
+        "link": "https://microhardcorp.com"
+      }
+    ],
+    "Silvus": [
+      {
+        "id": "silvus_sc4200",
+        "name": "StreamCaster 4200",
+        "weight": 150,
+        "range_km": 150,
+        "bandwidth_mbps": 100,
+        "link": "https://silvustechnologies.com"
+      }
+    ],
+    "Herelink": [
+      {
+        "id": "herelink_v1.1",
+        "name": "Herelink V1.1 Air Unit",
+        "weight": 95,
         "range_km": 20,
-        "encryption": "AES-256",
-        "price": 650,
-        "link": "https://www.microhardcorp.com/"
-      },
-      {
-        "id": "silvus_streamcaster",
-        "name": "Silvus StreamCaster 4200",
-        "weight": 260,
-        "range_km": 50,
-        "encryption": "AES-256 Suite B",
-        "price": 3500,
-        "link": "https://silvustechnologies.com/"
+        "bandwidth_mbps": 12,
+        "link": "https://cubepilot.org"
       }
     ]
   },
-  "sensor": {},
-  "pdb": {},
-  "gimbal": {}
+  "sensor": {
+    "LiDAR": [
+      {
+        "id": "velodyne_puck",
+        "name": "Velodyne Puck VLP-16",
+        "weight": 830,
+        "range_m": 100,
+        "accuracy_cm": 3,
+        "link": "https://velodynelidar.com"
+      },
+      {
+        "id": "livox_avia",
+        "name": "Livox Avia",
+        "weight": 498,
+        "range_m": 320,
+        "accuracy_cm": 2,
+        "link": "https://livoxtech.com"
+      }
+    ],
+    "GPS / RTK": [
+      {
+        "id": "here4_rtk",
+        "name": "Here4 RTK",
+        "weight": 16,
+        "range_m": 0,
+        "accuracy_cm": 1,
+        "link": "https://cubepilot.org"
+      },
+      {
+        "id": "f9p_rtk",
+        "name": "Holybro H-RTK F9P",
+        "weight": 30,
+        "range_m": 0,
+        "accuracy_cm": 1,
+        "link": "https://holybro.com"
+      }
+    ]
+  },
+  "pdb": {
+    "Mauch": [
+      {
+        "id": "mauch_pl_200",
+        "name": "PL-200 Sensor + Hub",
+        "weight": 45,
+        "amps": 200,
+        "link": "https://mauch-electronic.com"
+      },
+      {
+        "id": "mauch_pl_400",
+        "name": "PL-400 Quad Sensor",
+        "weight": 85,
+        "amps": 400,
+        "link": "https://mauch-electronic.com"
+      }
+    ],
+    "Holybro": [
+      {
+        "id": "pm02_v3",
+        "name": "PM02D Power Module",
+        "weight": 20,
+        "amps": 90,
+        "link": "https://holybro.com"
+      }
+    ]
+  },
+  "gimbal": {
+    "Gremsy": [
+      {
+        "id": "gremsy_pio",
+        "name": "Pixy PE",
+        "weight": 420,
+        "payload_g": 600,
+        "link": "https://gremsy.com"
+      },
+      {
+        "id": "gremsy_t3",
+        "name": "T3 V3",
+        "weight": 1200,
+        "payload_g": 3300,
+        "link": "https://gremsy.com"
+      }
+    ],
+    "DJI": [
+      {
+        "id": "zenmuse_rs3",
+        "name": "Ronin S3 Pro",
+        "weight": 1500,
+        "payload_g": 4500,
+        "link": "https://dji.com"
+      }
+    ]
+  }
 }
