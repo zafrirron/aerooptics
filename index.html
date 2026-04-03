@@ -540,13 +540,13 @@
                 const response = await fetch(DB_URL + '?t=' + new Date().getTime(), { cache: "no-store" });
                 if (!response.ok) throw new Error("JSON not found");
                 masterDB = await response.json(); presetGroups = masterDB.optics || {};
-                localStorage.setItem('AeroOptics_LocalDB', JSON.stringify(presetGroups));
+                localStorage.setItem('AeroOptics_MasterDB_v2', JSON.stringify(masterDB));
                 dbStatus.innerHTML = `<i class="fa-solid fa-cloud-check text-emerald-400"></i> <span class="text-emerald-400">Database Synced (${Object.values(presetGroups).flat().length} items)</span>`;
                 dbStatus.classList.replace('bg-slate-800/50', 'bg-emerald-500/10'); dbStatus.classList.add('border-emerald-500/30');
             } catch (error) {
                 console.warn("Could not fetch database.json (Check CORS or server status). Using local cache.");
-                const cachedDB = localStorage.getItem('AeroOptics_LocalDB');
-                masterDB = cachedDB ? JSON.parse(cachedDB) : fallbackDB; presetGroups = masterDB.optics || fallbackDB.optics || {};
+                const cachedDB = localStorage.getItem('AeroOptics_MasterDB_v2');
+                masterDB = cachedDB ? JSON.parse(cachedDB) : { optics: fallbackDB }; presetGroups = masterDB.optics || {};
                 dbStatus.innerHTML = `<i class="fa-solid fa-wifi text-amber-400"></i> <span class="text-amber-400">Offline Cache Mode (${Object.values(presetGroups).flat().length} items)</span>`;
                 dbStatus.classList.replace('bg-slate-800/50', 'bg-amber-500/10'); dbStatus.classList.add('border-amber-500/30');
             }
