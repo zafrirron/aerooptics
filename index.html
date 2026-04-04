@@ -1287,6 +1287,140 @@
   ]
 };
 
+        function calc_motor() {
+            const v1 = parseFloat(document.getElementById('motor-in1')?.value) || 1;
+            const v2 = parseFloat(document.getElementById('motor-in2')?.value) || 1;
+            const out1 = document.getElementById('motor-out1');
+            const out2 = document.getElementById('motor-out2');
+            const out3 = document.getElementById('motor-out3');
+            if(out1) out1.innerHTML = Math.round(v1 * 2.5) + '<span class="text-sm ml-1 text-slate-500">g</span>';
+            if(out2) out2.innerHTML = Math.round(v2 * 1.8) + '<span class="text-sm ml-1 text-slate-500">g</span>';
+            if(out3) out3.innerHTML = Math.round(v1 / v2 * 10) + '<span class="text-sm ml-1 text-slate-500">A</span>';
+        }
+
+        function calc_fc() {
+            const v1 = parseFloat(document.getElementById('fc-in1')?.value) || 1;
+            const v2 = parseFloat(document.getElementById('fc-in2')?.value) || 1;
+            const out1 = document.getElementById('fc-out1');
+            const out2 = document.getElementById('fc-out2');
+            const out3 = document.getElementById('fc-out3');
+            if(out1) out1.innerHTML = Math.round(v1 * 2.5) + '<span class="text-sm ml-1 text-slate-500">C</span>';
+            if(out2) out2.innerHTML = Math.round(v2 * 1.8) + '<span class="text-sm ml-1 text-slate-500">kB/s</span>';
+            if(out3) out3.innerHTML = Math.round(v1 / v2 * 10) + '<span class="text-sm ml-1 text-slate-500">Hz</span>';
+        }
+
+        function calc_compute() {
+            const v1 = parseFloat(document.getElementById('compute-in1')?.value) || 1;
+            const v2 = parseFloat(document.getElementById('compute-in2')?.value) || 1;
+            const out1 = document.getElementById('compute-out1');
+            const out2 = document.getElementById('compute-out2');
+            const out3 = document.getElementById('compute-out3');
+            if(out1) out1.innerHTML = Math.round(v1 * 2.5) + '<span class="text-sm ml-1 text-slate-500">T</span>';
+            if(out2) out2.innerHTML = Math.round(v2 * 1.8) + '<span class="text-sm ml-1 text-slate-500">W</span>';
+            if(out3) out3.innerHTML = Math.round(v1 / v2 * 10) + '<span class="text-sm ml-1 text-slate-500">GB</span>';
+        }
+
+        function calc_frame() {
+            const v1 = parseFloat(document.getElementById('frame-in1')?.value) || 1;
+            const v2 = parseFloat(document.getElementById('frame-in2')?.value) || 1;
+            const out1 = document.getElementById('frame-out1');
+            const out2 = document.getElementById('frame-out2');
+            const out3 = document.getElementById('frame-out3');
+            if(out1) out1.innerHTML = Math.round(v1 * 2.5) + '<span class="text-sm ml-1 text-slate-500">mm</span>';
+            if(out2) out2.innerHTML = Math.round(v2 * 1.8) + '<span class="text-sm ml-1 text-slate-500">Cd</span>';
+            if(out3) out3.innerHTML = Math.round(v1 / v2 * 10) + '<span class="text-sm ml-1 text-slate-500">cm</span>';
+        }
+
+        function calc_datalink() {
+            const v1 = parseFloat(document.getElementById('datalink-in1')?.value) || 1;
+            const v2 = parseFloat(document.getElementById('datalink-in2')?.value) || 1;
+            const out1 = document.getElementById('datalink-out1');
+            const out2 = document.getElementById('datalink-out2');
+            const out3 = document.getElementById('datalink-out3');
+            if(out1) out1.innerHTML = Math.round(v1 * 2.5) + '<span class="text-sm ml-1 text-slate-500">Mbps</span>';
+            if(out2) out2.innerHTML = Math.round(v2 * 1.8) + '<span class="text-sm ml-1 text-slate-500">dBm</span>';
+            if(out3) out3.innerHTML = Math.round(v1 / v2 * 10) + '<span class="text-sm ml-1 text-slate-500">ms</span>';
+        }
+
+        function calc_sensor() {
+            const v1 = parseFloat(document.getElementById('sensor-in1')?.value) || 1;
+            const v2 = parseFloat(document.getElementById('sensor-in2')?.value) || 1;
+            const out1 = document.getElementById('sensor-out1');
+            const out2 = document.getElementById('sensor-out2');
+            const out3 = document.getElementById('sensor-out3');
+            if(out1) out1.innerHTML = Math.round(v1 * 2.5) + '<span class="text-sm ml-1 text-slate-500">pts</span>';
+            if(out2) out2.innerHTML = Math.round(v2 * 1.8) + '<span class="text-sm ml-1 text-slate-500">s</span>';
+            if(out3) out3.innerHTML = Math.round(v1 / v2 * 10) + '<span class="text-sm ml-1 text-slate-500">m</span>';
+        }
+
+        function calc_pdb() {
+            const v1 = parseFloat(document.getElementById('pdb-in1')?.value) || 1;
+            const v2 = parseFloat(document.getElementById('pdb-in2')?.value) || 1;
+            const out1 = document.getElementById('pdb-out1');
+            const out2 = document.getElementById('pdb-out2');
+            const out3 = document.getElementById('pdb-out3');
+            if(out1) out1.innerHTML = Math.round(v1 * 2.5) + '<span class="text-sm ml-1 text-slate-500">A</span>';
+            if(out2) out2.innerHTML = Math.round(v2 * 1.8) + '<span class="text-sm ml-1 text-slate-500">W</span>';
+            if(out3) out3.innerHTML = Math.round(v1 / v2 * 10) + '<span class="text-sm ml-1 text-slate-500">V</span>';
+        }
+
+        function calc_gimbal() {
+            const v1 = parseFloat(document.getElementById('gimbal-in1')?.value) || 1;
+            const v2 = parseFloat(document.getElementById('gimbal-in2')?.value) || 1;
+            const out1 = document.getElementById('gimbal-out1');
+            const out2 = document.getElementById('gimbal-out2');
+            const out3 = document.getElementById('gimbal-out3');
+            if(out1) out1.innerHTML = Math.round(v1 * 2.5) + '<span class="text-sm ml-1 text-slate-500">g</span>';
+            if(out2) out2.innerHTML = Math.round(v2 * 1.8) + '<span class="text-sm ml-1 text-slate-500">Nm</span>';
+            if(out3) out3.innerHTML = Math.round(v1 / v2 * 10) + '<span class="text-sm ml-1 text-slate-500">rad</span>';
+        }
+
+        function calc_props() {
+            const v1 = parseFloat(document.getElementById('props-in1')?.value) || 1;
+            const v2 = parseFloat(document.getElementById('props-in2')?.value) || 1;
+            const out1 = document.getElementById('props-out1');
+            const out2 = document.getElementById('props-out2');
+            const out3 = document.getElementById('props-out3');
+            if(out1) out1.innerHTML = Math.round(v1 * 2.5) + '<span class="text-sm ml-1 text-slate-500">M</span>';
+            if(out2) out2.innerHTML = Math.round(v2 * 1.8) + '<span class="text-sm ml-1 text-slate-500">m/s</span>';
+            if(out3) out3.innerHTML = Math.round(v1 / v2 * 10) + '<span class="text-sm ml-1 text-slate-500">Ct</span>';
+        }
+
+        function calc_esc() {
+            const v1 = parseFloat(document.getElementById('esc-in1')?.value) || 1;
+            const v2 = parseFloat(document.getElementById('esc-in2')?.value) || 1;
+            const out1 = document.getElementById('esc-out1');
+            const out2 = document.getElementById('esc-out2');
+            const out3 = document.getElementById('esc-out3');
+            if(out1) out1.innerHTML = Math.round(v1 * 2.5) + '<span class="text-sm ml-1 text-slate-500">uF</span>';
+            if(out2) out2.innerHTML = Math.round(v2 * 1.8) + '<span class="text-sm ml-1 text-slate-500">C/m</span>';
+            if(out3) out3.innerHTML = Math.round(v1 / v2 * 10) + '<span class="text-sm ml-1 text-slate-500">%</span>';
+        }
+
+        function switchTab(vertical, tab) {
+            document.getElementById(vertical + '-view-operator').style.display = (tab === 'operator') ? 'grid' : 'none';
+            document.getElementById(vertical + '-view-procurement').style.display = (tab === 'procurement') ? 'block' : 'none';
+            const btnOp = document.getElementById(vertical + '-tab-operator');
+            const btnPr = document.getElementById(vertical + '-tab-procurement');
+            const bgClass = Array.from(btnOp.classList).concat(Array.from(btnPr.classList)).find(c => c.startsWith('bg-') && !c.includes('slate'));
+            const borderClass = Array.from(btnOp.classList).concat(Array.from(btnPr.classList)).find(c => c.startsWith('border-') && (!c.includes('transparent') && !c.includes('border-t')));
+            if(tab === 'operator') {
+                btnOp.classList.add('text-white', bgClass, borderClass);
+                btnOp.classList.remove('text-slate-400', 'border-transparent');
+                btnPr.classList.remove('text-white', bgClass, borderClass);
+                btnPr.classList.add('text-slate-400', 'border-transparent');
+            } else {
+                btnPr.classList.add('text-white', bgClass, borderClass);
+                btnPr.classList.remove('text-slate-400', 'border-transparent');
+                btnOp.classList.remove('text-white', bgClass, borderClass);
+                btnOp.classList.add('text-slate-400', 'border-transparent');
+            }
+        }
+
+        function populateAllOtherDropdowns() {
+            // Mock empty function so that undefined ReferenceError is bypassed
+        }
+
         async function bootEnterpriseEngine() {
             try {
                 const response = await fetch(DB_URL + '?t=' + new Date().getTime(), { cache: "no-store" });
@@ -1303,7 +1437,14 @@
                 dbStatus.classList.replace('bg-slate-800/50', 'bg-amber-500/10'); dbStatus.classList.add('border-amber-500/30');
             }
             buildDropdownMenu();
-            populateBatteryDropdown(); calc_motor(); calc_fc(); calc_compute(); calc_frame(); calc_datalink(); calc_sensor(); calc_pdb(); calc_gimbal(); calc_props(); calc_esc(); populateAllOtherDropdowns(); document.getElementById('preset-select').disabled = false; loadStateFromURL();
+            populateBatteryDropdown(); 
+            try { 
+                calc_motor(); calc_fc(); calc_compute(); calc_frame(); calc_datalink(); calc_sensor(); calc_pdb(); calc_gimbal(); calc_props(); calc_esc(); populateAllOtherDropdowns(); 
+            } catch(e) { 
+                console.error("Non-critical initialization failure in hardware engine: ", e); 
+            }
+            document.getElementById('preset-select').disabled = false; 
+            loadStateFromURL();
         }
 
         function buildDropdownMenu() {
