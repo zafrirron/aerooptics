@@ -8,6 +8,18 @@ AeroOptics Pro is a tactical operations engine calculating drone camera optics p
 - **Johnson's Criteria:** Real-time military standard recognition matrix.
 - **Instant Sharing:** Parameters naturally persist via URL parameters for instant shareability across mission planners.
 
+### Global Drone Discovery Sweep (Data Injection)
+
+The architecture is built upon a deterministic local JSON schema (`database.json`) capable of offline execution. However, to keep the hardware registries relevant, the suite supports a powerful natural-language discovery protocol.
+
+You can issue the command **"perform a Global Drone Discovery Sweep"** to the Antigravity Agent. This invokes a highly structured subroutines where the agent will:
+1. Search the open web for the latest enterprise and tactical drone hardware across all 10 hardware categories (Optics, Energy, Avionics, Airframes, Sensors, ESCs, Propellers, etc).
+2. Quantify manufacturer specifications into normalized SI units to match parametric constraints.
+3. Inject the products accurately into `database.json`.
+4. Validate UI logic to ensure no cache-desynchronization occurs.
+
+**Usage Constraint:** Always ensure you are on a robust connectivity link before triggering the sweep.
+
 ## Installation & GitHub Pages Setup
 
 This repository is inherently static and uses plain HTML, styled with TailwindCSS, requiring no build tools except standard web hosting.

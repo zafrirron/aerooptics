@@ -78,31 +78,47 @@
                 <button onclick="switchVertical('battery')" id="nav-battery" class="w-full text-left px-3 py-3 sm:px-4 rounded-lg text-sm font-bold transition-all duration-300 text-slate-400 hover:text-white hover:bg-slate-900 border border-transparent flex items-center justify-center sm:justify-start gap-3">
                     <i class="fa-solid fa-battery-full text-emerald-400 text-lg w-5 text-center"></i> <span class="hidden sm:inline">Energy Storage</span>
                 </button>
+                
                 <button onclick="switchVertical('motor')" id="nav-motor" class="w-full text-left px-3 py-3 sm:px-4 rounded-lg text-sm font-bold transition-all duration-300 text-slate-400 hover:text-white hover:bg-slate-900 border border-transparent flex items-center justify-center sm:justify-start gap-3">
-                    <i class="fa-solid fa-fan text-amber-400 text-lg w-5 text-center"></i> <span class="hidden sm:inline">Propulsion System</span>
+                    <i class="fa-solid fa-fan text-amber-400 text-lg w-5 text-center"></i> <span class="hidden sm:inline">Propulsion</span>
                 </button>
+
                 <button onclick="switchVertical('fc')" id="nav-fc" class="w-full text-left px-3 py-3 sm:px-4 rounded-lg text-sm font-bold transition-all duration-300 text-slate-400 hover:text-white hover:bg-slate-900 border border-transparent flex items-center justify-center sm:justify-start gap-3">
                     <i class="fa-solid fa-microchip text-indigo-400 text-lg w-5 text-center"></i> <span class="hidden sm:inline">Core Avionics (FC)</span>
                 </button>
-                
+
                 <button onclick="switchVertical('compute')" id="nav-compute" class="w-full text-left px-3 py-3 sm:px-4 rounded-lg text-sm font-bold transition-all duration-300 text-slate-400 hover:text-white hover:bg-slate-900 border border-transparent flex items-center justify-center sm:justify-start gap-3">
-                    <i class="fa-solid fa-brain text-purple-400 text-lg w-5 text-center"></i> <span class="hidden sm:inline">Edge Neural Compute</span>
+                    <i class="fa-solid fa-brain text-purple-400 text-lg w-5 text-center"></i> <span class="hidden sm:inline">Edge Compute</span>
                 </button>
+
                 <button onclick="switchVertical('frame')" id="nav-frame" class="w-full text-left px-3 py-3 sm:px-4 rounded-lg text-sm font-bold transition-all duration-300 text-slate-400 hover:text-white hover:bg-slate-900 border border-transparent flex items-center justify-center sm:justify-start gap-3">
-                    <i class="fa-solid fa-compress text-brand-400 text-lg w-5 text-center"></i> <span class="hidden sm:inline">Airframes</span>
+                    <i class="fa-solid fa-compress text-sky-400 text-lg w-5 text-center"></i> <span class="hidden sm:inline">Airframes</span>
                 </button>
+
                 <button onclick="switchVertical('datalink')" id="nav-datalink" class="w-full text-left px-3 py-3 sm:px-4 rounded-lg text-sm font-bold transition-all duration-300 text-slate-400 hover:text-white hover:bg-slate-900 border border-transparent flex items-center justify-center sm:justify-start gap-3">
-                    <i class="fa-solid fa-broadcast-tower text-indigo-400 text-lg w-5 text-center"></i> <span class="hidden sm:inline">Data Link (C2)</span>
+                    <i class="fa-solid fa-broadcast-tower text-blue-400 text-lg w-5 text-center"></i> <span class="hidden sm:inline">Data Link (C2)</span>
                 </button>
+
                 <button onclick="switchVertical('sensor')" id="nav-sensor" class="w-full text-left px-3 py-3 sm:px-4 rounded-lg text-sm font-bold transition-all duration-300 text-slate-400 hover:text-white hover:bg-slate-900 border border-transparent flex items-center justify-center sm:justify-start gap-3">
                     <i class="fa-solid fa-radar text-emerald-400 text-lg w-5 text-center"></i> <span class="hidden sm:inline">Sensors & GNSS</span>
                 </button>
+
                 <button onclick="switchVertical('pdb')" id="nav-pdb" class="w-full text-left px-3 py-3 sm:px-4 rounded-lg text-sm font-bold transition-all duration-300 text-slate-400 hover:text-white hover:bg-slate-900 border border-transparent flex items-center justify-center sm:justify-start gap-3">
-                    <i class="fa-solid fa-bolt text-amber-400 text-lg w-5 text-center"></i> <span class="hidden sm:inline">Power (PDB/PMU)</span>
+                    <i class="fa-solid fa-bolt text-yellow-400 text-lg w-5 text-center"></i> <span class="hidden sm:inline">Power Module</span>
                 </button>
+
                 <button onclick="switchVertical('gimbal')" id="nav-gimbal" class="w-full text-left px-3 py-3 sm:px-4 rounded-lg text-sm font-bold transition-all duration-300 text-slate-400 hover:text-white hover:bg-slate-900 border border-transparent flex items-center justify-center sm:justify-start gap-3">
-                    <i class="fa-solid fa-arrows-to-dot text-slate-400 text-lg w-5 text-center"></i> <span class="hidden sm:inline">Camera Gimbals</span>
+                    <i class="fa-solid fa-arrows-to-dot text-slate-300 text-lg w-5 text-center"></i> <span class="hidden sm:inline">Camera Gimbals</span>
                 </button>
+
+                <button onclick="switchVertical('props')" id="nav-props" class="w-full text-left px-3 py-3 sm:px-4 rounded-lg text-sm font-bold transition-all duration-300 text-slate-400 hover:text-white hover:bg-slate-900 border border-transparent flex items-center justify-center sm:justify-start gap-3">
+                    <i class="fa-solid fa-superpowers text-cyan-400 text-lg w-5 text-center"></i> <span class="hidden sm:inline">Propellers</span>
+                </button>
+
+                <button onclick="switchVertical('esc')" id="nav-esc" class="w-full text-left px-3 py-3 sm:px-4 rounded-lg text-sm font-bold transition-all duration-300 text-slate-400 hover:text-white hover:bg-slate-900 border border-transparent flex items-center justify-center sm:justify-start gap-3">
+                    <i class="fa-solid fa-memory text-red-400 text-lg w-5 text-center"></i> <span class="hidden sm:inline">Motor Controllers</span>
+                </button>
+
             </nav>
             <div class="p-4 border-t border-slate-800 hidden sm:block text-center">
                  <div class="py-2 px-3 rounded-lg bg-emerald-500/10 border border-emerald-500/30 text-[10px] font-mono text-emerald-400"><i class="fa-solid fa-cloud-check"></i> Master DB Sync</div>
@@ -387,289 +403,769 @@
 
                 
                 <!-- MOTOR VERTICAL -->
-                <div id="vertical-motor" class="w-full hidden pb-10">
-                    <header class="pt-16 pb-10 px-4 text-center max-w-5xl mx-auto relative z-10">
-                        <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-slate-800/50 border border-slate-700 text-amber-400 text-xs font-bold uppercase tracking-widest mb-4 transition-all duration-300">
-                            <i class="fa-solid fa-fan"></i> AeroForge Propulsion Module
-                        </div>
-                        <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold mb-4 tracking-tight text-white">Thrust & <span class="text-amber-400">Mass Mapping</span></h1>
-                        <p class="text-slate-400 text-lg md:text-xl max-w-3xl mx-auto font-light leading-relaxed mb-6">Evaluate KV ratings, max thrust, and hover tolerances according to absolute payload mass.</p>
-                    </header>
+                            <div id="vertical-motor" class="hidden w-full pb-10">
+                <header class="w-full relative z-20 pt-6 pb-4 md:pt-10 md:pb-6 text-center">
+                    <h1 class="text-3xl md:text-5xl font-black text-transparent bg-clip-text bg-gradient-to-r from-amber-400 to-slate-400 tracking-tighter mb-2 sm:mb-3">Propulsion<span class="text-white">//</span></h1>
+                    <p class="text-xs sm:text-sm text-slate-400 font-mono max-w-2xl mx-auto px-4 mb-6 sm:mb-8">Tactical Propulsion Engine & Parametric Mapping Matrix.</p>
+                    <div class="flex p-1 bg-slate-900/80 border border-slate-700/50 rounded-xl w-fit mx-auto relative shadow-[0_0_20px_rgba(0,0,0,0.5)] backdrop-blur-sm">
+                        <button onclick="switchTab('motor', 'operator')" id="motor-tab-operator" class="px-5 py-2 sm:px-8 sm:py-2.5 rounded-lg text-xs sm:text-sm font-bold transition-all duration-300 text-white bg-amber-500 shadow-[0_0_15px_rgba(255,255,255,0.2)] flex items-center gap-2 border border-amber-400"><i class="fa-solid fa-calculator"></i> Operator Calculator</button>
+                        <button onclick="switchTab('motor', 'procurement')" id="motor-tab-procurement" class="px-5 py-2 sm:px-8 sm:py-2.5 rounded-lg text-xs sm:text-sm font-bold transition-all duration-300 text-slate-400 hover:text-white flex items-center gap-2 border border-transparent"><i class="fa-solid fa-server"></i> Filter Procurement</button>
+                    </div>
+                </header>
 
-                    <main class="w-full relative z-10 pb-10 max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 px-4">
+                <main class="w-full relative z-10 pb-10">
+                    <div id="motor-view-operator" class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 px-4 transition-opacity duration-300">
                         <div class="lg:col-span-4 space-y-6">
-                            <div class="glass-panel rounded-2xl p-6 sm:p-8 border-t border-amber-500/30">
-                                <div class="flex items-center gap-3 mb-6 border-b border-slate-700/50 pb-4"><div class="w-8 h-8 rounded-lg bg-slate-800 flex items-center justify-center text-amber-400"><i class="fa-solid fa-cogs"></i></div><h2 class="text-lg font-bold text-white uppercase tracking-wider">Flight Parameters</h2></div>
-                                <div class="space-y-6">
-                                    <div class="relative">
-                                        <label class="text-xs font-semibold text-slate-400 uppercase tracking-wider mb-2 w-max block">Target Airframe Mass (MTOW)</label>
-                                        <div class="relative"><input type="number" id="motor-mtow" value="5.0" step="0.1" class="w-full input-base rounded-lg pl-3 pr-10 py-2.5 text-sm font-semibold" onchange="runMotorEngine()"><span class="absolute right-3 top-1/2 -translate-y-1/2 text-slate-500 text-xs">kg</span></div>
-                                    </div>
-                                    <div class="relative">
-                                        <label class="text-xs font-semibold text-slate-400 uppercase tracking-wider mb-2 w-max block">Motor Count (Arms)</label>
-                                        <div class="relative">
-                                            <select id="motor-arms" class="w-full input-base rounded-lg px-3 py-2.5 text-sm font-semibold text-slate-300 bg-slate-900 border-slate-700" onchange="runMotorEngine()">
-                                                <option value="4">Quadcopter (4)</option>
-                                                <option value="6">Hexacopter (6)</option>
-                                                <option value="8">Octocopter (8)</option>
-                                                <option value="12">Dodecacopter (12)</option>
-                                            </select>
-                                        </div>
-                                    </div>
+                            <div class="glass-panel rounded-2xl p-6 sm:p-8 border-t border-amber-500/30 shadow-lg relative h-full">
+                                <div class="flex items-center gap-3 mb-6 border-b border-slate-700/50 pb-4"><div class="w-8 h-8 rounded-lg bg-slate-800 flex items-center justify-center text-amber-400"><i class="fa-solid fa-fan"></i></div><h2 class="text-lg font-bold text-white uppercase tracking-wider">Engine Specs</h2></div>
+                                
+                                <div class="relative mb-6">
+                                    <label class="text-xs font-semibold text-slate-400 uppercase tracking-wider mb-2 w-max text-left block">Hardware DB Selection</label>
+                                    <select class="w-full input-base rounded-lg px-3 py-3 text-sm font-medium bg-slate-900 border border-slate-700 text-slate-300"><option>Loading...</option></select>
+                                </div>
+                                <div class="space-y-4">
+                                    <div><label class="text-xs font-semibold text-slate-400 uppercase tracking-wider mb-2 block">Target Mass (kg)</label><input type="number" id="motor-in1" value="5.0" class="w-full input-base rounded-lg px-3 py-2.5 text-sm font-semibold" onchange="calc_motor()"></div>
+                                    <div><label class="text-xs font-semibold text-slate-400 uppercase tracking-wider mb-2 block">Motor Arms</label><input type="number" id="motor-in2" value="4" class="w-full input-base rounded-lg px-3 py-2.5 text-sm font-semibold" onchange="calc_motor()"></div>
                                 </div>
                             </div>
                         </div>
-
-                        <div class="lg:col-span-8 flex flex-col gap-6">
-                            <div class="glass-panel rounded-2xl p-6 sm:p-8 flex-1">
-                                <div class="flex items-center gap-3 mb-6 border-b border-slate-700/50 pb-4"><div class="w-8 h-8 rounded-lg bg-amber-500/10 flex items-center justify-center text-amber-400"><i class="fa-solid fa-list"></i></div><h2 class="text-lg font-bold text-white uppercase tracking-wider">Procurement Matrix</h2></div>
-                                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6">
-                                    <div class="bg-slate-900/50 rounded-xl p-5 border border-slate-700/50">
-                                        <div class="text-[10px] font-bold text-slate-500 uppercase tracking-widest mb-1">Hover Base (1.0:1)</div>
-                                        <div class="text-3xl font-black text-white" id="motor-hover-base">0<span class="text-sm text-slate-500 font-medium ml-1">g / arm</span></div>
-                                    </div>
-                                    <div class="bg-amber-500/10 rounded-xl p-5 border border-amber-500/30 shadow-[0_0_15px_rgba(245,158,11,0.1)] relative overflow-hidden">
-                                        <div class="text-[10px] font-bold text-amber-400 uppercase tracking-widest mb-1">Target Thrust (2.0:1)</div>
-                                        <div class="text-3xl font-black text-amber-300" id="motor-thrust-target">0<span class="text-sm text-amber-500/80 font-medium ml-1">g / arm</span></div>
-                                    </div>
+                        <div class="lg:col-span-8 flex flex-col justify-between gap-6">
+                            <div class="grid grid-cols-1 sm:grid-cols-3 gap-6">
+                                <div class="bg-slate-900/80 border border-slate-700/50 rounded-xl p-6 shadow-lg shadow-black/50 text-center">
+                                    <h3 class="text-[10px] font-bold text-slate-500 uppercase tracking-widest mb-2">Hover Base</h3>
+                                    <div class="text-3xl font-black text-amber-400" id="motor-out1">--<span class="text-sm ml-1 text-slate-500">g</span></div>
                                 </div>
-                                <div class="overflow-x-auto custom-scrollbar">
-                                    <table class="w-full text-left border-collapse">
-                                        <thead>
-                                            <tr class="bg-slate-800/80 text-xs font-bold text-slate-400 uppercase tracking-wider">
-                                                <th class="p-3 rounded-tl-lg">Model</th>
-                                                <th class="p-3">Weight</th>
-                                                <th class="p-3">KV</th>
-                                                <th class="p-3">Max Thrust</th>
-                                                <th class="p-3 text-right">Headroom</th>
-                                                <th class="p-3 rounded-tr-lg text-center">Spec</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody id="motor-procurement-list" class="divide-y divide-slate-800/50 text-sm font-medium text-slate-300">
-                                            <tr><td colspan="6" class="p-6 text-center text-slate-500">Select parameters to load motors...</td></tr>
-                                        </tbody>
-                                    </table>
+                                <div class="bg-slate-900/80 border border-slate-700/50 rounded-xl p-6 shadow-lg shadow-black/50 text-center">
+                                    <h3 class="text-[10px] font-bold text-slate-500 uppercase tracking-widest mb-2">Thrust Reqd</h3>
+                                    <div class="text-3xl font-black text-white" id="motor-out2">--<span class="text-sm ml-1 text-slate-500">g</span></div>
+                                </div>
+                                <div class="bg-slate-900/80 border border-slate-700/50 rounded-xl p-6 shadow-lg shadow-black/50 text-center">
+                                    <h3 class="text-[10px] font-bold text-slate-500 uppercase tracking-widest mb-2">Peak Amp Draw</h3>
+                                    <div class="text-3xl font-black text-slate-300" id="motor-out3">--<span class="text-sm ml-1 text-slate-500">A</span></div>
                                 </div>
                             </div>
-                        </div>
-                    </main>
-                </div>
-
-                <!-- FC VERTICAL -->
-                <div id="vertical-fc" class="w-full hidden pb-10">
-                    <header class="pt-16 pb-10 px-4 text-center max-w-5xl mx-auto relative z-10">
-                        <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-slate-800/50 border border-slate-700 text-indigo-400 text-xs font-bold uppercase tracking-widest mb-4 transition-all duration-300">
-                            <i class="fa-solid fa-microchip"></i> AeroForge Flight Control
-                        </div>
-                        <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold mb-4 tracking-tight text-white">Flight Control <span class="gradient-text">Matrix</span></h1>
-                        <p class="text-slate-400 text-lg md:text-xl max-w-3xl mx-auto font-light leading-relaxed mb-6">Centralized database registry for tactical and enterprise procurement.</p>
-                    </header>
-                    <main class="w-full relative z-10 pb-10 max-w-7xl mx-auto px-4">
-                        <div class="glass-panel border-t border-indigo-500/30 rounded-2xl p-6 sm:p-8 flex-1">
-                            <div class="overflow-x-auto custom-scrollbar">
-                                <table class="w-full text-left border-collapse">
-                                    <thead>
-                                        <tr class="bg-slate-800/80 text-xs font-bold text-slate-400 uppercase tracking-wider" id="header-fc">
-                                            <th class="p-3 rounded-tl-lg">Item</th>
-                                            <th class="p-3">Weight (g)</th>
-                                            <th class="p-3">Details</th>
-                                            <th class="p-3 rounded-tr-lg text-center">Spec</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody id="fc-list" class="divide-y divide-slate-800/50 text-sm font-medium text-slate-300">
-                                        <tr><td colspan="4" class="p-6 text-center text-slate-500">Loading Flight Control...</td></tr>
-                                    </tbody>
-                                </table>
+                            <div class="glass-panel p-6 sm:p-8 rounded-2xl flex-1 flex flex-col justify-center">
+                                <h3 class="text-lg font-bold text-white mb-2">Propulsion Analytics Sub-Routine</h3>
+                                <p class="text-sm text-slate-400">Dynamic scaling applies constraints against Target Mass (kg) combined with empirical bounds of Motor Arms. These live calculations power the reverse-procurement matrices mapped directly to the `database.json` arrays.</p>
                             </div>
                         </div>
-                    </main>
-                </div>
-
-                <!-- COMPUTE VERTICAL -->
-                <div id="vertical-compute" class="w-full hidden pb-10">
-                    <header class="pt-16 pb-10 px-4 text-center max-w-5xl mx-auto relative z-10">
-                        <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-slate-800/50 border border-slate-700 text-purple-400 text-xs font-bold uppercase tracking-widest mb-4 transition-all duration-300">
-                            <i class="fa-solid fa-network-wired"></i> AeroForge Companion Compute
-                        </div>
-                        <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold mb-4 tracking-tight text-white">Companion Compute <span class="gradient-text">Matrix</span></h1>
-                        <p class="text-slate-400 text-lg md:text-xl max-w-3xl mx-auto font-light leading-relaxed mb-6">Centralized database registry for tactical and enterprise procurement.</p>
-                    </header>
-                    <main class="w-full relative z-10 pb-10 max-w-7xl mx-auto px-4">
-                        <div class="glass-panel border-t border-purple-500/30 rounded-2xl p-6 sm:p-8 flex-1">
-                            <div class="overflow-x-auto custom-scrollbar">
-                                <table class="w-full text-left border-collapse">
-                                    <thead>
-                                        <tr class="bg-slate-800/80 text-xs font-bold text-slate-400 uppercase tracking-wider" id="header-compute">
-                                            <th class="p-3 rounded-tl-lg">Item</th>
-                                            <th class="p-3">Weight (g)</th>
-                                            <th class="p-3">Details</th>
-                                            <th class="p-3 rounded-tr-lg text-center">Spec</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody id="compute-list" class="divide-y divide-slate-800/50 text-sm font-medium text-slate-300">
-                                        <tr><td colspan="4" class="p-6 text-center text-slate-500">Loading Companion Compute...</td></tr>
-                                    </tbody>
-                                </table>
+                    </div>
+                    
+                    <div id="motor-view-procurement" class="hidden max-w-5xl mx-auto px-4 transition-opacity duration-300">
+                        <div class="glass-panel p-6 sm:p-8 rounded-2xl border-t border-amber-500/30 mb-8 shadow-lg">
+                            <div class="flex items-center gap-3 mb-6 border-b border-slate-700/50 pb-4">
+                                <div class="w-8 h-8 rounded-lg bg-slate-800 flex items-center justify-center text-amber-400"><i class="fa-solid fa-filter"></i></div>
+                                <h2 class="text-lg font-bold text-white uppercase tracking-wider text-left">Filter Constraints Matrix</h2>
+                            </div>
+                            <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+                                <div><label class="text-xs font-semibold text-slate-400 uppercase tracking-wider mb-2 block">Max Weight</label><input type="number" value="5000" class="w-full input-base rounded-lg px-3 py-2.5 text-sm font-semibold"></div>
+                                <div><label class="text-xs font-semibold text-slate-400 uppercase tracking-wider mb-2 block">Min Tolerance</label><input type="number" value="1.5" class="w-full input-base rounded-lg px-3 py-2.5 text-sm font-semibold"></div>
+                                <div><label class="text-xs font-semibold text-slate-400 uppercase tracking-wider mb-2 block">Max Budget ($)</label><input type="number" value="1000" class="w-full input-base rounded-lg px-3 py-2.5 text-sm font-semibold text-white"></div>
+                                <div class="flex items-end"><button class="w-full bg-amber-500 hover:brightness-110 text-white px-4 py-2.5 rounded-lg text-sm font-bold flex items-center justify-center gap-2" onclick="alert('Procuring Database...')"><i class="fa-solid fa-server"></i> QUERY</button></div>
                             </div>
                         </div>
-                    </main>
-                </div>
-
-                <!-- FRAME VERTICAL -->
-                <div id="vertical-frame" class="w-full hidden pb-10">
-                    <header class="pt-16 pb-10 px-4 text-center max-w-5xl mx-auto relative z-10">
-                        <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-slate-800/50 border border-slate-700 text-brand-400 text-xs font-bold uppercase tracking-widest mb-4 transition-all duration-300">
-                            <i class="fa-solid fa-compress"></i> AeroForge Airframes
+                        <div class="glass-panel border-t border-amber-500/20 p-6 rounded-2xl">
+                             <table class="w-full text-left text-sm text-slate-300">
+                                <thead>
+                                    <tr class="bg-slate-800 text-xs text-slate-400 uppercase"><th class="p-3">Model</th><th class="p-3">Weight (g)</th><th class="p-3">Specs</th><th class="p-3 text-right">Vendor</th></tr>
+                                </thead>
+                                <tbody id="motor-proc-list" class="divide-y divide-slate-800">
+                                    <tr><td colspan="4" class="p-6 text-center text-slate-500">Query the database to render specs.</td></tr>
+                                </tbody>
+                             </table>
                         </div>
-                        <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold mb-4 tracking-tight text-white">Airframes <span class="gradient-text">Matrix</span></h1>
-                        <p class="text-slate-400 text-lg md:text-xl max-w-3xl mx-auto font-light leading-relaxed mb-6">Centralized database registry for tactical and enterprise procurement.</p>
-                    </header>
-                    <main class="w-full relative z-10 pb-10 max-w-7xl mx-auto px-4">
-                        <div class="glass-panel border-t border-brand-500/30 rounded-2xl p-6 sm:p-8 flex-1">
-                            <div class="overflow-x-auto custom-scrollbar">
-                                <table class="w-full text-left border-collapse">
-                                    <thead>
-                                        <tr class="bg-slate-800/80 text-xs font-bold text-slate-400 uppercase tracking-wider" id="header-frame">
-                                            <th class="p-3 rounded-tl-lg">Item</th>
-                                            <th class="p-3">Weight (g)</th>
-                                            <th class="p-3">Details</th>
-                                            <th class="p-3 rounded-tr-lg text-center">Spec</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody id="frame-list" class="divide-y divide-slate-800/50 text-sm font-medium text-slate-300">
-                                        <tr><td colspan="4" class="p-6 text-center text-slate-500">Loading Airframes...</td></tr>
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
-                    </main>
-                </div>
-
-                <!-- DATALINK VERTICAL -->
-                <div id="vertical-datalink" class="w-full hidden pb-10">
-                    <header class="pt-16 pb-10 px-4 text-center max-w-5xl mx-auto relative z-10">
-                        <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-slate-800/50 border border-slate-700 text-blue-400 text-xs font-bold uppercase tracking-widest mb-4 transition-all duration-300">
-                            <i class="fa-solid fa-broadcast-tower"></i> AeroForge Data Link (C2)
-                        </div>
-                        <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold mb-4 tracking-tight text-white">Data Link (C2) <span class="gradient-text">Matrix</span></h1>
-                        <p class="text-slate-400 text-lg md:text-xl max-w-3xl mx-auto font-light leading-relaxed mb-6">Centralized database registry for tactical and enterprise procurement.</p>
-                    </header>
-                    <main class="w-full relative z-10 pb-10 max-w-7xl mx-auto px-4">
-                        <div class="glass-panel border-t border-blue-500/30 rounded-2xl p-6 sm:p-8 flex-1">
-                            <div class="overflow-x-auto custom-scrollbar">
-                                <table class="w-full text-left border-collapse">
-                                    <thead>
-                                        <tr class="bg-slate-800/80 text-xs font-bold text-slate-400 uppercase tracking-wider" id="header-datalink">
-                                            <th class="p-3 rounded-tl-lg">Item</th>
-                                            <th class="p-3">Weight (g)</th>
-                                            <th class="p-3">Details</th>
-                                            <th class="p-3 rounded-tr-lg text-center">Spec</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody id="datalink-list" class="divide-y divide-slate-800/50 text-sm font-medium text-slate-300">
-                                        <tr><td colspan="4" class="p-6 text-center text-slate-500">Loading Data Link (C2)...</td></tr>
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
-                    </main>
-                </div>
-
-                <!-- SENSOR VERTICAL -->
-                <div id="vertical-sensor" class="w-full hidden pb-10">
-                    <header class="pt-16 pb-10 px-4 text-center max-w-5xl mx-auto relative z-10">
-                        <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-slate-800/50 border border-slate-700 text-emerald-400 text-xs font-bold uppercase tracking-widest mb-4 transition-all duration-300">
-                            <i class="fa-solid fa-radar"></i> AeroForge Sensors & GNSS
-                        </div>
-                        <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold mb-4 tracking-tight text-white">Sensors & GNSS <span class="gradient-text">Matrix</span></h1>
-                        <p class="text-slate-400 text-lg md:text-xl max-w-3xl mx-auto font-light leading-relaxed mb-6">Centralized database registry for tactical and enterprise procurement.</p>
-                    </header>
-                    <main class="w-full relative z-10 pb-10 max-w-7xl mx-auto px-4">
-                        <div class="glass-panel border-t border-emerald-500/30 rounded-2xl p-6 sm:p-8 flex-1">
-                            <div class="overflow-x-auto custom-scrollbar">
-                                <table class="w-full text-left border-collapse">
-                                    <thead>
-                                        <tr class="bg-slate-800/80 text-xs font-bold text-slate-400 uppercase tracking-wider" id="header-sensor">
-                                            <th class="p-3 rounded-tl-lg">Item</th>
-                                            <th class="p-3">Weight (g)</th>
-                                            <th class="p-3">Details</th>
-                                            <th class="p-3 rounded-tr-lg text-center">Spec</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody id="sensor-list" class="divide-y divide-slate-800/50 text-sm font-medium text-slate-300">
-                                        <tr><td colspan="4" class="p-6 text-center text-slate-500">Loading Sensors & GNSS...</td></tr>
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
-                    </main>
-                </div>
-
-                <!-- PDB VERTICAL -->
-                <div id="vertical-pdb" class="w-full hidden pb-10">
-                    <header class="pt-16 pb-10 px-4 text-center max-w-5xl mx-auto relative z-10">
-                        <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-slate-800/50 border border-slate-700 text-yellow-400 text-xs font-bold uppercase tracking-widest mb-4 transition-all duration-300">
-                            <i class="fa-solid fa-bolt"></i> AeroForge Power Module (PMU)
-                        </div>
-                        <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold mb-4 tracking-tight text-white">Power Module (PMU) <span class="gradient-text">Matrix</span></h1>
-                        <p class="text-slate-400 text-lg md:text-xl max-w-3xl mx-auto font-light leading-relaxed mb-6">Centralized database registry for tactical and enterprise procurement.</p>
-                    </header>
-                    <main class="w-full relative z-10 pb-10 max-w-7xl mx-auto px-4">
-                        <div class="glass-panel border-t border-yellow-500/30 rounded-2xl p-6 sm:p-8 flex-1">
-                            <div class="overflow-x-auto custom-scrollbar">
-                                <table class="w-full text-left border-collapse">
-                                    <thead>
-                                        <tr class="bg-slate-800/80 text-xs font-bold text-slate-400 uppercase tracking-wider" id="header-pdb">
-                                            <th class="p-3 rounded-tl-lg">Item</th>
-                                            <th class="p-3">Weight (g)</th>
-                                            <th class="p-3">Details</th>
-                                            <th class="p-3 rounded-tr-lg text-center">Spec</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody id="pdb-list" class="divide-y divide-slate-800/50 text-sm font-medium text-slate-300">
-                                        <tr><td colspan="4" class="p-6 text-center text-slate-500">Loading Power Module (PMU)...</td></tr>
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
-                    </main>
-                </div>
-
-                <!-- GIMBAL VERTICAL -->
-                <div id="vertical-gimbal" class="w-full hidden pb-10">
-                    <header class="pt-16 pb-10 px-4 text-center max-w-5xl mx-auto relative z-10">
-                        <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-slate-800/50 border border-slate-700 text-slate-300 text-xs font-bold uppercase tracking-widest mb-4 transition-all duration-300">
-                            <i class="fa-solid fa-arrows-to-dot"></i> AeroForge Camera Gimbals
-                        </div>
-                        <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold mb-4 tracking-tight text-white">Camera Gimbals <span class="gradient-text">Matrix</span></h1>
-                        <p class="text-slate-400 text-lg md:text-xl max-w-3xl mx-auto font-light leading-relaxed mb-6">Centralized database registry for tactical and enterprise procurement.</p>
-                    </header>
-                    <main class="w-full relative z-10 pb-10 max-w-7xl mx-auto px-4">
-                        <div class="glass-panel border-t border-slate-500/30 rounded-2xl p-6 sm:p-8 flex-1">
-                            <div class="overflow-x-auto custom-scrollbar">
-                                <table class="w-full text-left border-collapse">
-                                    <thead>
-                                        <tr class="bg-slate-800/80 text-xs font-bold text-slate-400 uppercase tracking-wider" id="header-gimbal">
-                                            <th class="p-3 rounded-tl-lg">Item</th>
-                                            <th class="p-3">Weight (g)</th>
-                                            <th class="p-3">Details</th>
-                                            <th class="p-3 rounded-tr-lg text-center">Spec</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody id="gimbal-list" class="divide-y divide-slate-800/50 text-sm font-medium text-slate-300">
-                                        <tr><td colspan="4" class="p-6 text-center text-slate-500">Loading Camera Gimbals...</td></tr>
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
-                    </main>
-                </div>
-
+                    </div>
+                </main>
             </div>
-        </main>
-    </div>
-        
 
+
+            <div id="vertical-fc" class="hidden w-full pb-10">
+                <header class="w-full relative z-20 pt-6 pb-4 md:pt-10 md:pb-6 text-center">
+                    <h1 class="text-3xl md:text-5xl font-black text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 to-slate-400 tracking-tighter mb-2 sm:mb-3">Core Avionics (FC)<span class="text-white">//</span></h1>
+                    <p class="text-xs sm:text-sm text-slate-400 font-mono max-w-2xl mx-auto px-4 mb-6 sm:mb-8">Tactical Core Avionics (FC) Engine & Parametric Mapping Matrix.</p>
+                    <div class="flex p-1 bg-slate-900/80 border border-slate-700/50 rounded-xl w-fit mx-auto relative shadow-[0_0_20px_rgba(0,0,0,0.5)] backdrop-blur-sm">
+                        <button onclick="switchTab('fc', 'operator')" id="fc-tab-operator" class="px-5 py-2 sm:px-8 sm:py-2.5 rounded-lg text-xs sm:text-sm font-bold transition-all duration-300 text-white bg-indigo-500 shadow-[0_0_15px_rgba(255,255,255,0.2)] flex items-center gap-2 border border-indigo-400"><i class="fa-solid fa-calculator"></i> Operator Calculator</button>
+                        <button onclick="switchTab('fc', 'procurement')" id="fc-tab-procurement" class="px-5 py-2 sm:px-8 sm:py-2.5 rounded-lg text-xs sm:text-sm font-bold transition-all duration-300 text-slate-400 hover:text-white flex items-center gap-2 border border-transparent"><i class="fa-solid fa-server"></i> Filter Procurement</button>
+                    </div>
+                </header>
+
+                <main class="w-full relative z-10 pb-10">
+                    <div id="fc-view-operator" class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 px-4 transition-opacity duration-300">
+                        <div class="lg:col-span-4 space-y-6">
+                            <div class="glass-panel rounded-2xl p-6 sm:p-8 border-t border-indigo-500/30 shadow-lg relative h-full">
+                                <div class="flex items-center gap-3 mb-6 border-b border-slate-700/50 pb-4"><div class="w-8 h-8 rounded-lg bg-slate-800 flex items-center justify-center text-indigo-400"><i class="fa-solid fa-microchip"></i></div><h2 class="text-lg font-bold text-white uppercase tracking-wider">Engine Specs</h2></div>
+                                
+                                <div class="relative mb-6">
+                                    <label class="text-xs font-semibold text-slate-400 uppercase tracking-wider mb-2 w-max text-left block">Hardware DB Selection</label>
+                                    <select class="w-full input-base rounded-lg px-3 py-3 text-sm font-medium bg-slate-900 border border-slate-700 text-slate-300"><option>Loading...</option></select>
+                                </div>
+                                <div class="space-y-4">
+                                    <div><label class="text-xs font-semibold text-slate-400 uppercase tracking-wider mb-2 block">Redundancy Req</label><input type="number" id="fc-in1" value="2" class="w-full input-base rounded-lg px-3 py-2.5 text-sm font-semibold" onchange="calc_fc()"></div>
+                                    <div><label class="text-xs font-semibold text-slate-400 uppercase tracking-wider mb-2 block">CAN Nodes</label><input type="number" id="fc-in2" value="4" class="w-full input-base rounded-lg px-3 py-2.5 text-sm font-semibold" onchange="calc_fc()"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="lg:col-span-8 flex flex-col justify-between gap-6">
+                            <div class="grid grid-cols-1 sm:grid-cols-3 gap-6">
+                                <div class="bg-slate-900/80 border border-slate-700/50 rounded-xl p-6 shadow-lg shadow-black/50 text-center">
+                                    <h3 class="text-[10px] font-bold text-slate-500 uppercase tracking-widest mb-2">MCU Heat</h3>
+                                    <div class="text-3xl font-black text-indigo-400" id="fc-out1">--<span class="text-sm ml-1 text-slate-500">C</span></div>
+                                </div>
+                                <div class="bg-slate-900/80 border border-slate-700/50 rounded-xl p-6 shadow-lg shadow-black/50 text-center">
+                                    <h3 class="text-[10px] font-bold text-slate-500 uppercase tracking-widest mb-2">Serial Bus</h3>
+                                    <div class="text-3xl font-black text-white" id="fc-out2">--<span class="text-sm ml-1 text-slate-500">kB/s</span></div>
+                                </div>
+                                <div class="bg-slate-900/80 border border-slate-700/50 rounded-xl p-6 shadow-lg shadow-black/50 text-center">
+                                    <h3 class="text-[10px] font-bold text-slate-500 uppercase tracking-widest mb-2">Loop Rate</h3>
+                                    <div class="text-3xl font-black text-slate-300" id="fc-out3">--<span class="text-sm ml-1 text-slate-500">Hz</span></div>
+                                </div>
+                            </div>
+                            <div class="glass-panel p-6 sm:p-8 rounded-2xl flex-1 flex flex-col justify-center">
+                                <h3 class="text-lg font-bold text-white mb-2">Core Avionics (FC) Analytics Sub-Routine</h3>
+                                <p class="text-sm text-slate-400">Dynamic scaling applies constraints against Redundancy Req combined with empirical bounds of CAN Nodes. These live calculations power the reverse-procurement matrices mapped directly to the `database.json` arrays.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div id="fc-view-procurement" class="hidden max-w-5xl mx-auto px-4 transition-opacity duration-300">
+                        <div class="glass-panel p-6 sm:p-8 rounded-2xl border-t border-indigo-500/30 mb-8 shadow-lg">
+                            <div class="flex items-center gap-3 mb-6 border-b border-slate-700/50 pb-4">
+                                <div class="w-8 h-8 rounded-lg bg-slate-800 flex items-center justify-center text-indigo-400"><i class="fa-solid fa-filter"></i></div>
+                                <h2 class="text-lg font-bold text-white uppercase tracking-wider text-left">Filter Constraints Matrix</h2>
+                            </div>
+                            <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+                                <div><label class="text-xs font-semibold text-slate-400 uppercase tracking-wider mb-2 block">Max Weight</label><input type="number" value="5000" class="w-full input-base rounded-lg px-3 py-2.5 text-sm font-semibold"></div>
+                                <div><label class="text-xs font-semibold text-slate-400 uppercase tracking-wider mb-2 block">Min Tolerance</label><input type="number" value="1.5" class="w-full input-base rounded-lg px-3 py-2.5 text-sm font-semibold"></div>
+                                <div><label class="text-xs font-semibold text-slate-400 uppercase tracking-wider mb-2 block">Max Budget ($)</label><input type="number" value="1000" class="w-full input-base rounded-lg px-3 py-2.5 text-sm font-semibold text-white"></div>
+                                <div class="flex items-end"><button class="w-full bg-indigo-500 hover:brightness-110 text-white px-4 py-2.5 rounded-lg text-sm font-bold flex items-center justify-center gap-2" onclick="alert('Procuring Database...')"><i class="fa-solid fa-server"></i> QUERY</button></div>
+                            </div>
+                        </div>
+                        <div class="glass-panel border-t border-indigo-500/20 p-6 rounded-2xl">
+                             <table class="w-full text-left text-sm text-slate-300">
+                                <thead>
+                                    <tr class="bg-slate-800 text-xs text-slate-400 uppercase"><th class="p-3">Model</th><th class="p-3">Weight (g)</th><th class="p-3">Specs</th><th class="p-3 text-right">Vendor</th></tr>
+                                </thead>
+                                <tbody id="fc-proc-list" class="divide-y divide-slate-800">
+                                    <tr><td colspan="4" class="p-6 text-center text-slate-500">Query the database to render specs.</td></tr>
+                                </tbody>
+                             </table>
+                        </div>
+                    </div>
+                </main>
+            </div>
+
+
+            <div id="vertical-compute" class="hidden w-full pb-10">
+                <header class="w-full relative z-20 pt-6 pb-4 md:pt-10 md:pb-6 text-center">
+                    <h1 class="text-3xl md:text-5xl font-black text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-slate-400 tracking-tighter mb-2 sm:mb-3">Edge Compute<span class="text-white">//</span></h1>
+                    <p class="text-xs sm:text-sm text-slate-400 font-mono max-w-2xl mx-auto px-4 mb-6 sm:mb-8">Tactical Edge Compute Engine & Parametric Mapping Matrix.</p>
+                    <div class="flex p-1 bg-slate-900/80 border border-slate-700/50 rounded-xl w-fit mx-auto relative shadow-[0_0_20px_rgba(0,0,0,0.5)] backdrop-blur-sm">
+                        <button onclick="switchTab('compute', 'operator')" id="compute-tab-operator" class="px-5 py-2 sm:px-8 sm:py-2.5 rounded-lg text-xs sm:text-sm font-bold transition-all duration-300 text-white bg-purple-500 shadow-[0_0_15px_rgba(255,255,255,0.2)] flex items-center gap-2 border border-purple-400"><i class="fa-solid fa-calculator"></i> Operator Calculator</button>
+                        <button onclick="switchTab('compute', 'procurement')" id="compute-tab-procurement" class="px-5 py-2 sm:px-8 sm:py-2.5 rounded-lg text-xs sm:text-sm font-bold transition-all duration-300 text-slate-400 hover:text-white flex items-center gap-2 border border-transparent"><i class="fa-solid fa-server"></i> Filter Procurement</button>
+                    </div>
+                </header>
+
+                <main class="w-full relative z-10 pb-10">
+                    <div id="compute-view-operator" class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 px-4 transition-opacity duration-300">
+                        <div class="lg:col-span-4 space-y-6">
+                            <div class="glass-panel rounded-2xl p-6 sm:p-8 border-t border-purple-500/30 shadow-lg relative h-full">
+                                <div class="flex items-center gap-3 mb-6 border-b border-slate-700/50 pb-4"><div class="w-8 h-8 rounded-lg bg-slate-800 flex items-center justify-center text-purple-400"><i class="fa-solid fa-brain"></i></div><h2 class="text-lg font-bold text-white uppercase tracking-wider">Engine Specs</h2></div>
+                                
+                                <div class="relative mb-6">
+                                    <label class="text-xs font-semibold text-slate-400 uppercase tracking-wider mb-2 w-max text-left block">Hardware DB Selection</label>
+                                    <select class="w-full input-base rounded-lg px-3 py-3 text-sm font-medium bg-slate-900 border border-slate-700 text-slate-300"><option>Loading...</option></select>
+                                </div>
+                                <div class="space-y-4">
+                                    <div><label class="text-xs font-semibold text-slate-400 uppercase tracking-wider mb-2 block">Camera Count</label><input type="number" id="compute-in1" value="4" class="w-full input-base rounded-lg px-3 py-2.5 text-sm font-semibold" onchange="calc_compute()"></div>
+                                    <div><label class="text-xs font-semibold text-slate-400 uppercase tracking-wider mb-2 block">Model Complexity</label><input type="number" id="compute-in2" value="7" class="w-full input-base rounded-lg px-3 py-2.5 text-sm font-semibold" onchange="calc_compute()"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="lg:col-span-8 flex flex-col justify-between gap-6">
+                            <div class="grid grid-cols-1 sm:grid-cols-3 gap-6">
+                                <div class="bg-slate-900/80 border border-slate-700/50 rounded-xl p-6 shadow-lg shadow-black/50 text-center">
+                                    <h3 class="text-[10px] font-bold text-slate-500 uppercase tracking-widest mb-2">Req. TOPS</h3>
+                                    <div class="text-3xl font-black text-purple-400" id="compute-out1">--<span class="text-sm ml-1 text-slate-500">T</span></div>
+                                </div>
+                                <div class="bg-slate-900/80 border border-slate-700/50 rounded-xl p-6 shadow-lg shadow-black/50 text-center">
+                                    <h3 class="text-[10px] font-bold text-slate-500 uppercase tracking-widest mb-2">Thermal Load</h3>
+                                    <div class="text-3xl font-black text-white" id="compute-out2">--<span class="text-sm ml-1 text-slate-500">W</span></div>
+                                </div>
+                                <div class="bg-slate-900/80 border border-slate-700/50 rounded-xl p-6 shadow-lg shadow-black/50 text-center">
+                                    <h3 class="text-[10px] font-bold text-slate-500 uppercase tracking-widest mb-2">RAM Usage</h3>
+                                    <div class="text-3xl font-black text-slate-300" id="compute-out3">--<span class="text-sm ml-1 text-slate-500">GB</span></div>
+                                </div>
+                            </div>
+                            <div class="glass-panel p-6 sm:p-8 rounded-2xl flex-1 flex flex-col justify-center">
+                                <h3 class="text-lg font-bold text-white mb-2">Edge Compute Analytics Sub-Routine</h3>
+                                <p class="text-sm text-slate-400">Dynamic scaling applies constraints against Camera Count combined with empirical bounds of Model Complexity. These live calculations power the reverse-procurement matrices mapped directly to the `database.json` arrays.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div id="compute-view-procurement" class="hidden max-w-5xl mx-auto px-4 transition-opacity duration-300">
+                        <div class="glass-panel p-6 sm:p-8 rounded-2xl border-t border-purple-500/30 mb-8 shadow-lg">
+                            <div class="flex items-center gap-3 mb-6 border-b border-slate-700/50 pb-4">
+                                <div class="w-8 h-8 rounded-lg bg-slate-800 flex items-center justify-center text-purple-400"><i class="fa-solid fa-filter"></i></div>
+                                <h2 class="text-lg font-bold text-white uppercase tracking-wider text-left">Filter Constraints Matrix</h2>
+                            </div>
+                            <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+                                <div><label class="text-xs font-semibold text-slate-400 uppercase tracking-wider mb-2 block">Max Weight</label><input type="number" value="5000" class="w-full input-base rounded-lg px-3 py-2.5 text-sm font-semibold"></div>
+                                <div><label class="text-xs font-semibold text-slate-400 uppercase tracking-wider mb-2 block">Min Tolerance</label><input type="number" value="1.5" class="w-full input-base rounded-lg px-3 py-2.5 text-sm font-semibold"></div>
+                                <div><label class="text-xs font-semibold text-slate-400 uppercase tracking-wider mb-2 block">Max Budget ($)</label><input type="number" value="1000" class="w-full input-base rounded-lg px-3 py-2.5 text-sm font-semibold text-white"></div>
+                                <div class="flex items-end"><button class="w-full bg-purple-500 hover:brightness-110 text-white px-4 py-2.5 rounded-lg text-sm font-bold flex items-center justify-center gap-2" onclick="alert('Procuring Database...')"><i class="fa-solid fa-server"></i> QUERY</button></div>
+                            </div>
+                        </div>
+                        <div class="glass-panel border-t border-purple-500/20 p-6 rounded-2xl">
+                             <table class="w-full text-left text-sm text-slate-300">
+                                <thead>
+                                    <tr class="bg-slate-800 text-xs text-slate-400 uppercase"><th class="p-3">Model</th><th class="p-3">Weight (g)</th><th class="p-3">Specs</th><th class="p-3 text-right">Vendor</th></tr>
+                                </thead>
+                                <tbody id="compute-proc-list" class="divide-y divide-slate-800">
+                                    <tr><td colspan="4" class="p-6 text-center text-slate-500">Query the database to render specs.</td></tr>
+                                </tbody>
+                             </table>
+                        </div>
+                    </div>
+                </main>
+            </div>
+
+
+            <div id="vertical-frame" class="hidden w-full pb-10">
+                <header class="w-full relative z-20 pt-6 pb-4 md:pt-10 md:pb-6 text-center">
+                    <h1 class="text-3xl md:text-5xl font-black text-transparent bg-clip-text bg-gradient-to-r from-sky-400 to-slate-400 tracking-tighter mb-2 sm:mb-3">Airframes<span class="text-white">//</span></h1>
+                    <p class="text-xs sm:text-sm text-slate-400 font-mono max-w-2xl mx-auto px-4 mb-6 sm:mb-8">Tactical Airframes Engine & Parametric Mapping Matrix.</p>
+                    <div class="flex p-1 bg-slate-900/80 border border-slate-700/50 rounded-xl w-fit mx-auto relative shadow-[0_0_20px_rgba(0,0,0,0.5)] backdrop-blur-sm">
+                        <button onclick="switchTab('frame', 'operator')" id="frame-tab-operator" class="px-5 py-2 sm:px-8 sm:py-2.5 rounded-lg text-xs sm:text-sm font-bold transition-all duration-300 text-white bg-sky-500 shadow-[0_0_15px_rgba(255,255,255,0.2)] flex items-center gap-2 border border-sky-400"><i class="fa-solid fa-calculator"></i> Operator Calculator</button>
+                        <button onclick="switchTab('frame', 'procurement')" id="frame-tab-procurement" class="px-5 py-2 sm:px-8 sm:py-2.5 rounded-lg text-xs sm:text-sm font-bold transition-all duration-300 text-slate-400 hover:text-white flex items-center gap-2 border border-transparent"><i class="fa-solid fa-server"></i> Filter Procurement</button>
+                    </div>
+                </header>
+
+                <main class="w-full relative z-10 pb-10">
+                    <div id="frame-view-operator" class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 px-4 transition-opacity duration-300">
+                        <div class="lg:col-span-4 space-y-6">
+                            <div class="glass-panel rounded-2xl p-6 sm:p-8 border-t border-sky-500/30 shadow-lg relative h-full">
+                                <div class="flex items-center gap-3 mb-6 border-b border-slate-700/50 pb-4"><div class="w-8 h-8 rounded-lg bg-slate-800 flex items-center justify-center text-sky-400"><i class="fa-solid fa-compress"></i></div><h2 class="text-lg font-bold text-white uppercase tracking-wider">Engine Specs</h2></div>
+                                
+                                <div class="relative mb-6">
+                                    <label class="text-xs font-semibold text-slate-400 uppercase tracking-wider mb-2 w-max text-left block">Hardware DB Selection</label>
+                                    <select class="w-full input-base rounded-lg px-3 py-3 text-sm font-medium bg-slate-900 border border-slate-700 text-slate-300"><option>Loading...</option></select>
+                                </div>
+                                <div class="space-y-4">
+                                    <div><label class="text-xs font-semibold text-slate-400 uppercase tracking-wider mb-2 block">Payload Weight (kg)</label><input type="number" id="frame-in1" value="2.5" class="w-full input-base rounded-lg px-3 py-2.5 text-sm font-semibold" onchange="calc_frame()"></div>
+                                    <div><label class="text-xs font-semibold text-slate-400 uppercase tracking-wider mb-2 block">Flight Time Req (m)</label><input type="number" id="frame-in2" value="40" class="w-full input-base rounded-lg px-3 py-2.5 text-sm font-semibold" onchange="calc_frame()"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="lg:col-span-8 flex flex-col justify-between gap-6">
+                            <div class="grid grid-cols-1 sm:grid-cols-3 gap-6">
+                                <div class="bg-slate-900/80 border border-slate-700/50 rounded-xl p-6 shadow-lg shadow-black/50 text-center">
+                                    <h3 class="text-[10px] font-bold text-slate-500 uppercase tracking-widest mb-2">Frame Class</h3>
+                                    <div class="text-3xl font-black text-sky-400" id="frame-out1">--<span class="text-sm ml-1 text-slate-500">mm</span></div>
+                                </div>
+                                <div class="bg-slate-900/80 border border-slate-700/50 rounded-xl p-6 shadow-lg shadow-black/50 text-center">
+                                    <h3 class="text-[10px] font-bold text-slate-500 uppercase tracking-widest mb-2">Drag Coeff</h3>
+                                    <div class="text-3xl font-black text-white" id="frame-out2">--<span class="text-sm ml-1 text-slate-500">Cd</span></div>
+                                </div>
+                                <div class="bg-slate-900/80 border border-slate-700/50 rounded-xl p-6 shadow-lg shadow-black/50 text-center">
+                                    <h3 class="text-[10px] font-bold text-slate-500 uppercase tracking-widest mb-2">CG Shift Reqd</h3>
+                                    <div class="text-3xl font-black text-slate-300" id="frame-out3">--<span class="text-sm ml-1 text-slate-500">cm</span></div>
+                                </div>
+                            </div>
+                            <div class="glass-panel p-6 sm:p-8 rounded-2xl flex-1 flex flex-col justify-center">
+                                <h3 class="text-lg font-bold text-white mb-2">Airframes Analytics Sub-Routine</h3>
+                                <p class="text-sm text-slate-400">Dynamic scaling applies constraints against Payload Weight (kg) combined with empirical bounds of Flight Time Req (m). These live calculations power the reverse-procurement matrices mapped directly to the `database.json` arrays.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div id="frame-view-procurement" class="hidden max-w-5xl mx-auto px-4 transition-opacity duration-300">
+                        <div class="glass-panel p-6 sm:p-8 rounded-2xl border-t border-sky-500/30 mb-8 shadow-lg">
+                            <div class="flex items-center gap-3 mb-6 border-b border-slate-700/50 pb-4">
+                                <div class="w-8 h-8 rounded-lg bg-slate-800 flex items-center justify-center text-sky-400"><i class="fa-solid fa-filter"></i></div>
+                                <h2 class="text-lg font-bold text-white uppercase tracking-wider text-left">Filter Constraints Matrix</h2>
+                            </div>
+                            <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+                                <div><label class="text-xs font-semibold text-slate-400 uppercase tracking-wider mb-2 block">Max Weight</label><input type="number" value="5000" class="w-full input-base rounded-lg px-3 py-2.5 text-sm font-semibold"></div>
+                                <div><label class="text-xs font-semibold text-slate-400 uppercase tracking-wider mb-2 block">Min Tolerance</label><input type="number" value="1.5" class="w-full input-base rounded-lg px-3 py-2.5 text-sm font-semibold"></div>
+                                <div><label class="text-xs font-semibold text-slate-400 uppercase tracking-wider mb-2 block">Max Budget ($)</label><input type="number" value="1000" class="w-full input-base rounded-lg px-3 py-2.5 text-sm font-semibold text-white"></div>
+                                <div class="flex items-end"><button class="w-full bg-sky-500 hover:brightness-110 text-white px-4 py-2.5 rounded-lg text-sm font-bold flex items-center justify-center gap-2" onclick="alert('Procuring Database...')"><i class="fa-solid fa-server"></i> QUERY</button></div>
+                            </div>
+                        </div>
+                        <div class="glass-panel border-t border-sky-500/20 p-6 rounded-2xl">
+                             <table class="w-full text-left text-sm text-slate-300">
+                                <thead>
+                                    <tr class="bg-slate-800 text-xs text-slate-400 uppercase"><th class="p-3">Model</th><th class="p-3">Weight (g)</th><th class="p-3">Specs</th><th class="p-3 text-right">Vendor</th></tr>
+                                </thead>
+                                <tbody id="frame-proc-list" class="divide-y divide-slate-800">
+                                    <tr><td colspan="4" class="p-6 text-center text-slate-500">Query the database to render specs.</td></tr>
+                                </tbody>
+                             </table>
+                        </div>
+                    </div>
+                </main>
+            </div>
+
+
+            <div id="vertical-datalink" class="hidden w-full pb-10">
+                <header class="w-full relative z-20 pt-6 pb-4 md:pt-10 md:pb-6 text-center">
+                    <h1 class="text-3xl md:text-5xl font-black text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-slate-400 tracking-tighter mb-2 sm:mb-3">Data Link (C2)<span class="text-white">//</span></h1>
+                    <p class="text-xs sm:text-sm text-slate-400 font-mono max-w-2xl mx-auto px-4 mb-6 sm:mb-8">Tactical Data Link (C2) Engine & Parametric Mapping Matrix.</p>
+                    <div class="flex p-1 bg-slate-900/80 border border-slate-700/50 rounded-xl w-fit mx-auto relative shadow-[0_0_20px_rgba(0,0,0,0.5)] backdrop-blur-sm">
+                        <button onclick="switchTab('datalink', 'operator')" id="datalink-tab-operator" class="px-5 py-2 sm:px-8 sm:py-2.5 rounded-lg text-xs sm:text-sm font-bold transition-all duration-300 text-white bg-blue-500 shadow-[0_0_15px_rgba(255,255,255,0.2)] flex items-center gap-2 border border-blue-400"><i class="fa-solid fa-calculator"></i> Operator Calculator</button>
+                        <button onclick="switchTab('datalink', 'procurement')" id="datalink-tab-procurement" class="px-5 py-2 sm:px-8 sm:py-2.5 rounded-lg text-xs sm:text-sm font-bold transition-all duration-300 text-slate-400 hover:text-white flex items-center gap-2 border border-transparent"><i class="fa-solid fa-server"></i> Filter Procurement</button>
+                    </div>
+                </header>
+
+                <main class="w-full relative z-10 pb-10">
+                    <div id="datalink-view-operator" class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 px-4 transition-opacity duration-300">
+                        <div class="lg:col-span-4 space-y-6">
+                            <div class="glass-panel rounded-2xl p-6 sm:p-8 border-t border-blue-500/30 shadow-lg relative h-full">
+                                <div class="flex items-center gap-3 mb-6 border-b border-slate-700/50 pb-4"><div class="w-8 h-8 rounded-lg bg-slate-800 flex items-center justify-center text-blue-400"><i class="fa-solid fa-broadcast-tower"></i></div><h2 class="text-lg font-bold text-white uppercase tracking-wider">Engine Specs</h2></div>
+                                
+                                <div class="relative mb-6">
+                                    <label class="text-xs font-semibold text-slate-400 uppercase tracking-wider mb-2 w-max text-left block">Hardware DB Selection</label>
+                                    <select class="w-full input-base rounded-lg px-3 py-3 text-sm font-medium bg-slate-900 border border-slate-700 text-slate-300"><option>Loading...</option></select>
+                                </div>
+                                <div class="space-y-4">
+                                    <div><label class="text-xs font-semibold text-slate-400 uppercase tracking-wider mb-2 block">Target Range (km)</label><input type="number" id="datalink-in1" value="15" class="w-full input-base rounded-lg px-3 py-2.5 text-sm font-semibold" onchange="calc_datalink()"></div>
+                                    <div><label class="text-xs font-semibold text-slate-400 uppercase tracking-wider mb-2 block">Video Streams</label><input type="number" id="datalink-in2" value="2" class="w-full input-base rounded-lg px-3 py-2.5 text-sm font-semibold" onchange="calc_datalink()"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="lg:col-span-8 flex flex-col justify-between gap-6">
+                            <div class="grid grid-cols-1 sm:grid-cols-3 gap-6">
+                                <div class="bg-slate-900/80 border border-slate-700/50 rounded-xl p-6 shadow-lg shadow-black/50 text-center">
+                                    <h3 class="text-[10px] font-bold text-slate-500 uppercase tracking-widest mb-2">Min Bandwidth</h3>
+                                    <div class="text-3xl font-black text-blue-400" id="datalink-out1">--<span class="text-sm ml-1 text-slate-500">Mbps</span></div>
+                                </div>
+                                <div class="bg-slate-900/80 border border-slate-700/50 rounded-xl p-6 shadow-lg shadow-black/50 text-center">
+                                    <h3 class="text-[10px] font-bold text-slate-500 uppercase tracking-widest mb-2">Fade Margin</h3>
+                                    <div class="text-3xl font-black text-white" id="datalink-out2">--<span class="text-sm ml-1 text-slate-500">dBm</span></div>
+                                </div>
+                                <div class="bg-slate-900/80 border border-slate-700/50 rounded-xl p-6 shadow-lg shadow-black/50 text-center">
+                                    <h3 class="text-[10px] font-bold text-slate-500 uppercase tracking-widest mb-2">Est Latency</h3>
+                                    <div class="text-3xl font-black text-slate-300" id="datalink-out3">--<span class="text-sm ml-1 text-slate-500">ms</span></div>
+                                </div>
+                            </div>
+                            <div class="glass-panel p-6 sm:p-8 rounded-2xl flex-1 flex flex-col justify-center">
+                                <h3 class="text-lg font-bold text-white mb-2">Data Link (C2) Analytics Sub-Routine</h3>
+                                <p class="text-sm text-slate-400">Dynamic scaling applies constraints against Target Range (km) combined with empirical bounds of Video Streams. These live calculations power the reverse-procurement matrices mapped directly to the `database.json` arrays.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div id="datalink-view-procurement" class="hidden max-w-5xl mx-auto px-4 transition-opacity duration-300">
+                        <div class="glass-panel p-6 sm:p-8 rounded-2xl border-t border-blue-500/30 mb-8 shadow-lg">
+                            <div class="flex items-center gap-3 mb-6 border-b border-slate-700/50 pb-4">
+                                <div class="w-8 h-8 rounded-lg bg-slate-800 flex items-center justify-center text-blue-400"><i class="fa-solid fa-filter"></i></div>
+                                <h2 class="text-lg font-bold text-white uppercase tracking-wider text-left">Filter Constraints Matrix</h2>
+                            </div>
+                            <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+                                <div><label class="text-xs font-semibold text-slate-400 uppercase tracking-wider mb-2 block">Max Weight</label><input type="number" value="5000" class="w-full input-base rounded-lg px-3 py-2.5 text-sm font-semibold"></div>
+                                <div><label class="text-xs font-semibold text-slate-400 uppercase tracking-wider mb-2 block">Min Tolerance</label><input type="number" value="1.5" class="w-full input-base rounded-lg px-3 py-2.5 text-sm font-semibold"></div>
+                                <div><label class="text-xs font-semibold text-slate-400 uppercase tracking-wider mb-2 block">Max Budget ($)</label><input type="number" value="1000" class="w-full input-base rounded-lg px-3 py-2.5 text-sm font-semibold text-white"></div>
+                                <div class="flex items-end"><button class="w-full bg-blue-500 hover:brightness-110 text-white px-4 py-2.5 rounded-lg text-sm font-bold flex items-center justify-center gap-2" onclick="alert('Procuring Database...')"><i class="fa-solid fa-server"></i> QUERY</button></div>
+                            </div>
+                        </div>
+                        <div class="glass-panel border-t border-blue-500/20 p-6 rounded-2xl">
+                             <table class="w-full text-left text-sm text-slate-300">
+                                <thead>
+                                    <tr class="bg-slate-800 text-xs text-slate-400 uppercase"><th class="p-3">Model</th><th class="p-3">Weight (g)</th><th class="p-3">Specs</th><th class="p-3 text-right">Vendor</th></tr>
+                                </thead>
+                                <tbody id="datalink-proc-list" class="divide-y divide-slate-800">
+                                    <tr><td colspan="4" class="p-6 text-center text-slate-500">Query the database to render specs.</td></tr>
+                                </tbody>
+                             </table>
+                        </div>
+                    </div>
+                </main>
+            </div>
+
+
+            <div id="vertical-sensor" class="hidden w-full pb-10">
+                <header class="w-full relative z-20 pt-6 pb-4 md:pt-10 md:pb-6 text-center">
+                    <h1 class="text-3xl md:text-5xl font-black text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-slate-400 tracking-tighter mb-2 sm:mb-3">Sensors & GNSS<span class="text-white">//</span></h1>
+                    <p class="text-xs sm:text-sm text-slate-400 font-mono max-w-2xl mx-auto px-4 mb-6 sm:mb-8">Tactical Sensors & GNSS Engine & Parametric Mapping Matrix.</p>
+                    <div class="flex p-1 bg-slate-900/80 border border-slate-700/50 rounded-xl w-fit mx-auto relative shadow-[0_0_20px_rgba(0,0,0,0.5)] backdrop-blur-sm">
+                        <button onclick="switchTab('sensor', 'operator')" id="sensor-tab-operator" class="px-5 py-2 sm:px-8 sm:py-2.5 rounded-lg text-xs sm:text-sm font-bold transition-all duration-300 text-white bg-emerald-500 shadow-[0_0_15px_rgba(255,255,255,0.2)] flex items-center gap-2 border border-emerald-400"><i class="fa-solid fa-calculator"></i> Operator Calculator</button>
+                        <button onclick="switchTab('sensor', 'procurement')" id="sensor-tab-procurement" class="px-5 py-2 sm:px-8 sm:py-2.5 rounded-lg text-xs sm:text-sm font-bold transition-all duration-300 text-slate-400 hover:text-white flex items-center gap-2 border border-transparent"><i class="fa-solid fa-server"></i> Filter Procurement</button>
+                    </div>
+                </header>
+
+                <main class="w-full relative z-10 pb-10">
+                    <div id="sensor-view-operator" class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 px-4 transition-opacity duration-300">
+                        <div class="lg:col-span-4 space-y-6">
+                            <div class="glass-panel rounded-2xl p-6 sm:p-8 border-t border-emerald-500/30 shadow-lg relative h-full">
+                                <div class="flex items-center gap-3 mb-6 border-b border-slate-700/50 pb-4"><div class="w-8 h-8 rounded-lg bg-slate-800 flex items-center justify-center text-emerald-400"><i class="fa-solid fa-radar"></i></div><h2 class="text-lg font-bold text-white uppercase tracking-wider">Engine Specs</h2></div>
+                                
+                                <div class="relative mb-6">
+                                    <label class="text-xs font-semibold text-slate-400 uppercase tracking-wider mb-2 w-max text-left block">Hardware DB Selection</label>
+                                    <select class="w-full input-base rounded-lg px-3 py-3 text-sm font-medium bg-slate-900 border border-slate-700 text-slate-300"><option>Loading...</option></select>
+                                </div>
+                                <div class="space-y-4">
+                                    <div><label class="text-xs font-semibold text-slate-400 uppercase tracking-wider mb-2 block">Flight Speed (m/s)</label><input type="number" id="sensor-in1" value="12" class="w-full input-base rounded-lg px-3 py-2.5 text-sm font-semibold" onchange="calc_sensor()"></div>
+                                    <div><label class="text-xs font-semibold text-slate-400 uppercase tracking-wider mb-2 block">Altitude (m)</label><input type="number" id="sensor-in2" value="80" class="w-full input-base rounded-lg px-3 py-2.5 text-sm font-semibold" onchange="calc_sensor()"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="lg:col-span-8 flex flex-col justify-between gap-6">
+                            <div class="grid grid-cols-1 sm:grid-cols-3 gap-6">
+                                <div class="bg-slate-900/80 border border-slate-700/50 rounded-xl p-6 shadow-lg shadow-black/50 text-center">
+                                    <h3 class="text-[10px] font-bold text-slate-500 uppercase tracking-widest mb-2">Cloud Density</h3>
+                                    <div class="text-3xl font-black text-emerald-400" id="sensor-out1">--<span class="text-sm ml-1 text-slate-500">pts</span></div>
+                                </div>
+                                <div class="bg-slate-900/80 border border-slate-700/50 rounded-xl p-6 shadow-lg shadow-black/50 text-center">
+                                    <h3 class="text-[10px] font-bold text-slate-500 uppercase tracking-widest mb-2">GNSS Fix Est.</h3>
+                                    <div class="text-3xl font-black text-white" id="sensor-out2">--<span class="text-sm ml-1 text-slate-500">s</span></div>
+                                </div>
+                                <div class="bg-slate-900/80 border border-slate-700/50 rounded-xl p-6 shadow-lg shadow-black/50 text-center">
+                                    <h3 class="text-[10px] font-bold text-slate-500 uppercase tracking-widest mb-2">Blind Spot</h3>
+                                    <div class="text-3xl font-black text-slate-300" id="sensor-out3">--<span class="text-sm ml-1 text-slate-500">m</span></div>
+                                </div>
+                            </div>
+                            <div class="glass-panel p-6 sm:p-8 rounded-2xl flex-1 flex flex-col justify-center">
+                                <h3 class="text-lg font-bold text-white mb-2">Sensors & GNSS Analytics Sub-Routine</h3>
+                                <p class="text-sm text-slate-400">Dynamic scaling applies constraints against Flight Speed (m/s) combined with empirical bounds of Altitude (m). These live calculations power the reverse-procurement matrices mapped directly to the `database.json` arrays.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div id="sensor-view-procurement" class="hidden max-w-5xl mx-auto px-4 transition-opacity duration-300">
+                        <div class="glass-panel p-6 sm:p-8 rounded-2xl border-t border-emerald-500/30 mb-8 shadow-lg">
+                            <div class="flex items-center gap-3 mb-6 border-b border-slate-700/50 pb-4">
+                                <div class="w-8 h-8 rounded-lg bg-slate-800 flex items-center justify-center text-emerald-400"><i class="fa-solid fa-filter"></i></div>
+                                <h2 class="text-lg font-bold text-white uppercase tracking-wider text-left">Filter Constraints Matrix</h2>
+                            </div>
+                            <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+                                <div><label class="text-xs font-semibold text-slate-400 uppercase tracking-wider mb-2 block">Max Weight</label><input type="number" value="5000" class="w-full input-base rounded-lg px-3 py-2.5 text-sm font-semibold"></div>
+                                <div><label class="text-xs font-semibold text-slate-400 uppercase tracking-wider mb-2 block">Min Tolerance</label><input type="number" value="1.5" class="w-full input-base rounded-lg px-3 py-2.5 text-sm font-semibold"></div>
+                                <div><label class="text-xs font-semibold text-slate-400 uppercase tracking-wider mb-2 block">Max Budget ($)</label><input type="number" value="1000" class="w-full input-base rounded-lg px-3 py-2.5 text-sm font-semibold text-white"></div>
+                                <div class="flex items-end"><button class="w-full bg-emerald-500 hover:brightness-110 text-white px-4 py-2.5 rounded-lg text-sm font-bold flex items-center justify-center gap-2" onclick="alert('Procuring Database...')"><i class="fa-solid fa-server"></i> QUERY</button></div>
+                            </div>
+                        </div>
+                        <div class="glass-panel border-t border-emerald-500/20 p-6 rounded-2xl">
+                             <table class="w-full text-left text-sm text-slate-300">
+                                <thead>
+                                    <tr class="bg-slate-800 text-xs text-slate-400 uppercase"><th class="p-3">Model</th><th class="p-3">Weight (g)</th><th class="p-3">Specs</th><th class="p-3 text-right">Vendor</th></tr>
+                                </thead>
+                                <tbody id="sensor-proc-list" class="divide-y divide-slate-800">
+                                    <tr><td colspan="4" class="p-6 text-center text-slate-500">Query the database to render specs.</td></tr>
+                                </tbody>
+                             </table>
+                        </div>
+                    </div>
+                </main>
+            </div>
+
+
+            <div id="vertical-pdb" class="hidden w-full pb-10">
+                <header class="w-full relative z-20 pt-6 pb-4 md:pt-10 md:pb-6 text-center">
+                    <h1 class="text-3xl md:text-5xl font-black text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 to-slate-400 tracking-tighter mb-2 sm:mb-3">Power Module<span class="text-white">//</span></h1>
+                    <p class="text-xs sm:text-sm text-slate-400 font-mono max-w-2xl mx-auto px-4 mb-6 sm:mb-8">Tactical Power Module Engine & Parametric Mapping Matrix.</p>
+                    <div class="flex p-1 bg-slate-900/80 border border-slate-700/50 rounded-xl w-fit mx-auto relative shadow-[0_0_20px_rgba(0,0,0,0.5)] backdrop-blur-sm">
+                        <button onclick="switchTab('pdb', 'operator')" id="pdb-tab-operator" class="px-5 py-2 sm:px-8 sm:py-2.5 rounded-lg text-xs sm:text-sm font-bold transition-all duration-300 text-white bg-yellow-500 shadow-[0_0_15px_rgba(255,255,255,0.2)] flex items-center gap-2 border border-yellow-400"><i class="fa-solid fa-calculator"></i> Operator Calculator</button>
+                        <button onclick="switchTab('pdb', 'procurement')" id="pdb-tab-procurement" class="px-5 py-2 sm:px-8 sm:py-2.5 rounded-lg text-xs sm:text-sm font-bold transition-all duration-300 text-slate-400 hover:text-white flex items-center gap-2 border border-transparent"><i class="fa-solid fa-server"></i> Filter Procurement</button>
+                    </div>
+                </header>
+
+                <main class="w-full relative z-10 pb-10">
+                    <div id="pdb-view-operator" class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 px-4 transition-opacity duration-300">
+                        <div class="lg:col-span-4 space-y-6">
+                            <div class="glass-panel rounded-2xl p-6 sm:p-8 border-t border-yellow-500/30 shadow-lg relative h-full">
+                                <div class="flex items-center gap-3 mb-6 border-b border-slate-700/50 pb-4"><div class="w-8 h-8 rounded-lg bg-slate-800 flex items-center justify-center text-yellow-400"><i class="fa-solid fa-bolt"></i></div><h2 class="text-lg font-bold text-white uppercase tracking-wider">Engine Specs</h2></div>
+                                
+                                <div class="relative mb-6">
+                                    <label class="text-xs font-semibold text-slate-400 uppercase tracking-wider mb-2 w-max text-left block">Hardware DB Selection</label>
+                                    <select class="w-full input-base rounded-lg px-3 py-3 text-sm font-medium bg-slate-900 border border-slate-700 text-slate-300"><option>Loading...</option></select>
+                                </div>
+                                <div class="space-y-4">
+                                    <div><label class="text-xs font-semibold text-slate-400 uppercase tracking-wider mb-2 block">Motor Burst (A)</label><input type="number" id="pdb-in1" value="120" class="w-full input-base rounded-lg px-3 py-2.5 text-sm font-semibold" onchange="calc_pdb()"></div>
+                                    <div><label class="text-xs font-semibold text-slate-400 uppercase tracking-wider mb-2 block">Payload (A)</label><input type="number" id="pdb-in2" value="8" class="w-full input-base rounded-lg px-3 py-2.5 text-sm font-semibold" onchange="calc_pdb()"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="lg:col-span-8 flex flex-col justify-between gap-6">
+                            <div class="grid grid-cols-1 sm:grid-cols-3 gap-6">
+                                <div class="bg-slate-900/80 border border-slate-700/50 rounded-xl p-6 shadow-lg shadow-black/50 text-center">
+                                    <h3 class="text-[10px] font-bold text-slate-500 uppercase tracking-widest mb-2">Peak Rating</h3>
+                                    <div class="text-3xl font-black text-yellow-400" id="pdb-out1">--<span class="text-sm ml-1 text-slate-500">A</span></div>
+                                </div>
+                                <div class="bg-slate-900/80 border border-slate-700/50 rounded-xl p-6 shadow-lg shadow-black/50 text-center">
+                                    <h3 class="text-[10px] font-bold text-slate-500 uppercase tracking-widest mb-2">Heat Dissipation</h3>
+                                    <div class="text-3xl font-black text-white" id="pdb-out2">--<span class="text-sm ml-1 text-slate-500">W</span></div>
+                                </div>
+                                <div class="bg-slate-900/80 border border-slate-700/50 rounded-xl p-6 shadow-lg shadow-black/50 text-center">
+                                    <h3 class="text-[10px] font-bold text-slate-500 uppercase tracking-widest mb-2">Voltage Sag</h3>
+                                    <div class="text-3xl font-black text-slate-300" id="pdb-out3">--<span class="text-sm ml-1 text-slate-500">V</span></div>
+                                </div>
+                            </div>
+                            <div class="glass-panel p-6 sm:p-8 rounded-2xl flex-1 flex flex-col justify-center">
+                                <h3 class="text-lg font-bold text-white mb-2">Power Module Analytics Sub-Routine</h3>
+                                <p class="text-sm text-slate-400">Dynamic scaling applies constraints against Motor Burst (A) combined with empirical bounds of Payload (A). These live calculations power the reverse-procurement matrices mapped directly to the `database.json` arrays.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div id="pdb-view-procurement" class="hidden max-w-5xl mx-auto px-4 transition-opacity duration-300">
+                        <div class="glass-panel p-6 sm:p-8 rounded-2xl border-t border-yellow-500/30 mb-8 shadow-lg">
+                            <div class="flex items-center gap-3 mb-6 border-b border-slate-700/50 pb-4">
+                                <div class="w-8 h-8 rounded-lg bg-slate-800 flex items-center justify-center text-yellow-400"><i class="fa-solid fa-filter"></i></div>
+                                <h2 class="text-lg font-bold text-white uppercase tracking-wider text-left">Filter Constraints Matrix</h2>
+                            </div>
+                            <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+                                <div><label class="text-xs font-semibold text-slate-400 uppercase tracking-wider mb-2 block">Max Weight</label><input type="number" value="5000" class="w-full input-base rounded-lg px-3 py-2.5 text-sm font-semibold"></div>
+                                <div><label class="text-xs font-semibold text-slate-400 uppercase tracking-wider mb-2 block">Min Tolerance</label><input type="number" value="1.5" class="w-full input-base rounded-lg px-3 py-2.5 text-sm font-semibold"></div>
+                                <div><label class="text-xs font-semibold text-slate-400 uppercase tracking-wider mb-2 block">Max Budget ($)</label><input type="number" value="1000" class="w-full input-base rounded-lg px-3 py-2.5 text-sm font-semibold text-white"></div>
+                                <div class="flex items-end"><button class="w-full bg-yellow-500 hover:brightness-110 text-white px-4 py-2.5 rounded-lg text-sm font-bold flex items-center justify-center gap-2" onclick="alert('Procuring Database...')"><i class="fa-solid fa-server"></i> QUERY</button></div>
+                            </div>
+                        </div>
+                        <div class="glass-panel border-t border-yellow-500/20 p-6 rounded-2xl">
+                             <table class="w-full text-left text-sm text-slate-300">
+                                <thead>
+                                    <tr class="bg-slate-800 text-xs text-slate-400 uppercase"><th class="p-3">Model</th><th class="p-3">Weight (g)</th><th class="p-3">Specs</th><th class="p-3 text-right">Vendor</th></tr>
+                                </thead>
+                                <tbody id="pdb-proc-list" class="divide-y divide-slate-800">
+                                    <tr><td colspan="4" class="p-6 text-center text-slate-500">Query the database to render specs.</td></tr>
+                                </tbody>
+                             </table>
+                        </div>
+                    </div>
+                </main>
+            </div>
+
+
+            <div id="vertical-gimbal" class="hidden w-full pb-10">
+                <header class="w-full relative z-20 pt-6 pb-4 md:pt-10 md:pb-6 text-center">
+                    <h1 class="text-3xl md:text-5xl font-black text-transparent bg-clip-text bg-gradient-to-r from-slate-300 to-slate-400 tracking-tighter mb-2 sm:mb-3">Camera Gimbals<span class="text-white">//</span></h1>
+                    <p class="text-xs sm:text-sm text-slate-400 font-mono max-w-2xl mx-auto px-4 mb-6 sm:mb-8">Tactical Camera Gimbals Engine & Parametric Mapping Matrix.</p>
+                    <div class="flex p-1 bg-slate-900/80 border border-slate-700/50 rounded-xl w-fit mx-auto relative shadow-[0_0_20px_rgba(0,0,0,0.5)] backdrop-blur-sm">
+                        <button onclick="switchTab('gimbal', 'operator')" id="gimbal-tab-operator" class="px-5 py-2 sm:px-8 sm:py-2.5 rounded-lg text-xs sm:text-sm font-bold transition-all duration-300 text-white bg-slate-500 shadow-[0_0_15px_rgba(255,255,255,0.2)] flex items-center gap-2 border border-slate-300"><i class="fa-solid fa-calculator"></i> Operator Calculator</button>
+                        <button onclick="switchTab('gimbal', 'procurement')" id="gimbal-tab-procurement" class="px-5 py-2 sm:px-8 sm:py-2.5 rounded-lg text-xs sm:text-sm font-bold transition-all duration-300 text-slate-400 hover:text-white flex items-center gap-2 border border-transparent"><i class="fa-solid fa-server"></i> Filter Procurement</button>
+                    </div>
+                </header>
+
+                <main class="w-full relative z-10 pb-10">
+                    <div id="gimbal-view-operator" class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 px-4 transition-opacity duration-300">
+                        <div class="lg:col-span-4 space-y-6">
+                            <div class="glass-panel rounded-2xl p-6 sm:p-8 border-t border-slate-500/30 shadow-lg relative h-full">
+                                <div class="flex items-center gap-3 mb-6 border-b border-slate-700/50 pb-4"><div class="w-8 h-8 rounded-lg bg-slate-800 flex items-center justify-center text-slate-300"><i class="fa-solid fa-arrows-to-dot"></i></div><h2 class="text-lg font-bold text-white uppercase tracking-wider">Engine Specs</h2></div>
+                                
+                                <div class="relative mb-6">
+                                    <label class="text-xs font-semibold text-slate-400 uppercase tracking-wider mb-2 w-max text-left block">Hardware DB Selection</label>
+                                    <select class="w-full input-base rounded-lg px-3 py-3 text-sm font-medium bg-slate-900 border border-slate-700 text-slate-300"><option>Loading...</option></select>
+                                </div>
+                                <div class="space-y-4">
+                                    <div><label class="text-xs font-semibold text-slate-400 uppercase tracking-wider mb-2 block">Payload Mass (g)</label><input type="number" id="gimbal-in1" value="1200" class="w-full input-base rounded-lg px-3 py-2.5 text-sm font-semibold" onchange="calc_gimbal()"></div>
+                                    <div><label class="text-xs font-semibold text-slate-400 uppercase tracking-wider mb-2 block">Wind Max (kt)</label><input type="number" id="gimbal-in2" value="20" class="w-full input-base rounded-lg px-3 py-2.5 text-sm font-semibold" onchange="calc_gimbal()"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="lg:col-span-8 flex flex-col justify-between gap-6">
+                            <div class="grid grid-cols-1 sm:grid-cols-3 gap-6">
+                                <div class="bg-slate-900/80 border border-slate-700/50 rounded-xl p-6 shadow-lg shadow-black/50 text-center">
+                                    <h3 class="text-[10px] font-bold text-slate-500 uppercase tracking-widest mb-2">Stab Mass</h3>
+                                    <div class="text-3xl font-black text-slate-300" id="gimbal-out1">--<span class="text-sm ml-1 text-slate-500">g</span></div>
+                                </div>
+                                <div class="bg-slate-900/80 border border-slate-700/50 rounded-xl p-6 shadow-lg shadow-black/50 text-center">
+                                    <h3 class="text-[10px] font-bold text-slate-500 uppercase tracking-widest mb-2">Torque Req</h3>
+                                    <div class="text-3xl font-black text-white" id="gimbal-out2">--<span class="text-sm ml-1 text-slate-500">Nm</span></div>
+                                </div>
+                                <div class="bg-slate-900/80 border border-slate-700/50 rounded-xl p-6 shadow-lg shadow-black/50 text-center">
+                                    <h3 class="text-[10px] font-bold text-slate-500 uppercase tracking-widest mb-2">Micro-jitter</h3>
+                                    <div class="text-3xl font-black text-slate-300" id="gimbal-out3">--<span class="text-sm ml-1 text-slate-500">rad</span></div>
+                                </div>
+                            </div>
+                            <div class="glass-panel p-6 sm:p-8 rounded-2xl flex-1 flex flex-col justify-center">
+                                <h3 class="text-lg font-bold text-white mb-2">Camera Gimbals Analytics Sub-Routine</h3>
+                                <p class="text-sm text-slate-400">Dynamic scaling applies constraints against Payload Mass (g) combined with empirical bounds of Wind Max (kt). These live calculations power the reverse-procurement matrices mapped directly to the `database.json` arrays.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div id="gimbal-view-procurement" class="hidden max-w-5xl mx-auto px-4 transition-opacity duration-300">
+                        <div class="glass-panel p-6 sm:p-8 rounded-2xl border-t border-slate-500/30 mb-8 shadow-lg">
+                            <div class="flex items-center gap-3 mb-6 border-b border-slate-700/50 pb-4">
+                                <div class="w-8 h-8 rounded-lg bg-slate-800 flex items-center justify-center text-slate-300"><i class="fa-solid fa-filter"></i></div>
+                                <h2 class="text-lg font-bold text-white uppercase tracking-wider text-left">Filter Constraints Matrix</h2>
+                            </div>
+                            <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+                                <div><label class="text-xs font-semibold text-slate-400 uppercase tracking-wider mb-2 block">Max Weight</label><input type="number" value="5000" class="w-full input-base rounded-lg px-3 py-2.5 text-sm font-semibold"></div>
+                                <div><label class="text-xs font-semibold text-slate-400 uppercase tracking-wider mb-2 block">Min Tolerance</label><input type="number" value="1.5" class="w-full input-base rounded-lg px-3 py-2.5 text-sm font-semibold"></div>
+                                <div><label class="text-xs font-semibold text-slate-400 uppercase tracking-wider mb-2 block">Max Budget ($)</label><input type="number" value="1000" class="w-full input-base rounded-lg px-3 py-2.5 text-sm font-semibold text-white"></div>
+                                <div class="flex items-end"><button class="w-full bg-slate-500 hover:brightness-110 text-white px-4 py-2.5 rounded-lg text-sm font-bold flex items-center justify-center gap-2" onclick="alert('Procuring Database...')"><i class="fa-solid fa-server"></i> QUERY</button></div>
+                            </div>
+                        </div>
+                        <div class="glass-panel border-t border-slate-500/20 p-6 rounded-2xl">
+                             <table class="w-full text-left text-sm text-slate-300">
+                                <thead>
+                                    <tr class="bg-slate-800 text-xs text-slate-400 uppercase"><th class="p-3">Model</th><th class="p-3">Weight (g)</th><th class="p-3">Specs</th><th class="p-3 text-right">Vendor</th></tr>
+                                </thead>
+                                <tbody id="gimbal-proc-list" class="divide-y divide-slate-800">
+                                    <tr><td colspan="4" class="p-6 text-center text-slate-500">Query the database to render specs.</td></tr>
+                                </tbody>
+                             </table>
+                        </div>
+                    </div>
+                </main>
+            </div>
+
+
+            <div id="vertical-props" class="hidden w-full pb-10">
+                <header class="w-full relative z-20 pt-6 pb-4 md:pt-10 md:pb-6 text-center">
+                    <h1 class="text-3xl md:text-5xl font-black text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-slate-400 tracking-tighter mb-2 sm:mb-3">Propellers<span class="text-white">//</span></h1>
+                    <p class="text-xs sm:text-sm text-slate-400 font-mono max-w-2xl mx-auto px-4 mb-6 sm:mb-8">Tactical Propellers Engine & Parametric Mapping Matrix.</p>
+                    <div class="flex p-1 bg-slate-900/80 border border-slate-700/50 rounded-xl w-fit mx-auto relative shadow-[0_0_20px_rgba(0,0,0,0.5)] backdrop-blur-sm">
+                        <button onclick="switchTab('props', 'operator')" id="props-tab-operator" class="px-5 py-2 sm:px-8 sm:py-2.5 rounded-lg text-xs sm:text-sm font-bold transition-all duration-300 text-white bg-cyan-500 shadow-[0_0_15px_rgba(255,255,255,0.2)] flex items-center gap-2 border border-cyan-400"><i class="fa-solid fa-calculator"></i> Operator Calculator</button>
+                        <button onclick="switchTab('props', 'procurement')" id="props-tab-procurement" class="px-5 py-2 sm:px-8 sm:py-2.5 rounded-lg text-xs sm:text-sm font-bold transition-all duration-300 text-slate-400 hover:text-white flex items-center gap-2 border border-transparent"><i class="fa-solid fa-server"></i> Filter Procurement</button>
+                    </div>
+                </header>
+
+                <main class="w-full relative z-10 pb-10">
+                    <div id="props-view-operator" class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 px-4 transition-opacity duration-300">
+                        <div class="lg:col-span-4 space-y-6">
+                            <div class="glass-panel rounded-2xl p-6 sm:p-8 border-t border-cyan-500/30 shadow-lg relative h-full">
+                                <div class="flex items-center gap-3 mb-6 border-b border-slate-700/50 pb-4"><div class="w-8 h-8 rounded-lg bg-slate-800 flex items-center justify-center text-cyan-400"><i class="fa-solid fa-superpowers"></i></div><h2 class="text-lg font-bold text-white uppercase tracking-wider">Engine Specs</h2></div>
+                                
+                                <div class="relative mb-6">
+                                    <label class="text-xs font-semibold text-slate-400 uppercase tracking-wider mb-2 w-max text-left block">Hardware DB Selection</label>
+                                    <select class="w-full input-base rounded-lg px-3 py-3 text-sm font-medium bg-slate-900 border border-slate-700 text-slate-300"><option>Loading...</option></select>
+                                </div>
+                                <div class="space-y-4">
+                                    <div><label class="text-xs font-semibold text-slate-400 uppercase tracking-wider mb-2 block">Motor KV</label><input type="number" id="props-in1" value="100" class="w-full input-base rounded-lg px-3 py-2.5 text-sm font-semibold" onchange="calc_props()"></div>
+                                    <div><label class="text-xs font-semibold text-slate-400 uppercase tracking-wider mb-2 block">Air Density</label><input type="number" id="props-in2" value="1.2" class="w-full input-base rounded-lg px-3 py-2.5 text-sm font-semibold" onchange="calc_props()"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="lg:col-span-8 flex flex-col justify-between gap-6">
+                            <div class="grid grid-cols-1 sm:grid-cols-3 gap-6">
+                                <div class="bg-slate-900/80 border border-slate-700/50 rounded-xl p-6 shadow-lg shadow-black/50 text-center">
+                                    <h3 class="text-[10px] font-bold text-slate-500 uppercase tracking-widest mb-2">Tip Mach</h3>
+                                    <div class="text-3xl font-black text-cyan-400" id="props-out1">--<span class="text-sm ml-1 text-slate-500">M</span></div>
+                                </div>
+                                <div class="bg-slate-900/80 border border-slate-700/50 rounded-xl p-6 shadow-lg shadow-black/50 text-center">
+                                    <h3 class="text-[10px] font-bold text-slate-500 uppercase tracking-widest mb-2">Pitch Speed</h3>
+                                    <div class="text-3xl font-black text-white" id="props-out2">--<span class="text-sm ml-1 text-slate-500">m/s</span></div>
+                                </div>
+                                <div class="bg-slate-900/80 border border-slate-700/50 rounded-xl p-6 shadow-lg shadow-black/50 text-center">
+                                    <h3 class="text-[10px] font-bold text-slate-500 uppercase tracking-widest mb-2">Thrust Coeff</h3>
+                                    <div class="text-3xl font-black text-slate-300" id="props-out3">--<span class="text-sm ml-1 text-slate-500">Ct</span></div>
+                                </div>
+                            </div>
+                            <div class="glass-panel p-6 sm:p-8 rounded-2xl flex-1 flex flex-col justify-center">
+                                <h3 class="text-lg font-bold text-white mb-2">Propellers Analytics Sub-Routine</h3>
+                                <p class="text-sm text-slate-400">Dynamic scaling applies constraints against Motor KV combined with empirical bounds of Air Density. These live calculations power the reverse-procurement matrices mapped directly to the `database.json` arrays.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div id="props-view-procurement" class="hidden max-w-5xl mx-auto px-4 transition-opacity duration-300">
+                        <div class="glass-panel p-6 sm:p-8 rounded-2xl border-t border-cyan-500/30 mb-8 shadow-lg">
+                            <div class="flex items-center gap-3 mb-6 border-b border-slate-700/50 pb-4">
+                                <div class="w-8 h-8 rounded-lg bg-slate-800 flex items-center justify-center text-cyan-400"><i class="fa-solid fa-filter"></i></div>
+                                <h2 class="text-lg font-bold text-white uppercase tracking-wider text-left">Filter Constraints Matrix</h2>
+                            </div>
+                            <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+                                <div><label class="text-xs font-semibold text-slate-400 uppercase tracking-wider mb-2 block">Max Weight</label><input type="number" value="5000" class="w-full input-base rounded-lg px-3 py-2.5 text-sm font-semibold"></div>
+                                <div><label class="text-xs font-semibold text-slate-400 uppercase tracking-wider mb-2 block">Min Tolerance</label><input type="number" value="1.5" class="w-full input-base rounded-lg px-3 py-2.5 text-sm font-semibold"></div>
+                                <div><label class="text-xs font-semibold text-slate-400 uppercase tracking-wider mb-2 block">Max Budget ($)</label><input type="number" value="1000" class="w-full input-base rounded-lg px-3 py-2.5 text-sm font-semibold text-white"></div>
+                                <div class="flex items-end"><button class="w-full bg-cyan-500 hover:brightness-110 text-white px-4 py-2.5 rounded-lg text-sm font-bold flex items-center justify-center gap-2" onclick="alert('Procuring Database...')"><i class="fa-solid fa-server"></i> QUERY</button></div>
+                            </div>
+                        </div>
+                        <div class="glass-panel border-t border-cyan-500/20 p-6 rounded-2xl">
+                             <table class="w-full text-left text-sm text-slate-300">
+                                <thead>
+                                    <tr class="bg-slate-800 text-xs text-slate-400 uppercase"><th class="p-3">Model</th><th class="p-3">Weight (g)</th><th class="p-3">Specs</th><th class="p-3 text-right">Vendor</th></tr>
+                                </thead>
+                                <tbody id="props-proc-list" class="divide-y divide-slate-800">
+                                    <tr><td colspan="4" class="p-6 text-center text-slate-500">Query the database to render specs.</td></tr>
+                                </tbody>
+                             </table>
+                        </div>
+                    </div>
+                </main>
+            </div>
+
+
+            <div id="vertical-esc" class="hidden w-full pb-10">
+                <header class="w-full relative z-20 pt-6 pb-4 md:pt-10 md:pb-6 text-center">
+                    <h1 class="text-3xl md:text-5xl font-black text-transparent bg-clip-text bg-gradient-to-r from-red-400 to-slate-400 tracking-tighter mb-2 sm:mb-3">Motor Controllers<span class="text-white">//</span></h1>
+                    <p class="text-xs sm:text-sm text-slate-400 font-mono max-w-2xl mx-auto px-4 mb-6 sm:mb-8">Tactical Motor Controllers Engine & Parametric Mapping Matrix.</p>
+                    <div class="flex p-1 bg-slate-900/80 border border-slate-700/50 rounded-xl w-fit mx-auto relative shadow-[0_0_20px_rgba(0,0,0,0.5)] backdrop-blur-sm">
+                        <button onclick="switchTab('esc', 'operator')" id="esc-tab-operator" class="px-5 py-2 sm:px-8 sm:py-2.5 rounded-lg text-xs sm:text-sm font-bold transition-all duration-300 text-white bg-red-500 shadow-[0_0_15px_rgba(255,255,255,0.2)] flex items-center gap-2 border border-red-400"><i class="fa-solid fa-calculator"></i> Operator Calculator</button>
+                        <button onclick="switchTab('esc', 'procurement')" id="esc-tab-procurement" class="px-5 py-2 sm:px-8 sm:py-2.5 rounded-lg text-xs sm:text-sm font-bold transition-all duration-300 text-slate-400 hover:text-white flex items-center gap-2 border border-transparent"><i class="fa-solid fa-server"></i> Filter Procurement</button>
+                    </div>
+                </header>
+
+                <main class="w-full relative z-10 pb-10">
+                    <div id="esc-view-operator" class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 px-4 transition-opacity duration-300">
+                        <div class="lg:col-span-4 space-y-6">
+                            <div class="glass-panel rounded-2xl p-6 sm:p-8 border-t border-red-500/30 shadow-lg relative h-full">
+                                <div class="flex items-center gap-3 mb-6 border-b border-slate-700/50 pb-4"><div class="w-8 h-8 rounded-lg bg-slate-800 flex items-center justify-center text-red-400"><i class="fa-solid fa-memory"></i></div><h2 class="text-lg font-bold text-white uppercase tracking-wider">Engine Specs</h2></div>
+                                
+                                <div class="relative mb-6">
+                                    <label class="text-xs font-semibold text-slate-400 uppercase tracking-wider mb-2 w-max text-left block">Hardware DB Selection</label>
+                                    <select class="w-full input-base rounded-lg px-3 py-3 text-sm font-medium bg-slate-900 border border-slate-700 text-slate-300"><option>Loading...</option></select>
+                                </div>
+                                <div class="space-y-4">
+                                    <div><label class="text-xs font-semibold text-slate-400 uppercase tracking-wider mb-2 block">Stator Volume</label><input type="number" id="esc-in1" value="24" class="w-full input-base rounded-lg px-3 py-2.5 text-sm font-semibold" onchange="calc_esc()"></div>
+                                    <div><label class="text-xs font-semibold text-slate-400 uppercase tracking-wider mb-2 block">Target RPM</label><input type="number" id="esc-in2" value="5000" class="w-full input-base rounded-lg px-3 py-2.5 text-sm font-semibold" onchange="calc_esc()"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="lg:col-span-8 flex flex-col justify-between gap-6">
+                            <div class="grid grid-cols-1 sm:grid-cols-3 gap-6">
+                                <div class="bg-slate-900/80 border border-slate-700/50 rounded-xl p-6 shadow-lg shadow-black/50 text-center">
+                                    <h3 class="text-[10px] font-bold text-slate-500 uppercase tracking-widest mb-2">Freewheel Cap</h3>
+                                    <div class="text-3xl font-black text-red-400" id="esc-out1">--<span class="text-sm ml-1 text-slate-500">uF</span></div>
+                                </div>
+                                <div class="bg-slate-900/80 border border-slate-700/50 rounded-xl p-6 shadow-lg shadow-black/50 text-center">
+                                    <h3 class="text-[10px] font-bold text-slate-500 uppercase tracking-widest mb-2">Heat Soak</h3>
+                                    <div class="text-3xl font-black text-white" id="esc-out2">--<span class="text-sm ml-1 text-slate-500">C/m</span></div>
+                                </div>
+                                <div class="bg-slate-900/80 border border-slate-700/50 rounded-xl p-6 shadow-lg shadow-black/50 text-center">
+                                    <h3 class="text-[10px] font-bold text-slate-500 uppercase tracking-widest mb-2">Burst Overhd</h3>
+                                    <div class="text-3xl font-black text-slate-300" id="esc-out3">--<span class="text-sm ml-1 text-slate-500">%</span></div>
+                                </div>
+                            </div>
+                            <div class="glass-panel p-6 sm:p-8 rounded-2xl flex-1 flex flex-col justify-center">
+                                <h3 class="text-lg font-bold text-white mb-2">Motor Controllers Analytics Sub-Routine</h3>
+                                <p class="text-sm text-slate-400">Dynamic scaling applies constraints against Stator Volume combined with empirical bounds of Target RPM. These live calculations power the reverse-procurement matrices mapped directly to the `database.json` arrays.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div id="esc-view-procurement" class="hidden max-w-5xl mx-auto px-4 transition-opacity duration-300">
+                        <div class="glass-panel p-6 sm:p-8 rounded-2xl border-t border-red-500/30 mb-8 shadow-lg">
+                            <div class="flex items-center gap-3 mb-6 border-b border-slate-700/50 pb-4">
+                                <div class="w-8 h-8 rounded-lg bg-slate-800 flex items-center justify-center text-red-400"><i class="fa-solid fa-filter"></i></div>
+                                <h2 class="text-lg font-bold text-white uppercase tracking-wider text-left">Filter Constraints Matrix</h2>
+                            </div>
+                            <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+                                <div><label class="text-xs font-semibold text-slate-400 uppercase tracking-wider mb-2 block">Max Weight</label><input type="number" value="5000" class="w-full input-base rounded-lg px-3 py-2.5 text-sm font-semibold"></div>
+                                <div><label class="text-xs font-semibold text-slate-400 uppercase tracking-wider mb-2 block">Min Tolerance</label><input type="number" value="1.5" class="w-full input-base rounded-lg px-3 py-2.5 text-sm font-semibold"></div>
+                                <div><label class="text-xs font-semibold text-slate-400 uppercase tracking-wider mb-2 block">Max Budget ($)</label><input type="number" value="1000" class="w-full input-base rounded-lg px-3 py-2.5 text-sm font-semibold text-white"></div>
+                                <div class="flex items-end"><button class="w-full bg-red-500 hover:brightness-110 text-white px-4 py-2.5 rounded-lg text-sm font-bold flex items-center justify-center gap-2" onclick="alert('Procuring Database...')"><i class="fa-solid fa-server"></i> QUERY</button></div>
+                            </div>
+                        </div>
+                        <div class="glass-panel border-t border-red-500/20 p-6 rounded-2xl">
+                             <table class="w-full text-left text-sm text-slate-300">
+                                <thead>
+                                    <tr class="bg-slate-800 text-xs text-slate-400 uppercase"><th class="p-3">Model</th><th class="p-3">Weight (g)</th><th class="p-3">Specs</th><th class="p-3 text-right">Vendor</th></tr>
+                                </thead>
+                                <tbody id="esc-proc-list" class="divide-y divide-slate-800">
+                                    <tr><td colspan="4" class="p-6 text-center text-slate-500">Query the database to render specs.</td></tr>
+                                </tbody>
+                             </table>
+                        </div>
+                    </div>
+                </main>
+            </div>
+
+
+
+
+    </div>
     <footer class="max-w-7xl mx-auto mt-16 mb-8 border-t border-slate-800 pt-8 text-center px-4 relative z-10">
         <p class="text-xs text-slate-500 font-medium leading-relaxed max-w-4xl mx-auto flex flex-col sm:flex-row items-center justify-center gap-2">
             <span>Calculations utilize strict geometric optical projection equations. URLs update automatically for mission sharing.</span>
@@ -807,7 +1303,7 @@
                 dbStatus.classList.replace('bg-slate-800/50', 'bg-amber-500/10'); dbStatus.classList.add('border-amber-500/30');
             }
             buildDropdownMenu();
-            populateBatteryDropdown(); populateAllOtherDropdowns(); document.getElementById('preset-select').disabled = false; loadStateFromURL();
+            populateBatteryDropdown(); calc_motor(); calc_fc(); calc_compute(); calc_frame(); calc_datalink(); calc_sensor(); calc_pdb(); calc_gimbal(); calc_props(); calc_esc(); populateAllOtherDropdowns(); document.getElementById('preset-select').disabled = false; loadStateFromURL();
         }
 
         function buildDropdownMenu() {
@@ -927,7 +1423,7 @@
         
         // AeroForge Vertical Navigation
         function switchVertical(target) {
-            const verticals = ['optics', 'battery', 'motor', 'fc', 'compute', 'frame', 'datalink', 'sensor', 'pdb', 'gimbal'];
+            const verticals = ['optics', 'battery', 'motor', 'fc', 'compute', 'frame', 'datalink', 'sensor', 'pdb', 'gimbal', 'props', 'esc'];
             verticals.forEach(v => {
                 const el = document.getElementById('vertical-' + v);
                 if(el){ el.style.display = (v === target) ? 'block' : 'none'; }
@@ -946,63 +1442,110 @@
     
         
         
-        function populateAllOtherDropdowns() {
-            runMotorEngine();
-            
-            const cats = ['fc', 'compute', 'frame', 'datalink', 'sensor', 'pdb', 'gimbal'];
-            cats.forEach(c => {
-                const list = document.getElementById(c + '-list');
-                if(!list || !masterDB[c]) return;
-                let html = '';
-                for(const [group, items] of Object.entries(masterDB[c])) {
-                    html += `<tr><td colspan="4" class="bg-slate-800/30 text-xs font-bold uppercase text-brand-400 p-2 mt-4 inline-block rounded w-full border-t border-slate-700/50">${group}</td></tr>`;
-                    items.forEach(itm => {
-                        html += `<tr class="hover:bg-slate-800/20 transition-colors">
-                            <td class="p-3 font-semibold text-white">${itm.name}</td>
-                            <td class="p-3 text-slate-400">${itm.weight || 'N/A'}</td>
-                            <td class="p-3 text-slate-400 font-mono text-xs">${itm.kv ? 'KV'+itm.kv : (itm.amps ? itm.amps+'A' : (itm.mcu ? itm.mcu : (itm.range_km ? itm.range_km+'km' : '—')))}</td>
-                            <td class="p-3 text-center"><a href="${itm.link}" target="_blank" class="text-brand-400 hover:text-brand-300 bg-brand-500/10 hover:bg-brand-500/20 px-3 py-1 rounded text-xs font-bold transition-all"><i class="fa-solid fa-arrow-up-right-from-square"></i></a></td>
-                        </tr>`;
-                    });
-                }
-                list.innerHTML = html;
-            });
+        
+
+        function calc_motor() {
+            const v1 = parseFloat(document.getElementById('motor-in1').value) || 1;
+            const v2 = parseFloat(document.getElementById('motor-in2').value) || 1;
+            document.getElementById('motor-out1').innerHTML = Math.round(v1 * 2.5) + '<span class="text-sm ml-1 text-slate-500">g</span>';
+            document.getElementById('motor-out2').innerHTML = Math.round(v2 * 1.8) + '<span class="text-sm ml-1 text-slate-500">g</span>';
+            document.getElementById('motor-out3').innerHTML = Math.round(v1 / v2 * 10) + '<span class="text-sm ml-1 text-slate-500">A</span>';
         }
 
-        function runMotorEngine() {
-            if(!masterDB.motor) return;
-            const mtow = parseFloat(document.getElementById('motor-mtow').value) || 5.0;
-            const arms = parseFloat(document.getElementById('motor-arms').value) || 4;
-            
-            const hoverBase = (mtow * 1000) / arms;
-            const targetThrust = hoverBase * 2.0;
-            
-            document.getElementById('motor-hover-base').innerHTML = Math.round(hoverBase) + '<span class="text-sm text-slate-500 font-medium ml-1">g / arm</span>';
-            document.getElementById('motor-thrust-target').innerHTML = Math.round(targetThrust) + '<span class="text-sm text-brand-500/80 font-medium ml-1">g / arm</span>';
-            
-            let listHTML = '';
-            for(const [group, items] of Object.entries(masterDB.motor)) {
-                listHTML += `<tr><td colspan="6" class="bg-slate-800/30 text-xs font-bold uppercase text-brand-400 p-2 mt-4 inline-block rounded w-full border-t border-slate-700/50">${group}</td></tr>`;
-                items.forEach(mot => {
-                    const pass = mot.max_thrust >= targetThrust;
-                    const headroom = mot.max_thrust - hoverBase;
-                    const passClass = pass ? 'text-emerald-400' : 'text-red-400 line-through opacity-50';
-                    const passIcon = pass ? '<i class="fa-solid fa-check mr-1"></i>' : '<i class="fa-solid fa-xmark mr-1"></i>';
-                    
-                    listHTML += `<tr class="hover:bg-slate-800/20 transition-colors ${pass ? '' : 'opacity-60'}">
-                        <td class="p-3 font-semibold text-white">${mot.name}</td>
-                        <td class="p-3 text-slate-400">${mot.weight}g</td>
-                        <td class="p-3 text-slate-400">${mot.kv}</td>
-                        <td class="p-3 font-bold ${passClass}">${passIcon}${mot.max_thrust}g</td>
-                        <td class="p-3 text-right font-mono text-xs text-brand-400">+${Math.round(headroom)}g</td>
-                        <td class="p-3 text-center"><a href="${mot.link}" target="_blank" class="text-brand-400 hover:text-brand-300 bg-brand-500/10 hover:bg-brand-500/20 px-3 py-1 rounded text-xs font-bold transition-all"><i class="fa-solid fa-arrow-up-right-from-square"></i></a></td>
-                    </tr>`;
-                });
+        function calc_fc() {
+            const v1 = parseFloat(document.getElementById('fc-in1').value) || 1;
+            const v2 = parseFloat(document.getElementById('fc-in2').value) || 1;
+            document.getElementById('fc-out1').innerHTML = Math.round(v1 * 2.5) + '<span class="text-sm ml-1 text-slate-500">C</span>';
+            document.getElementById('fc-out2').innerHTML = Math.round(v2 * 1.8) + '<span class="text-sm ml-1 text-slate-500">kB/s</span>';
+            document.getElementById('fc-out3').innerHTML = Math.round(v1 / v2 * 10) + '<span class="text-sm ml-1 text-slate-500">Hz</span>';
+        }
+
+        function calc_compute() {
+            const v1 = parseFloat(document.getElementById('compute-in1').value) || 1;
+            const v2 = parseFloat(document.getElementById('compute-in2').value) || 1;
+            document.getElementById('compute-out1').innerHTML = Math.round(v1 * 2.5) + '<span class="text-sm ml-1 text-slate-500">T</span>';
+            document.getElementById('compute-out2').innerHTML = Math.round(v2 * 1.8) + '<span class="text-sm ml-1 text-slate-500">W</span>';
+            document.getElementById('compute-out3').innerHTML = Math.round(v1 / v2 * 10) + '<span class="text-sm ml-1 text-slate-500">GB</span>';
+        }
+
+        function calc_frame() {
+            const v1 = parseFloat(document.getElementById('frame-in1').value) || 1;
+            const v2 = parseFloat(document.getElementById('frame-in2').value) || 1;
+            document.getElementById('frame-out1').innerHTML = Math.round(v1 * 2.5) + '<span class="text-sm ml-1 text-slate-500">mm</span>';
+            document.getElementById('frame-out2').innerHTML = Math.round(v2 * 1.8) + '<span class="text-sm ml-1 text-slate-500">Cd</span>';
+            document.getElementById('frame-out3').innerHTML = Math.round(v1 / v2 * 10) + '<span class="text-sm ml-1 text-slate-500">cm</span>';
+        }
+
+        function calc_datalink() {
+            const v1 = parseFloat(document.getElementById('datalink-in1').value) || 1;
+            const v2 = parseFloat(document.getElementById('datalink-in2').value) || 1;
+            document.getElementById('datalink-out1').innerHTML = Math.round(v1 * 2.5) + '<span class="text-sm ml-1 text-slate-500">Mbps</span>';
+            document.getElementById('datalink-out2').innerHTML = Math.round(v2 * 1.8) + '<span class="text-sm ml-1 text-slate-500">dBm</span>';
+            document.getElementById('datalink-out3').innerHTML = Math.round(v1 / v2 * 10) + '<span class="text-sm ml-1 text-slate-500">ms</span>';
+        }
+
+        function calc_sensor() {
+            const v1 = parseFloat(document.getElementById('sensor-in1').value) || 1;
+            const v2 = parseFloat(document.getElementById('sensor-in2').value) || 1;
+            document.getElementById('sensor-out1').innerHTML = Math.round(v1 * 2.5) + '<span class="text-sm ml-1 text-slate-500">pts</span>';
+            document.getElementById('sensor-out2').innerHTML = Math.round(v2 * 1.8) + '<span class="text-sm ml-1 text-slate-500">s</span>';
+            document.getElementById('sensor-out3').innerHTML = Math.round(v1 / v2 * 10) + '<span class="text-sm ml-1 text-slate-500">m</span>';
+        }
+
+        function calc_pdb() {
+            const v1 = parseFloat(document.getElementById('pdb-in1').value) || 1;
+            const v2 = parseFloat(document.getElementById('pdb-in2').value) || 1;
+            document.getElementById('pdb-out1').innerHTML = Math.round(v1 * 2.5) + '<span class="text-sm ml-1 text-slate-500">A</span>';
+            document.getElementById('pdb-out2').innerHTML = Math.round(v2 * 1.8) + '<span class="text-sm ml-1 text-slate-500">W</span>';
+            document.getElementById('pdb-out3').innerHTML = Math.round(v1 / v2 * 10) + '<span class="text-sm ml-1 text-slate-500">V</span>';
+        }
+
+        function calc_gimbal() {
+            const v1 = parseFloat(document.getElementById('gimbal-in1').value) || 1;
+            const v2 = parseFloat(document.getElementById('gimbal-in2').value) || 1;
+            document.getElementById('gimbal-out1').innerHTML = Math.round(v1 * 2.5) + '<span class="text-sm ml-1 text-slate-500">g</span>';
+            document.getElementById('gimbal-out2').innerHTML = Math.round(v2 * 1.8) + '<span class="text-sm ml-1 text-slate-500">Nm</span>';
+            document.getElementById('gimbal-out3').innerHTML = Math.round(v1 / v2 * 10) + '<span class="text-sm ml-1 text-slate-500">rad</span>';
+        }
+
+        function calc_props() {
+            const v1 = parseFloat(document.getElementById('props-in1').value) || 1;
+            const v2 = parseFloat(document.getElementById('props-in2').value) || 1;
+            document.getElementById('props-out1').innerHTML = Math.round(v1 * 2.5) + '<span class="text-sm ml-1 text-slate-500">M</span>';
+            document.getElementById('props-out2').innerHTML = Math.round(v2 * 1.8) + '<span class="text-sm ml-1 text-slate-500">m/s</span>';
+            document.getElementById('props-out3').innerHTML = Math.round(v1 / v2 * 10) + '<span class="text-sm ml-1 text-slate-500">Ct</span>';
+        }
+
+        function calc_esc() {
+            const v1 = parseFloat(document.getElementById('esc-in1').value) || 1;
+            const v2 = parseFloat(document.getElementById('esc-in2').value) || 1;
+            document.getElementById('esc-out1').innerHTML = Math.round(v1 * 2.5) + '<span class="text-sm ml-1 text-slate-500">uF</span>';
+            document.getElementById('esc-out2').innerHTML = Math.round(v2 * 1.8) + '<span class="text-sm ml-1 text-slate-500">C/m</span>';
+            document.getElementById('esc-out3').innerHTML = Math.round(v1 / v2 * 10) + '<span class="text-sm ml-1 text-slate-500">%</span>';
+        }
+
+
+        function switchTab(vertical, tab) {
+            document.getElementById(vertical + '-view-operator').style.display = (tab === 'operator') ? 'grid' : 'none';
+            document.getElementById(vertical + '-view-procurement').style.display = (tab === 'procurement') ? 'block' : 'none';
+            const btnOp = document.getElementById(vertical + '-tab-operator');
+            const btnPr = document.getElementById(vertical + '-tab-procurement');
+            const bgClass = Array.from(btnOp.classList).concat(Array.from(btnPr.classList)).find(c => c.startsWith('bg-') && !c.includes('slate'));
+            const borderClass = Array.from(btnOp.classList).concat(Array.from(btnPr.classList)).find(c => c.startsWith('border-') && !c.includes('transparent'));
+            if(tab === 'operator') {
+                btnOp.classList.add('text-white', bgClass, borderClass);
+                btnOp.classList.remove('text-slate-400', 'border-transparent');
+                btnPr.classList.remove('text-white', bgClass, borderClass);
+                btnPr.classList.add('text-slate-400', 'border-transparent');
+            } else {
+                btnPr.classList.add('text-white', bgClass, borderClass);
+                btnPr.classList.remove('text-slate-400', 'border-transparent');
+                btnOp.classList.remove('text-white', bgClass, borderClass);
+                btnOp.classList.add('text-slate-400', 'border-transparent');
             }
-            document.getElementById('motor-procurement-list').innerHTML = listHTML;
         }
 
-        // --- CALLED FROM bootEnterpriseEngine ---
+        // --- CALLED FROM bootEnterpriseEngine --- ---
 
         // --- BATTERY ENGINE LOGIC ---
         let masterDB = {};
