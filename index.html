@@ -79,6 +79,7 @@
                     <i class="fa-solid fa-battery-full text-emerald-400 text-lg w-5 text-center"></i> <span class="hidden sm:inline">Energy Storage</span>
                 </button>
                 
+                
                 <button onclick="switchVertical('motor')" id="nav-motor" class="w-full text-left px-3 py-3 sm:px-4 rounded-lg text-sm font-bold transition-all duration-300 text-slate-400 hover:text-white hover:bg-slate-900 border border-transparent flex items-center justify-center sm:justify-start gap-3">
                     <i class="fa-solid fa-fan text-amber-400 text-lg w-5 text-center"></i> <span class="hidden sm:inline">Propulsion</span>
                 </button>
@@ -100,7 +101,11 @@
                 </button>
 
                 <button onclick="switchVertical('sensor')" id="nav-sensor" class="w-full text-left px-3 py-3 sm:px-4 rounded-lg text-sm font-bold transition-all duration-300 text-slate-400 hover:text-white hover:bg-slate-900 border border-transparent flex items-center justify-center sm:justify-start gap-3">
-                    <i class="fa-solid fa-radar text-emerald-400 text-lg w-5 text-center"></i> <span class="hidden sm:inline">Sensors & GNSS</span>
+                    <i class="fa-solid fa-satellite-dish text-emerald-400 text-lg w-5 text-center"></i> <span class="hidden sm:inline">Sensors (LiDAR)</span>
+                </button>
+
+                <button onclick="switchVertical('gnss')" id="nav-gnss" class="w-full text-left px-3 py-3 sm:px-4 rounded-lg text-sm font-bold transition-all duration-300 text-slate-400 hover:text-white hover:bg-slate-900 border border-transparent flex items-center justify-center sm:justify-start gap-3">
+                    <i class="fa-solid fa-location-crosshairs text-lime-400 text-lg w-5 text-center"></i> <span class="hidden sm:inline">GNSS & Positioning</span>
                 </button>
 
                 <button onclick="switchVertical('pdb')" id="nav-pdb" class="w-full text-left px-3 py-3 sm:px-4 rounded-lg text-sm font-bold transition-all duration-300 text-slate-400 hover:text-white hover:bg-slate-900 border border-transparent flex items-center justify-center sm:justify-start gap-3">
@@ -403,7 +408,7 @@
 
                 
                 <!-- MOTOR VERTICAL -->
-                            <div id="vertical-motor" class="hidden w-full pb-10">
+                                        <div id="vertical-motor" class="hidden w-full pb-10">
                 <header class="w-full relative z-20 pt-6 pb-4 md:pt-10 md:pb-6 text-center">
                     <h1 class="text-3xl md:text-5xl font-black text-transparent bg-clip-text bg-gradient-to-r from-amber-400 to-slate-400 tracking-tighter mb-2 sm:mb-3">Propulsion<span class="text-white">//</span></h1>
                     <p class="text-xs sm:text-sm text-slate-400 font-mono max-w-2xl mx-auto px-4 mb-6 sm:mb-8">Tactical Propulsion Engine & Parametric Mapping Matrix.</p>
@@ -785,8 +790,8 @@
 
             <div id="vertical-sensor" class="hidden w-full pb-10">
                 <header class="w-full relative z-20 pt-6 pb-4 md:pt-10 md:pb-6 text-center">
-                    <h1 class="text-3xl md:text-5xl font-black text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-slate-400 tracking-tighter mb-2 sm:mb-3">Sensors & GNSS<span class="text-white">//</span></h1>
-                    <p class="text-xs sm:text-sm text-slate-400 font-mono max-w-2xl mx-auto px-4 mb-6 sm:mb-8">Tactical Sensors & GNSS Engine & Parametric Mapping Matrix.</p>
+                    <h1 class="text-3xl md:text-5xl font-black text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-slate-400 tracking-tighter mb-2 sm:mb-3">Sensors (LiDAR)<span class="text-white">//</span></h1>
+                    <p class="text-xs sm:text-sm text-slate-400 font-mono max-w-2xl mx-auto px-4 mb-6 sm:mb-8">Tactical Sensors (LiDAR) Engine & Parametric Mapping Matrix.</p>
                     <div class="flex p-1 bg-slate-900/80 border border-slate-700/50 rounded-xl w-fit mx-auto relative shadow-[0_0_20px_rgba(0,0,0,0.5)] backdrop-blur-sm">
                         <button onclick="switchTab('sensor', 'operator')" id="sensor-tab-operator" class="px-5 py-2 sm:px-8 sm:py-2.5 rounded-lg text-xs sm:text-sm font-bold transition-all duration-300 text-white bg-emerald-500 shadow-[0_0_15px_rgba(255,255,255,0.2)] flex items-center gap-2 border border-emerald-400"><i class="fa-solid fa-calculator"></i> Operator Calculator</button>
                         <button onclick="switchTab('sensor', 'procurement')" id="sensor-tab-procurement" class="px-5 py-2 sm:px-8 sm:py-2.5 rounded-lg text-xs sm:text-sm font-bold transition-all duration-300 text-slate-400 hover:text-white flex items-center gap-2 border border-transparent"><i class="fa-solid fa-server"></i> Filter Procurement</button>
@@ -797,7 +802,7 @@
                     <div id="sensor-view-operator" class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 px-4 transition-opacity duration-300">
                         <div class="lg:col-span-4 space-y-6">
                             <div class="glass-panel rounded-2xl p-6 sm:p-8 border-t border-emerald-500/30 shadow-lg relative h-full">
-                                <div class="flex items-center gap-3 mb-6 border-b border-slate-700/50 pb-4"><div class="w-8 h-8 rounded-lg bg-slate-800 flex items-center justify-center text-emerald-400"><i class="fa-solid fa-radar"></i></div><h2 class="text-lg font-bold text-white uppercase tracking-wider">Engine Specs</h2></div>
+                                <div class="flex items-center gap-3 mb-6 border-b border-slate-700/50 pb-4"><div class="w-8 h-8 rounded-lg bg-slate-800 flex items-center justify-center text-emerald-400"><i class="fa-solid fa-satellite-dish"></i></div><h2 class="text-lg font-bold text-white uppercase tracking-wider">Engine Specs</h2></div>
                                 
                                 <div class="relative mb-6">
                                     <label class="text-xs font-semibold text-slate-400 uppercase tracking-wider mb-2 w-max text-left block">Hardware DB Selection</label>
@@ -816,8 +821,8 @@
                                     <div class="text-3xl font-black text-emerald-400" id="sensor-out1">--<span class="text-sm ml-1 text-slate-500">pts</span></div>
                                 </div>
                                 <div class="bg-slate-900/80 border border-slate-700/50 rounded-xl p-6 shadow-lg shadow-black/50 text-center">
-                                    <h3 class="text-[10px] font-bold text-slate-500 uppercase tracking-widest mb-2">GNSS Fix Est.</h3>
-                                    <div class="text-3xl font-black text-white" id="sensor-out2">--<span class="text-sm ml-1 text-slate-500">s</span></div>
+                                    <h3 class="text-[10px] font-bold text-slate-500 uppercase tracking-widest mb-2">Swath Width</h3>
+                                    <div class="text-3xl font-black text-white" id="sensor-out2">--<span class="text-sm ml-1 text-slate-500">m</span></div>
                                 </div>
                                 <div class="bg-slate-900/80 border border-slate-700/50 rounded-xl p-6 shadow-lg shadow-black/50 text-center">
                                     <h3 class="text-[10px] font-bold text-slate-500 uppercase tracking-widest mb-2">Blind Spot</h3>
@@ -825,7 +830,7 @@
                                 </div>
                             </div>
                             <div class="glass-panel p-6 sm:p-8 rounded-2xl flex-1 flex flex-col justify-center">
-                                <h3 class="text-lg font-bold text-white mb-2">Sensors & GNSS Analytics Sub-Routine</h3>
+                                <h3 class="text-lg font-bold text-white mb-2">Sensors (LiDAR) Analytics Sub-Routine</h3>
                                 <p class="text-sm text-slate-400">Dynamic scaling applies constraints against Flight Speed (m/s) combined with empirical bounds of Altitude (m). These live calculations power the reverse-procurement matrices mapped directly to the `database.json` arrays.</p>
                             </div>
                         </div>
@@ -850,6 +855,82 @@
                                     <tr class="bg-slate-800 text-xs text-slate-400 uppercase"><th class="p-3">Model</th><th class="p-3">Weight (g)</th><th class="p-3">Specs</th><th class="p-3 text-right">Vendor</th></tr>
                                 </thead>
                                 <tbody id="sensor-proc-list" class="divide-y divide-slate-800">
+                                    <tr><td colspan="4" class="p-6 text-center text-slate-500">Query the database to render specs.</td></tr>
+                                </tbody>
+                             </table>
+                        </div>
+                    </div>
+                </main>
+            </div>
+
+
+            <div id="vertical-gnss" class="hidden w-full pb-10">
+                <header class="w-full relative z-20 pt-6 pb-4 md:pt-10 md:pb-6 text-center">
+                    <h1 class="text-3xl md:text-5xl font-black text-transparent bg-clip-text bg-gradient-to-r from-lime-400 to-slate-400 tracking-tighter mb-2 sm:mb-3">GNSS & Positioning<span class="text-white">//</span></h1>
+                    <p class="text-xs sm:text-sm text-slate-400 font-mono max-w-2xl mx-auto px-4 mb-6 sm:mb-8">Tactical GNSS & Positioning Engine & Parametric Mapping Matrix.</p>
+                    <div class="flex p-1 bg-slate-900/80 border border-slate-700/50 rounded-xl w-fit mx-auto relative shadow-[0_0_20px_rgba(0,0,0,0.5)] backdrop-blur-sm">
+                        <button onclick="switchTab('gnss', 'operator')" id="gnss-tab-operator" class="px-5 py-2 sm:px-8 sm:py-2.5 rounded-lg text-xs sm:text-sm font-bold transition-all duration-300 text-white bg-lime-500 shadow-[0_0_15px_rgba(255,255,255,0.2)] flex items-center gap-2 border border-lime-400"><i class="fa-solid fa-calculator"></i> Operator Calculator</button>
+                        <button onclick="switchTab('gnss', 'procurement')" id="gnss-tab-procurement" class="px-5 py-2 sm:px-8 sm:py-2.5 rounded-lg text-xs sm:text-sm font-bold transition-all duration-300 text-slate-400 hover:text-white flex items-center gap-2 border border-transparent"><i class="fa-solid fa-server"></i> Filter Procurement</button>
+                    </div>
+                </header>
+
+                <main class="w-full relative z-10 pb-10">
+                    <div id="gnss-view-operator" class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 px-4 transition-opacity duration-300">
+                        <div class="lg:col-span-4 space-y-6">
+                            <div class="glass-panel rounded-2xl p-6 sm:p-8 border-t border-lime-500/30 shadow-lg relative h-full">
+                                <div class="flex items-center gap-3 mb-6 border-b border-slate-700/50 pb-4"><div class="w-8 h-8 rounded-lg bg-slate-800 flex items-center justify-center text-lime-400"><i class="fa-solid fa-location-crosshairs"></i></div><h2 class="text-lg font-bold text-white uppercase tracking-wider">Engine Specs</h2></div>
+                                
+                                <div class="relative mb-6">
+                                    <label class="text-xs font-semibold text-slate-400 uppercase tracking-wider mb-2 w-max text-left block">Hardware DB Selection</label>
+                                    <select class="w-full input-base rounded-lg px-3 py-3 text-sm font-medium bg-slate-900 border border-slate-700 text-slate-300"><option>Loading...</option></select>
+                                </div>
+                                <div class="space-y-4">
+                                    <div><label class="text-xs font-semibold text-slate-400 uppercase tracking-wider mb-2 block">Baseline Limit (km)</label><input type="number" id="gnss-in1" value="20" class="w-full input-base rounded-lg px-3 py-2.5 text-sm font-semibold" onchange="calc_gnss()"></div>
+                                    <div><label class="text-xs font-semibold text-slate-400 uppercase tracking-wider mb-2 block">Loc Convergence (s)</label><input type="number" id="gnss-in2" value="30" class="w-full input-base rounded-lg px-3 py-2.5 text-sm font-semibold" onchange="calc_gnss()"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="lg:col-span-8 flex flex-col justify-between gap-6">
+                            <div class="grid grid-cols-1 sm:grid-cols-3 gap-6">
+                                <div class="bg-slate-900/80 border border-slate-700/50 rounded-xl p-6 shadow-lg shadow-black/50 text-center">
+                                    <h3 class="text-[10px] font-bold text-slate-500 uppercase tracking-widest mb-2">RTK Accuracy</h3>
+                                    <div class="text-3xl font-black text-lime-400" id="gnss-out1">--<span class="text-sm ml-1 text-slate-500">cm</span></div>
+                                </div>
+                                <div class="bg-slate-900/80 border border-slate-700/50 rounded-xl p-6 shadow-lg shadow-black/50 text-center">
+                                    <h3 class="text-[10px] font-bold text-slate-500 uppercase tracking-widest mb-2">Multipath Rej.</h3>
+                                    <div class="text-3xl font-black text-white" id="gnss-out2">--<span class="text-sm ml-1 text-slate-500">dB</span></div>
+                                </div>
+                                <div class="bg-slate-900/80 border border-slate-700/50 rounded-xl p-6 shadow-lg shadow-black/50 text-center">
+                                    <h3 class="text-[10px] font-bold text-slate-500 uppercase tracking-widest mb-2">Heading Error</h3>
+                                    <div class="text-3xl font-black text-slate-300" id="gnss-out3">--<span class="text-sm ml-1 text-slate-500">deg</span></div>
+                                </div>
+                            </div>
+                            <div class="glass-panel p-6 sm:p-8 rounded-2xl flex-1 flex flex-col justify-center">
+                                <h3 class="text-lg font-bold text-white mb-2">GNSS & Positioning Analytics Sub-Routine</h3>
+                                <p class="text-sm text-slate-400">Dynamic scaling applies constraints against Baseline Limit (km) combined with empirical bounds of Loc Convergence (s). These live calculations power the reverse-procurement matrices mapped directly to the `database.json` arrays.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div id="gnss-view-procurement" class="hidden max-w-5xl mx-auto px-4 transition-opacity duration-300">
+                        <div class="glass-panel p-6 sm:p-8 rounded-2xl border-t border-lime-500/30 mb-8 shadow-lg">
+                            <div class="flex items-center gap-3 mb-6 border-b border-slate-700/50 pb-4">
+                                <div class="w-8 h-8 rounded-lg bg-slate-800 flex items-center justify-center text-lime-400"><i class="fa-solid fa-filter"></i></div>
+                                <h2 class="text-lg font-bold text-white uppercase tracking-wider text-left">Filter Constraints Matrix</h2>
+                            </div>
+                            <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+                                <div><label class="text-xs font-semibold text-slate-400 uppercase tracking-wider mb-2 block">Max Weight</label><input type="number" value="5000" class="w-full input-base rounded-lg px-3 py-2.5 text-sm font-semibold"></div>
+                                <div><label class="text-xs font-semibold text-slate-400 uppercase tracking-wider mb-2 block">Min Tolerance</label><input type="number" value="1.5" class="w-full input-base rounded-lg px-3 py-2.5 text-sm font-semibold"></div>
+                                <div><label class="text-xs font-semibold text-slate-400 uppercase tracking-wider mb-2 block">Max Budget ($)</label><input type="number" value="1000" class="w-full input-base rounded-lg px-3 py-2.5 text-sm font-semibold text-white"></div>
+                                <div class="flex items-end"><button class="w-full bg-lime-500 hover:brightness-110 text-white px-4 py-2.5 rounded-lg text-sm font-bold flex items-center justify-center gap-2" onclick="alert('Procuring Database...')"><i class="fa-solid fa-server"></i> QUERY</button></div>
+                            </div>
+                        </div>
+                        <div class="glass-panel border-t border-lime-500/20 p-6 rounded-2xl">
+                             <table class="w-full text-left text-sm text-slate-300">
+                                <thead>
+                                    <tr class="bg-slate-800 text-xs text-slate-400 uppercase"><th class="p-3">Model</th><th class="p-3">Weight (g)</th><th class="p-3">Specs</th><th class="p-3 text-right">Vendor</th></tr>
+                                </thead>
+                                <tbody id="gnss-proc-list" class="divide-y divide-slate-800">
                                     <tr><td colspan="4" class="p-6 text-center text-slate-500">Query the database to render specs.</td></tr>
                                 </tbody>
                              </table>
@@ -1287,6 +1368,7 @@
   ]
 };
 
+        
         function calc_motor() {
             const v1 = parseFloat(document.getElementById('motor-in1')?.value) || 1;
             const v2 = parseFloat(document.getElementById('motor-in2')?.value) || 1;
@@ -1349,8 +1431,19 @@
             const out2 = document.getElementById('sensor-out2');
             const out3 = document.getElementById('sensor-out3');
             if(out1) out1.innerHTML = Math.round(v1 * 2.5) + '<span class="text-sm ml-1 text-slate-500">pts</span>';
-            if(out2) out2.innerHTML = Math.round(v2 * 1.8) + '<span class="text-sm ml-1 text-slate-500">s</span>';
+            if(out2) out2.innerHTML = Math.round(v2 * 1.8) + '<span class="text-sm ml-1 text-slate-500">m</span>';
             if(out3) out3.innerHTML = Math.round(v1 / v2 * 10) + '<span class="text-sm ml-1 text-slate-500">m</span>';
+        }
+
+        function calc_gnss() {
+            const v1 = parseFloat(document.getElementById('gnss-in1')?.value) || 1;
+            const v2 = parseFloat(document.getElementById('gnss-in2')?.value) || 1;
+            const out1 = document.getElementById('gnss-out1');
+            const out2 = document.getElementById('gnss-out2');
+            const out3 = document.getElementById('gnss-out3');
+            if(out1) out1.innerHTML = Math.round(v1 * 2.5) + '<span class="text-sm ml-1 text-slate-500">cm</span>';
+            if(out2) out2.innerHTML = Math.round(v2 * 1.8) + '<span class="text-sm ml-1 text-slate-500">dB</span>';
+            if(out3) out3.innerHTML = Math.round(v1 / v2 * 10) + '<span class="text-sm ml-1 text-slate-500">deg</span>';
         }
 
         function calc_pdb() {
@@ -1397,6 +1490,7 @@
             if(out3) out3.innerHTML = Math.round(v1 / v2 * 10) + '<span class="text-sm ml-1 text-slate-500">%</span>';
         }
 
+
         function switchTab(vertical, tab) {
             document.getElementById(vertical + '-view-operator').style.display = (tab === 'operator') ? 'grid' : 'none';
             document.getElementById(vertical + '-view-procurement').style.display = (tab === 'procurement') ? 'block' : 'none';
@@ -1418,7 +1512,7 @@
         }
 
         function populateAllOtherDropdowns() {
-            // Mock empty function so that undefined ReferenceError is bypassed
+            // Deprecated/mock empty function so that undefined ReferenceError is bypassed
         }
 
         async function bootEnterpriseEngine() {
@@ -1439,7 +1533,7 @@
             buildDropdownMenu();
             populateBatteryDropdown(); 
             try { 
-                calc_motor(); calc_fc(); calc_compute(); calc_frame(); calc_datalink(); calc_sensor(); calc_pdb(); calc_gimbal(); calc_props(); calc_esc(); populateAllOtherDropdowns(); 
+                calc_motor(); calc_fc(); calc_compute(); calc_frame(); calc_datalink(); calc_sensor(); calc_gnss(); calc_pdb(); calc_gimbal(); calc_props(); calc_esc(); populateAllOtherDropdowns(); 
             } catch(e) { 
                 console.error("Non-critical initialization failure in hardware engine: ", e); 
             }
@@ -1564,7 +1658,7 @@
         
         // AeroForge Vertical Navigation
         function switchVertical(target) {
-            const verticals = ['optics', 'battery', 'motor', 'fc', 'compute', 'frame', 'datalink', 'sensor', 'pdb', 'gimbal', 'props', 'esc'];
+            const verticals = ['optics', 'battery', 'motor', 'fc', 'compute', 'frame', 'datalink', 'sensor', 'gnss', 'pdb', 'gimbal', 'props', 'esc'];
             verticals.forEach(v => {
                 const el = document.getElementById('vertical-' + v);
                 if(el){ el.style.display = (v === target) ? 'block' : 'none'; }

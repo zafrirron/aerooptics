@@ -1,4 +1,5 @@
 import os
+import re
 
 path = './index.html'
 tpl_path = './template.html'
@@ -36,9 +37,14 @@ v_data = [
         "o1": "Min Bandwidth", "o1_u": "Mbps", "o2": "Fade Margin", "o2_u": "dBm", "o3": "Est Latency", "o3_u": "ms"
     },
     {
-        "id": "sensor", "name": "Sensors & GNSS", "icon": "fa-radar", "c_text": "text-emerald-400", "c_bg": "bg-emerald-500", "c_b": "border-emerald-500",
+        "id": "sensor", "name": "Sensors (LiDAR)", "icon": "fa-satellite-dish", "c_text": "text-emerald-400", "c_bg": "bg-emerald-500", "c_b": "border-emerald-500",
         "i1": "Flight Speed (m/s)", "i1_d": "12", "i2": "Altitude (m)", "i2_d": "80",
-        "o1": "Cloud Density", "o1_u": "pts", "o2": "GNSS Fix Est.", "o2_u": "s", "o3": "Blind Spot", "o3_u": "m"
+        "o1": "Cloud Density", "o1_u": "pts", "o2": "Swath Width", "o2_u": "m", "o3": "Blind Spot", "o3_u": "m"
+    },
+    {
+        "id": "gnss", "name": "GNSS & Positioning", "icon": "fa-location-crosshairs", "c_text": "text-lime-400", "c_bg": "bg-lime-500", "c_b": "border-lime-500",
+        "i1": "Baseline Limit (km)", "i1_d": "20", "i2": "Loc Convergence (s)", "i2_d": "30",
+        "o1": "RTK Accuracy", "o1_u": "cm", "o2": "Multipath Rej.", "o2_u": "dB", "o3": "Heading Error", "o3_u": "deg"
     },
     {
         "id": "pdb", "name": "Power Module", "icon": "fa-bolt", "c_text": "text-yellow-400", "c_bg": "bg-yellow-500", "c_b": "border-yellow-500",
@@ -90,11 +96,14 @@ for v in v_data:
 
     calc_js += f"""
         function calc_{v['id']}() {{
-            const v1 = parseFloat(document.getElementById('{v['id']}-in1').value) || 1;
-            const v2 = parseFloat(document.getElementById('{v['id']}-in2').value) || 1;
-            document.getElementById('{v['id']}-out1').innerHTML = Math.round(v1 * 2.5) + '<span class="text-sm ml-1 text-slate-500">{v['o1_u']}</span>';
-            document.getElementById('{v['id']}-out2').innerHTML = Math.round(v2 * 1.8) + '<span class="text-sm ml-1 text-slate-500">{v['o2_u']}</span>';
-            document.getElementById('{v['id']}-out3').innerHTML = Math.round(v1 / v2 * 10) + '<span class="text-sm ml-1 text-slate-500">{v['o3_u']}</span>';
+            const v1 = parseFloat(document.getElementById('{v['id']}-in1')?.value) || 1;
+            const v2 = parseFloat(document.getElementById('{v['id']}-in2')?.value) || 1;
+            const out1 = document.getElementById('{v['id']}-out1');
+            const out2 = document.getElementById('{v['id']}-out2');
+            const out3 = document.getElementById('{v['id']}-out3');
+            if(out1) out1.innerHTML = Math.round(v1 * 2.5) + '<span class="text-sm ml-1 text-slate-500">{v['o1_u']}</span>';
+            if(out2) out2.innerHTML = Math.round(v2 * 1.8) + '<span class="text-sm ml-1 text-slate-500">{v['o2_u']}</span>';
+            if(out3) out3.innerHTML = Math.round(v1 / v2 * 10) + '<span class="text-sm ml-1 text-slate-500">{v['o3_u']}</span>';
         }}
 """
 
@@ -105,7 +114,7 @@ switch_js = """
             const btnOp = document.getElementById(vertical + '-tab-operator');
             const btnPr = document.getElementById(vertical + '-tab-procurement');
             const bgClass = Array.from(btnOp.classList).concat(Array.from(btnPr.classList)).find(c => c.startsWith('bg-') && !c.includes('slate'));
-            const borderClass = Array.from(btnOp.classList).concat(Array.from(btnPr.classList)).find(c => c.startsWith('border-') && !c.includes('transparent'));
+            const borderClass = Array.from(btnOp.classList).concat(Array.from(btnPr.classList)).find(c => c.startsWith('border-') && (!c.includes('transparent') && !c.includes('border-t')));
             if(tab === 'operator') {
                 btnOp.classList.add('text-white', bgClass, borderClass);
                 btnOp.classList.remove('text-slate-400', 'border-transparent');
@@ -118,9 +127,13 @@ switch_js = """
                 btnOp.classList.add('text-slate-400', 'border-transparent');
             }
         }
+
+        function populateAllOtherDropdowns() {
+            // Deprecated/mock empty function so that undefined ReferenceError is bypassed
+        }
 """
 
-import re
+# HTML Modifications
 
 # 1. Update verticals Array
 stringified = "['optics', 'battery', " + ", ".join([ f"'{v['id']}'" for v in v_data ]) + "]"
@@ -133,12 +146,18 @@ html = re.sub(r'<button.*id="nav-motor"[\s\S]*?</nav>', btn_html + "\n          
 html = re.sub(r'<div id="vertical-motor"[\s\S]*?<footer', generated_html + "\n\n    </div>\n    <footer", html)
 
 # 4. Inject JS Scripts
-html = re.sub(r'function populateAllOtherDropdowns\(\) \{[\s\S]*?//\s*---\s*CALLED FROM bootEnterpriseEngine', "\n" + calc_js + "\n" + switch_js + "\n        // --- CALLED FROM bootEnterpriseEngine ---", html)
+# We want to replace the previously injected JS blocks cleanly so they are not doubled up.
+# First, remove everything between `function calc_motor()` and `async function bootEnterpriseEngine()`
+html = re.sub(r'function calc_motor\(\) \{[\s\S]*?async function bootEnterpriseEngine\(\) \{', "async function bootEnterpriseEngine() {", html)
 
+# Now inject the new updated unified calc_js and switch_js right above bootEnterpriseEngine
+html = html.replace("async function bootEnterpriseEngine() {", calc_js + "\n" + switch_js + "\n        async function bootEnterpriseEngine() {")
+
+# 5. Injection inside bootEnterpriseEngine to call calc logic
 call_all = " ".join([ f"calc_{v['id']}();" for v in v_data ])
-html = re.sub(r'populateBatteryDropdown\(\);', f'populateBatteryDropdown(); {call_all}', html)
+html = re.sub(r'calc_motor\(\);\s*calc_fc\(\).*?populateAllOtherDropdowns\(\);', f'{call_all} populateAllOtherDropdowns();', html)
 
 with open(path, 'w', encoding='utf-8') as f:
     f.write(html)
 
-print("SUCCESSFULLY OVERHAULED ALL VERTICALS TO DUAL-TAB OPERATOR UX WITH PYTHON!")
+print("SUCCESSFULLY OVERHAULED AND SCALED VERTICALS!")
